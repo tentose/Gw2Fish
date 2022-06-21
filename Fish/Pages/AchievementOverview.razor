@@ -8,7 +8,7 @@
 
 @if (_loading)
 {
-    
+    <Loading></Loading>
 }
 else
 {
@@ -17,19 +17,22 @@ else
     <MudText Typo="Typo.h4" GutterBottom="true" Class="px-8">Achievements</MudText>
 
     <div class="d-flex flex-grow-0 flex-wrap gap-4">
-        <div class="mt-8 d-flex flex-wrap gap-4" style="width: auto">
+        <div class="mt-8 d-flex flex-wrap gap-4" style="max-width:600px; width: auto">
                 @foreach (var achievement in allAchievements)
                 {
                     <div class="flex-grow-1" width="" style="width: 250px">
                     <MudCard>
                         <MudCardContent>
                             <MudText Typo="Typo.h6">@(achievement.Name)</MudText>
-                            <MudProgressLinear Color="Color.Primary" Size="Size.Large" Value="@(((achievement.CurrentProgress) * 1.0 / achievement.PointRequirement) * 100)" Class="my-4">
-                                <MudText Typo="Typo.subtitle1" Class="z-10">
-                                    <b>@((achievement.CurrentProgress) + "/" + achievement.PointRequirement)</b>
-                                </MudText>
-                            </MudProgressLinear>
-                        </MudCardContent>
+                            @if (SettingsService.Gw2ApiKey != "")
+                            {
+                                <MudProgressLinear Color="Color.Success" Size="Size.Large" Value="@(((achievement.CurrentProgress) * 1.0 / achievement.PointRequirement) * 100)" Class="my-4">
+                                    <MudText Typo="Typo.subtitle1" Class="z-10" Color="Color.Default">
+                                        <b>@((achievement.CurrentProgress) + "/" + achievement.PointRequirement)</b>
+                                    </MudText>
+                                </MudProgressLinear>
+                            }
+                            </MudCardContent>
                         <MudCardActions>
                             <MudButton Variant="Variant.Text" Color="Color.Primary" Link="@("/achievements/" + achievement.Name)">Details</MudButton>
                         </MudCardActions>
