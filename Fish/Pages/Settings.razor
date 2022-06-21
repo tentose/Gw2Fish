@@ -4,7 +4,7 @@
 <MudGrid>
     <MudItem xs="12">
         <MudPaper Class="mud-width-full py-8 px-8">
-             <MudTextField T="string" Label="API Key" Class="mb-3"/>
+            <MudTextField T="string" Label="API Key" Class="mb-3" Validation="ValidateGw2ApiKey"/>
             <MudText>Don't have an API key? Get one here: <MudLink Href="https://account.arena.net/applications">https://account.arena.net/applications</MudLink></MudText>
             <MudText>For more details, see the wiki: <MudLink Href="https://wiki.guildwars2.com/wiki/API:API_key">https://wiki.guildwars2.com/wiki/API:API_key</MudLink></MudText>
         </MudPaper>
@@ -31,5 +31,21 @@
     private void DarkModeChecked(bool isChecked)
     {
         SettingsService.SetDarkMode(isChecked);
+    }
+
+    private bool ValidateGw2ApiKey(string key)
+    {
+        var regex = new System.Text.RegularExpressions.Regex(@"^[0-9A-Z]{8}-[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{20}-[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{12}$");
+        bool isMatch = regex.IsMatch(key);
+        if (isMatch || key == "")
+        {
+            SetGw2ApiKey(key);
+        }
+        return isMatch;
+    }
+
+    private void SetGw2ApiKey(string key)
+    {
+        SettingsService.SetGw2ApiKey(key);
     }
 }

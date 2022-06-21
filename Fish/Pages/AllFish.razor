@@ -1,5 +1,6 @@
 ﻿@page "/"
-@inject HttpClient Http
+@inject IDataService DataService
+@using Models;
 
 <PageTitle>All Fishes</PageTitle>
 
@@ -14,18 +15,24 @@
     }
 </style>
 
-@if (fishes == null)
+@if (_loading)
 {
     <MudText Class="py-12 px-8">Loading ... </MudText>
 }
 else
 {
 <MudTable Hover="true" Breakpoint="Breakpoint.Sm" FixedHeader="true"
-          Items="@fishes"
+          Items="@DataService.AllFishes"
           GroupBy="@_groupDefinition"
           GroupHeaderStyle="background-color:var(--mud-palette-background-grey)"
           GroupFooterClass="mb-4"
-          Dense="true">
+          Dense="true"
+        Filter="new Func<Fish,bool>(FilterFunc)">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">All Fish</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="searchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
     <ColGroup>
         <col style="width: 60px;" />
         <col />
@@ -59,20 +66,37 @@ else
 
 
 @code {
+    private bool _loading = true;
 
-    private List<Models.Fish>? fishes;
+    private string searchString = "";
 
     protected override async Task OnInitializedAsync()
     {
-        fishes = await Http.GetFromJsonAsync<List<Models.Fish>>("fish-data/merged_fish.json");
+        await DataService.LoadAppData();
+        _loading = false;
     }
 
-    private TableGroupDefinition<Models.Fish> _groupDefinition = new()
+    private TableGroupDefinition<Fish> _groupDefinition = new()
     {
         GroupName = "Group",
         Indentation = false,
         Expandable = true,
         Selector = (e) => string.Join(',', e.Area)
     };
+
+    private bool FilterFunc(Fish fish)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        if (fish.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+            return true;
+        if (fish.Area.Any(x => x.Contains(searchString, StringComparison.OrdinalIgnoreCase)))
+            return true;
+        if (fish.Hole.Any(x => x.Contains(searchString, StringComparison.OrdinalIgnoreCase)))
+            return true;
+        if (fish.Bait.Any(x => x.Contains(searchString, StringComparison.OrdinalIgnoreCase)))
+            return true;
+        return false;
+    }
 
 }

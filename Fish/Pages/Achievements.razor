@@ -1,35 +1,74 @@
 ﻿@page "/achievements"
+@page "/achievements/{AchievementName}"
 @inject HttpClient Http
+@inject ISettingsService SettingsService
+@inject IDataService DataService
 
 <PageTitle>Achievements</PageTitle>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Area</th>
-                <th>Name</th>
-                <th>Hole</th>
-                <th>Bait</th>
-                <th>Time</th>
-                <th>Hint</th>
-            </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-    </table>
-
+@if (_loading)
+{
+    <MudText Class="py-12 px-8">Loading ... </MudText>
+}
+else
+{
+    <MudGrid>
+    @if (selectedAchievement != null)
+    {
+       
+        <MudItem xs="12">
+            <AchievementBox model="@selectedAchievement" fishes="@(DataService.AllFishes.Where(fish => fish.AchievementIds.Contains(selectedAchievement.Id)))"></AchievementBox>
+        </MudItem>
+        
+    }
+    else
+    {
+        @foreach(var achievement in DataService.AllAchievements)
+        {
+            <MudItem xs="12">
+                <AchievementBox model="@achievement" fishes="@(DataService.AllFishes.Where(fish => fish.AchievementIds.Contains(achievement.Id)))"></AchievementBox>
+            </MudItem>
+        }
+    }
+    </MudGrid>
+}
 
 @code {
+    private string _achievementName;
+    [Parameter]
+    public string AchievementName { get; set; }
 
-    //private List<Fish>? fishes;
-   // private List<Achievement>? achievements;
+    private bool _loading = true;
+
+    private Models.Achievement? selectedAchievement;
+
+    private async Task UpdateContent()
+    {
+        if (_achievementName != "")
+        {
+            selectedAchievement = DataService.AllAchievements.First(ach => ach.Name == _achievementName);
+        }
+        else
+        {
+            selectedAchievement = null;
+        }
+
+        StateHasChanged();
+    }
 
     protected override async Task OnInitializedAsync()
     {
-        //fishes = await Http.GetFromJsonAsync<List<Fish>>("fish-data/merged_fish.json");
-       // achievements = await Http.GetFromJsonAsync<List<Achievement>>("fish-data/merged_achievements.json");
+        await DataService.LoadAllData();
+
+        _loading = false;
     }
 
+    protected override async Task OnParametersSetAsync()
+    {
+        _achievementName = AchievementName ?? "";
+        AchievementName = null;
+        await UpdateContent();
+        await base.OnParametersSetAsync();
+    }
 
 }

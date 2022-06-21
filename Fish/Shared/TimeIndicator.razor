@@ -1,5 +1,8 @@
-﻿<MudIcon Icon="@icon"></MudIcon>
+﻿
+<div class="d-flex flex-column">
+<MudIcon Icon="@icon"></MudIcon>
 <MudText>@(Region.ToString() + " " + stage + " " + remaining)</MudText>
+</div>
 
 @code {
 	public enum RegionType

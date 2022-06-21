@@ -16,5 +16,6 @@ builder.Services.AddMudServices();
 builder.Services.AddBlazoredLocalStorage();
 
 builder.Services.AddScoped<ISettingsService, SettingsService>();
+builder.Services.AddScoped<IDataService, DataService>();
 
 await builder.Build().RunAsync();

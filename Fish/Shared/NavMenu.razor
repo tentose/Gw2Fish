@@ -1,11 +1,21 @@
 ﻿@inject IDialogService DialogService
+@inject HttpClient Http
 
 <MudNavMenu>
     <MudText Typo="Typo.h6" Class="px-4 pt-4">GW2 Fish!</MudText>
     <MudText Typo="Typo.body2" Class="px-4 pb-4 mud-text-secondary">For all your fishing needs</MudText>
     <MudDivider></MudDivider>
     <MudNavLink Href="/" Match="NavLinkMatch.All">All Fish</MudNavLink>
-    <MudNavLink Href="/achievements" Match="NavLinkMatch.Prefix">Achievements</MudNavLink>
+    <MudNavGroup Title="Achievements" Expanded="false">
+        <MudNavLink Href="/achievements" Match="NavLinkMatch.All">All</MudNavLink>
+        @if(achievements != null)
+        {
+            @foreach(var achievement in achievements)
+            {
+                <MudNavLink Href="@("/achievements/" + achievement.Name)">@achievement.Name</MudNavLink>
+            }
+        }
+    </MudNavGroup>
     <MudNavLink Href="/settings" Match="NavLinkMatch.Prefix">Settings</MudNavLink>
     <MudNavLink Href="/about"  Match="NavLinkMatch.Prefix">About</MudNavLink>
 </MudNavMenu>
@@ -16,6 +26,13 @@
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
     private string? NavSettingsMenuCssClass => showSettingsMenu ? "show" : null;
+
+    private IEnumerable<Models.Achievement>? achievements;
+
+    protected override async Task OnInitializedAsync()
+    {
+        achievements = await Http.GetFromJsonAsync<List<Models.Achievement>>("fish-data/merged_achievement.json");
+    }
 
     private void ToggleNavMenu()
     {
