@@ -1,6 +1,6 @@
 {
-  "name": "Fish",
-  "short_name": "Fish",
+  "name": "GW2Fish",
+  "short_name": "GW2Fish",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",

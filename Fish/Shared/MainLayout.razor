@@ -1,17 +1,51 @@
 ﻿@inherits LayoutComponentBase
+@inject ISettingsService SettingsService
 
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+<MudThemeProvider @ref="@_mudThemeProvider" IsDarkMode="@SettingsService.IsDarkMode" IsDarkModeChanged="SettingsService.SetDarkMode" Theme="_theme"/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
+<MudLayout>
+    <MudAppBar>
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+    </MudAppBar>
+    <MudDrawer @bind-Open="@_drawerOpen">
+        <NavMenu/>
+    </MudDrawer>
+    <MudMainContent>
+        <MudContainer MaxWidth="MaxWidth.Medium">
             @Body
-        </article>
-    </main>
-</div>
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    bool _drawerOpen = true;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+
+    private MudThemeProvider _mudThemeProvider;
+    private MudTheme _theme = new();
+    private bool _isDarkMode;
+
+    protected override void OnInitialized()
+    {
+        SettingsService.DarkModeSettingChanged += DarkModeSettingChanged;
+        base.OnInitialized();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await SettingsService.InitializeSettings();
+            _isDarkMode = SettingsService.IsDarkMode;
+            StateHasChanged();
+        }
+    }
+
+    private void DarkModeSettingChanged(object sender, EventArgs e) => StateHasChanged();
+}

@@ -1,44 +1,35 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">Fish</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
+﻿@inject IDialogService DialogService
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="Welcome">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Welcome
-            </NavLink>
-        </div>
-    </nav>
-</div>
+<MudNavMenu>
+    <MudText Typo="Typo.h6" Class="px-4 pt-4">GW2 Fish!</MudText>
+    <MudText Typo="Typo.body2" Class="px-4 pb-4 mud-text-secondary">For all your fishing needs</MudText>
+    <MudDivider></MudDivider>
+    <MudNavLink Href="/" Match="NavLinkMatch.All">All Fish</MudNavLink>
+    <MudNavLink Href="/achievements" Match="NavLinkMatch.Prefix">Achievements</MudNavLink>
+    <MudNavLink Href="/settings" Match="NavLinkMatch.Prefix">Settings</MudNavLink>
+    <MudNavLink Href="/about"  Match="NavLinkMatch.Prefix">About</MudNavLink>
+</MudNavMenu>
 
 @code {
     private bool collapseNavMenu = true;
+    private bool showSettingsMenu = false;
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string? NavSettingsMenuCssClass => showSettingsMenu ? "show" : null;
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+
+    private void ToggleSettingsMenu()
+    {
+        showSettingsMenu = !showSettingsMenu;
+    }
+
+    private void OpenSetAPIKeyDialog()
+    {
+		var options = new DialogOptions { MaxWidth = MaxWidth.Medium, FullWidth = true, CloseOnEscapeKey = true };
+        DialogService.Show<SetApiKey>("Set API Key", options);
     }
 }

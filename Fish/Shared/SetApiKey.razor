@@ -1,0 +1,19 @@
+﻿<MudDialog>
+    <DialogContent>
+        <MudTextField T="string" Label="API Key" Class="mb-3"/>
+        <MudText></MudText>
+        <MudText>Don't have an API key? Get one here: <MudLink Href="https://account.arena.net/applications">https://account.arena.net/applications</MudLink></MudText>
+        <MudText>For more details, see the wiki: <MudLink Href="https://wiki.guildwars2.com/wiki/API:API_key">https://wiki.guildwars2.com/wiki/API:API_key</MudLink></MudText>
+    </DialogContent>
+    <DialogActions>
+        <MudButton OnClick="Cancel">Cancel</MudButton>
+        <MudButton Color="Color.Primary" OnClick="Submit">Ok</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+
+    void Submit() => MudDialog.Close(DialogResult.Ok(true));
+    void Cancel() => MudDialog.Cancel();
+}
