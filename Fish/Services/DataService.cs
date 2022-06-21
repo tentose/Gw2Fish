@@ -131,6 +131,10 @@ namespace Fish.Services
 
                     await RefreshDailydApiData();
                 }
+                catch(Exception e)
+                {
+                    Console.WriteLine("Failed API refresh: " + e.Message);
+                }
                 finally
                 {
                     allDataLock.ReleaseWriterLock();
