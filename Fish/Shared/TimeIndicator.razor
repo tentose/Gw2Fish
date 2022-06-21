@@ -1,0 +1,74 @@
+﻿<MudIcon Icon="@icon"></MudIcon>
+<MudText>@(Region.ToString() + " " + stage + " " + remaining)</MudText>
+
+@code {
+	public enum RegionType
+	{
+		Cantha,
+		Tyria
+	}
+
+	[Parameter]
+	public RegionType Region { get; set; }
+
+	string icon;
+	string stage;
+	string remaining;
+
+	protected override async Task OnInitializedAsync()
+	{
+		TickTimer();
+	}
+
+	public async void TickTimer()
+	{
+		(int time, string stage, string icon)[] canthanCutoffs = new[]
+			{
+				(35 * 60, "Night", Icons.Filled.NightsStay),
+				(40 * 60, "Dawn", Icons.Filled.WbTwilight),
+				(95 * 60, "Day", Icons.Filled.WbSunny),
+				(100 * 60, "Dusk", Icons.Filled.WbTwilight),
+				(120 * 60, "Night", Icons.Filled.NightsStay)
+			};
+		(int time, string stage, string icon)[] normalCutoffs = new[]
+			{
+				(25 * 60, "Night", Icons.Filled.NightsStay),
+				(30 * 60, "Dawn", Icons.Filled.WbTwilight),
+				(100 * 60, "Day", Icons.Filled.WbSunny),
+				(105 * 60, "Dusk", Icons.Filled.WbTwilight),
+				(120 * 60, "Night", Icons.Filled.NightsStay)
+			};
+
+		for(; ; )
+		{
+			var now = System.DateTime.UtcNow;
+			var hour = now.Hour % 2;
+			var time = now.Second + (now.Minute * 60) + (hour * 60 * 60);
+
+			var cutoffs = Region == RegionType.Cantha ? canthanCutoffs : normalCutoffs;
+
+			for (int i = 0; i < cutoffs.Length; i++)
+			{
+				if (time < cutoffs[i].time)
+				{
+					stage = cutoffs[i].stage;
+					var remainingTime = System.TimeSpan.FromSeconds(cutoffs[i].time - time);
+					remaining = $"{remainingTime:mm\\:ss}";
+					icon = cutoffs[i].icon;
+					break;
+				}
+			}
+
+			if (_disposed)
+			{
+				return;
+			}
+			
+			StateHasChanged();
+			await Task.Delay(1000);
+		}
+	}
+
+	bool _disposed = false;
+    public void Dispose() => _disposed = true;
+}

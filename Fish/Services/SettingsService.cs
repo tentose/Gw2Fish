@@ -48,11 +48,8 @@ namespace Fish.Services
                 savedSettings.Gw2ApiKey = "";
                 SaveSettings();
             }
-            else
-            {
-                IsDarkMode = savedSettings.IsDarkMode;
-                Gw2ApiKey = savedSettings.Gw2ApiKey;
-            }
+            IsDarkMode = savedSettings.IsDarkMode;
+            Gw2ApiKey = savedSettings.Gw2ApiKey;
         }
 
         public event EventHandler DarkModeSettingChanged;
