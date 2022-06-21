@@ -1,0 +1,29 @@
+﻿@inject IDialogService DialogService
+
+<div style="display: inline">
+    <MudLink Typo="@Typo" Class="@(Class + " d-inline")" onclick="@ToggleOpen">@Location</MudLink>
+</div>
+
+@code {
+    bool _isOpen = false;
+
+    [Parameter]
+    public Typo Typo { get; set; } = Typo.body1;
+
+    [Parameter]
+    public string Location { get; set; }
+
+    [Parameter]
+    public string Class { get; set; } = "";
+
+    public void ToggleOpen()
+    {
+        var parameters = new DialogParameters();
+        parameters.Add("Location", Location);
+
+        var options = new DialogOptions() { CloseButton = true, CloseOnEscapeKey = true };
+
+        DialogService.Show<AchievementLinkDialog>("Go to achievement", parameters, options);
+    }
+
+}

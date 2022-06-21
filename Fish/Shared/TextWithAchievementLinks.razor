@@ -1,0 +1,84 @@
+﻿@inject IDataService DataService
+
+@if(_loading)
+{
+    <MudText Typo="@Typo" Class="@Class">@Content</MudText>
+}
+else
+{
+    <MudText Typo="@Typo" Class="@Class">
+    @foreach(var fragment in parsedContent)
+    {
+        if (fragment.isLink)
+        {
+            <AchievementLink Typo="@Typo" Class="@Class" Location="@fragment.text"></AchievementLink>
+        }
+        else
+        {
+            @fragment.text
+        }
+    }
+    </MudText>
+}
+
+@code {
+    bool _loading = true;
+
+    [Parameter]
+    public Typo Typo { get; set; } = Typo.body1;
+
+    [Parameter]
+    public string Content { get; set; }
+
+    [Parameter]
+    public string Class { get; set; } = "";
+
+    List<(string text, bool isLink)> parsedContent;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+
+    async Task LoadData()
+    {
+        await DataService.LoadAppData();
+
+        var achievements = DataService.AllAchievements;
+        var locations = achievements.Where(a => a.Name.EndsWith(" Fisher") && !a.Name.StartsWith("Avid ") && !a.Name.Contains("Desert Isles"))
+                            .Select(a => a.Name.Substring(0, a.Name.IndexOf(" Fisher")));
+        // sort desert isles first so that it gets processed before "Desert"
+        locations.Prepend("Desert Isles");
+
+        // not the most efficient algorithm. but not significant on the scale we're operating on
+        parsedContent = new List<(string text, bool isLink)>();
+        parsedContent.Add((Content ?? "", false));
+
+        foreach (var location in locations)
+        {
+            for (int i = 0; i < parsedContent.Count; i++)
+            {
+                if (parsedContent[i].isLink)
+                {
+                    continue;
+                }
+
+                var text = parsedContent[i].text;
+                var indexOf = text.IndexOf(location);
+                if (indexOf > 0)
+                {
+                    var before = text.Substring(0, indexOf);
+                    var linkText = location;
+                    var after = text.Substring(indexOf + location.Length);
+                    parsedContent.RemoveAt(i);
+                    parsedContent.Insert(i, (after, false));
+                    parsedContent.Insert(i, (linkText, true));
+                    parsedContent.Insert(i, (before, false));
+                }
+            }
+        }
+
+        _loading = false;
+        StateHasChanged();
+    }
+}
