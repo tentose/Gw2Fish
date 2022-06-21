@@ -55,10 +55,12 @@ namespace Fish.Services
                 savedSettings = new SavedSettings();
                 savedSettings.IsDarkMode = true;
                 savedSettings.Gw2ApiKey = "";
+                savedSettings.HideCaughtFish = false;
                 SaveSettings();
             }
             IsDarkMode = savedSettings.IsDarkMode;
             Gw2ApiKey = savedSettings.Gw2ApiKey;
+            HideCaughtFish = savedSettings.HideCaughtFish;
         }
 
         public event EventHandler DarkModeSettingChanged;

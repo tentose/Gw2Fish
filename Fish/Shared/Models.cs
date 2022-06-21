@@ -1,6 +1,6 @@
 ﻿namespace Models
 {
-    public class Achievement
+    public record Achievement
     {
         // From JSON
         public int Id { get; set; }
@@ -18,7 +18,7 @@
         public int Repeated { get; set; }
     }
 
-    public class Fish
+    public record Fish
     {
         // From JSON
         public int Id { get; set; }

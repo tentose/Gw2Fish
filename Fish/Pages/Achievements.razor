@@ -27,7 +27,7 @@ else
         @foreach(var achievement in DataService.AllAchievements)
         {
             <MudItem xs="12">
-                <AchievementBox Model="@achievement" Fishes="@(DataService.AllFishes.Where(fish => fish.AchievementIds.Contains(achievement.Id)).ToList())" ShowCaughtInformation="isApiKeySet"></AchievementBox>
+                <AchievementBox Model="@achievement" Fishes="@(DataService.AllFishes.Where(fish => fish.AchievementIds.Contains(achievement.Id)).Select(fish => fish with {}).ToList())" ShowCaughtInformation="isApiKeySet"></AchievementBox>
             </MudItem>
         }
     }
