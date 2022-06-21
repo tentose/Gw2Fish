@@ -70,6 +70,6 @@
 
     private void TimeStageChanged(object sender, TimeState state)
     {
-        Snackbar.Add($"{state.Region} is has entered {state.Stage}", Severity.Info, config => { config.Icon = TimeService.GetIconForStage(state.Stage); });
+        Snackbar.Add($"{state.Region} has entered {state.Stage}", Severity.Info, config => { config.Icon = TimeService.GetIconForStage(state.Stage); });
     }
 }

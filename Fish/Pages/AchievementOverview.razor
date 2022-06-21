@@ -1,0 +1,117 @@
+﻿@page "/achievements"
+@inject ISettingsService SettingsService
+@inject IDataService DataService
+@inject ISnackbar Snackbar
+@inject NavigationManager NavManager
+
+<PageTitle>Achievements Overview</PageTitle>
+
+@if (_loading)
+{
+    
+}
+else
+{
+<div class="mud-width-full my-4 mt-8">
+
+    <MudText Typo="Typo.h4" GutterBottom="true" Class="px-8">Achievements</MudText>
+
+    <div class="d-flex flex-grow-0 flex-wrap gap-4">
+        <div class="mt-8 d-flex flex-wrap gap-4" style="width: auto">
+                @foreach (var achievement in allAchievements)
+                {
+                    <div class="flex-grow-1" width="" style="width: 250px">
+                    <MudCard>
+                        <MudCardContent>
+                            <MudText Typo="Typo.h6">@(achievement.Name)</MudText>
+                            <MudProgressLinear Color="Color.Primary" Size="Size.Large" Value="@(((achievement.CurrentProgress) * 1.0 / achievement.PointRequirement) * 100)" Class="my-4">
+                                <MudText Typo="Typo.subtitle1" Class="z-10">
+                                    <b>@((achievement.CurrentProgress) + "/" + achievement.PointRequirement)</b>
+                                </MudText>
+                            </MudProgressLinear>
+                        </MudCardContent>
+                        <MudCardActions>
+                            <MudButton Variant="Variant.Text" Color="Color.Primary" Link="@("/achievements/" + achievement.Name)">Details</MudButton>
+                        </MudCardActions>
+                    </MudCard>
+                    </div>
+                }
+        </div>
+
+        <MudPaper Width="280px" Class="mt-8 pr-8 py-8">
+            <MudText Typo="Typo.h6" Class="mx-6">@(maxTitleProgress + "/" + maxTitleRequirement)</MudText>
+            <MudTimeline TimelineOrientation="TimelineOrientation.Vertical" TimelinePosition="TimelinePosition.Start">
+                @foreach (var achievement in DataService.TitleAchievements)
+                {
+                    <MudTimelineItem Color="@(achievement.Completed ? Color.Success : Color.Default)">
+                        <MudText Typo="Typo.body1">@achievement.Name</MudText>
+                        <MudText Typo="Typo.body2" Class="mud-text-secondary">@(achievement.PointRequirement + "/" + maxTitleRequirement)</MudText>
+                    </MudTimelineItem>
+                }
+            </MudTimeline>
+        </MudPaper>
+    </div>
+
+</div>
+}
+
+@code {
+    private bool _loading = true;
+
+    private List<Models.Achievement>? allAchievements;
+    private bool isApiKeySet;
+
+    private Timer? promptApiKeyTimer;
+
+    private int maxTitleProgress = 0;
+    private int maxTitleRequirement = 0;
+
+    private async Task UpdateContent()
+    {
+        isApiKeySet = !string.IsNullOrEmpty(SettingsService.Gw2ApiKey);
+
+        allAchievements = DataService.AllAchievements.ToList();
+        allAchievements.Sort((a, b) =>
+        {
+            return a.Completed != b.Completed ?
+                a.Completed.CompareTo(b.Completed) :
+                b.CurrentProgress.CompareTo(a.CurrentProgress);
+        });
+
+        maxTitleProgress = DataService.TitleAchievements.Select(a => a.CurrentProgress).Max();
+        maxTitleRequirement = DataService.TitleAchievements.Select(a => a.PointRequirement).Max();
+
+        StateHasChanged();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await DataService.LoadAllData();
+
+        _loading = false;
+
+        await UpdateContent();
+
+        DataService.ApiDataUpdated += ApiDataUpdated;
+
+        if (SettingsService.Gw2ApiKey == "")
+        {
+            SendPromptForApiKey();
+        }
+    }
+
+    private async Task SendPromptForApiKey()
+    {
+        await Task.Delay(5000);
+        Snackbar.Add("You can add an API key in settings to track your progress", Severity.Info, config =>
+        {
+            config.Onclick = snackbar =>
+            {
+                NavManager.NavigateTo("/settings");
+                return Task.CompletedTask;
+            };
+        });
+    }
+
+    private void ApiDataUpdated(object sender, EventArgs e) => UpdateContent();
+}

@@ -12,7 +12,7 @@
     <MudDivider></MudDivider>
     <MudNavLink Href="/" Match="NavLinkMatch.All">All Fish</MudNavLink>
     <MudNavGroup Title="Achievements" Expanded="false">
-        <MudNavLink Href="/achievements" Match="NavLinkMatch.All">All</MudNavLink>
+        <MudNavLink Href="/achievements" Match="NavLinkMatch.All">Overview</MudNavLink>
         @if(achievements != null)
         {
             @foreach(var achievement in achievements)
@@ -20,6 +20,7 @@
                 <MudNavLink Href="@("/achievements/" + achievement.Name)">@achievement.Name</MudNavLink>
             }
         }
+        <MudNavLink Href="/achievements/all" Match="NavLinkMatch.All">All Achievements</MudNavLink>
     </MudNavGroup>
     <MudNavLink Href="/settings" Match="NavLinkMatch.Prefix">Settings</MudNavLink>
     <MudNavLink Href="/about"  Match="NavLinkMatch.Prefix">About</MudNavLink>

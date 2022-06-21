@@ -7,6 +7,7 @@ namespace Fish.Services
     public interface IDataService
     {
         public IEnumerable<Models.Achievement> AllAchievements { get; set; }
+        public IEnumerable<Models.Achievement> TitleAchievements { get; set; }
         public IEnumerable<Models.Fish> AllFishes { get; set; }
         public IEnumerable<Gw2Api.AccountAchievement> AllAccountAchievements { get; set; }
         public event EventHandler ApiDataUpdated;
@@ -23,6 +24,7 @@ namespace Fish.Services
         private ISettingsService settingsService;
 
         private List<Models.Achievement>? allAchievements;
+        private List<Models.Achievement>? titleAchievements;
         private List<Models.Fish>? allFishes;
         private List<Gw2Api.AccountAchievement>? allAccountAchievements;
 
@@ -39,6 +41,12 @@ namespace Fish.Services
         {
             get => allAchievements ?? (allAchievements = new List<Models.Achievement>());
             set => allAchievements = value.ToList();
+        }
+
+        public IEnumerable<Models.Achievement> TitleAchievements
+        {
+            get => titleAchievements ?? (titleAchievements = new List<Models.Achievement>());
+            set => titleAchievements = value.ToList();
         }
 
         public IEnumerable<Models.Fish> AllFishes
@@ -61,6 +69,11 @@ namespace Fish.Services
             if (allAchievements == null || allAchievements.Count() == 0 || force)
             {
                 allAchievements = await httpClient.GetFromJsonAsync<List<Models.Achievement>>("fish-data/merged_achievement.json");
+            }
+
+            if (titleAchievements == null || titleAchievements.Count() == 0 || force)
+            {
+                titleAchievements = await httpClient.GetFromJsonAsync<List<Models.Achievement>>("fish-data/title_achievements.json");
             }
 
             if (allFishes == null || allFishes.Count() == 0 || force)
@@ -106,12 +119,12 @@ namespace Fish.Services
                     {
                         allAccountAchievements = await httpClient.GetFromJsonAsync<List<Gw2Api.AccountAchievement>>("https://api.guildwars2.com/v2/account/achievements?access_token=" + settingsService.Gw2ApiKey);
 
-                        if (allAccountAchievements != null && allAchievements != null && allFishes != null)
+                        if (allAccountAchievements != null && allAchievements != null && allFishes != null && titleAchievements != null)
                         {
                             // Merge account achievements into the achievement data
 
                             // Some optimization (maybe) by doing a range comparison first instead of searching
-                            IEnumerable<int> fishingAchievementIds = allAchievements.Select(a => a.Id);
+                            IEnumerable<int> fishingAchievementIds = allAchievements.Select(a => a.Id).Concat(titleAchievements.Select(a => a.Id));
                             int minAchievementId = fishingAchievementIds.Min();
                             int maxAchievementId = fishingAchievementIds.Max();
 
@@ -130,9 +143,11 @@ namespace Fish.Services
                                     var bitIds = aa.bits.Select(bit => a.BitIds[bit]);
                                     a.CompletedBitIds = bitIds.ToArray();
                                     a.Completed = aa.done;
+                                    a.CurrentProgress = aa.current;
+                                    a.PointRequirement = aa.max;
 
-                                // If an achievement is completed, it won't have CompletedBitIds
-                                if (a.Completed)
+                                    // If an achievement is completed, it won't have CompletedBitIds
+                                    if (a.Completed)
                                     {
                                         caughtFishIds.AddRange(a.BitIds);
                                     }
@@ -141,8 +156,24 @@ namespace Fish.Services
                                         caughtFishIds.AddRange(bitIds);
                                     }
                                 }
+                                else
+                                {
+                                    a.PointRequirement = a.BitIds.Length;
+                                }
                                 return a;
                             }).ToList();
+
+                            titleAchievements = titleAchievements.GroupJoin(fishingAccountAchievements, a => a.Id, aa => aa.id, (a, aas) =>
+                            {
+                                var aa = aas.FirstOrDefault();
+                                if (aa != null && aa.bits != null)
+                                {
+                                    a.CurrentProgress = aa.current;
+                                    a.Completed = aa.done;
+                                }
+                                return a;
+                            }).ToList();
+                            titleAchievements.Sort((a, b) => a.PointRequirement.CompareTo(b.PointRequirement));
 
                             // Mark all caught fishes as caught
                             foreach (var fish in allFishes)

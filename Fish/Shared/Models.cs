@@ -9,10 +9,12 @@
         public byte[] Icon { get; set; }
         public int[] BitIds { get; set; }
         public string Region { get; set; }
+        public int PointRequirement { get; set; }
 
         // Filled in at run time
         public int[] CompletedBitIds { get; set; }
         public bool Completed { get; set; } = false;
+        public int CurrentProgress { get; set; }
     }
 
     public class Fish

@@ -1,12 +1,11 @@
-﻿@page "/achievements"
+﻿@page "/achievements/all"
 @page "/achievements/{AchievementName}"
-@inject HttpClient Http
 @inject ISettingsService SettingsService
 @inject IDataService DataService
 @inject ISnackbar Snackbar
 @inject NavigationManager NavManager
 
-<PageTitle>Achievements</PageTitle>
+<PageTitle>All Achievements</PageTitle>
 
 @if (_loading)
 {

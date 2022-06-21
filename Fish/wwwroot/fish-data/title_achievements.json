@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 6201,
+    "Name": "Kind of a Big Reel",
+    "Description": "You can fish your whole life without understanding it was never the fish you were truly after.",
+    "PointRequirement": 5
+  },
+  {
+    "Id": 6478,
+    "Name": "Fishmongers Know Me",
+    "Description": "You can fish your whole life without understanding it was never the fish you were truly after.",
+    "PointRequirement": 10
+  },
+  {
+    "Id": 6109,
+    "Name": "I\u0027m Very Buoyant",
+    "Description": "You can fish your whole life without understanding it was never the fish you were truly after.",
+    "PointRequirement": 15
+  },
+  {
+    "Id": 6284,
+    "Name": "I Have Many Lure-Bound Hooks",
+    "Description": "You can fish your whole life without understanding it was never the fish you were truly after.",
+    "PointRequirement": 20
+  },
+  {
+    "Id": 6279,
+    "Name": "My Guild Hall Smells of Fish Progeny",
+    "Description": "You can fish your whole life without understanding it was never the fish you were truly after.",
+    "PointRequirement": 25
+  },
+  {
+    "Id": 6111,
+    "Name": "Cod Swimming Amongst Mere Minnows",
+    "Description": "You can fish your whole life without understanding it was never the fish you were truly after.",
+    "PointRequirement": 30
+  }
+]
