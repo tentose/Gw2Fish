@@ -217,6 +217,7 @@ namespace Fish.Services
                         a.Completed = aa.done;
                         a.CurrentProgress = aa.current;
                         a.PointRequirement = aa.max;
+                        a.Repeated = aa.repeated;
 
                         // If an achievement is completed, it won't have CompletedBitIds
                         if (a.Completed)

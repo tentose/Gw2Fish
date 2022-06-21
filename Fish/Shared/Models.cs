@@ -15,6 +15,7 @@
         public int[] CompletedBitIds { get; set; }
         public bool Completed { get; set; } = false;
         public int CurrentProgress { get; set; }
+        public int Repeated { get; set; }
     }
 
     public class Fish

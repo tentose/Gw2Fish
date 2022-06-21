@@ -18,7 +18,7 @@
         {
             @foreach(var achievement in DataService.AllAchievements)
             {
-                <MudNavLink Href="@("/achievements/" + achievement.Name)" Icon="@(GetIconForAchievement(achievement))" IconColor="@(achievement.Completed ? Color.Default : Color.Primary)">@achievement.Name</MudNavLink>
+                <MudNavLink Href="@("/achievements/" + achievement.Name)" Icon="@(GetIconForAchievement(achievement))" IconColor="@(GetIconColorForAchievement(achievement))">@achievement.Name</MudNavLink>
             }
         }
         <MudNavLink Href="/achievements/all" Match="NavLinkMatch.All" Icon="@Icons.Filled.DensitySmall">All Achievements</MudNavLink>
@@ -67,7 +67,7 @@
 
     private string GetIconForAchievement(Models.Achievement a)
     {
-        if (a.Completed)
+        if (a.Completed || a.Repeated > 0)
             return Icons.Filled.Done;
 
         int left = a.PointRequirement - a.CurrentProgress;
@@ -75,5 +75,13 @@
             return AchievementIcons[left - 1];
         else
             return Icons.Filled.Filter9Plus;
+    }
+
+    private Color GetIconColorForAchievement(Models.Achievement a)
+    {
+        if (a.Completed || a.Repeated > 0)
+            return Color.Default;
+
+        return Color.Primary;
     }
 }
