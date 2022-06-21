@@ -16,5 +16,5 @@ steps:
     inputs:
       app_location: '/Fish'
       # api_location: 'api'
-      output_location: '/bin'
+      output_location: '/bin/Release/net6.0/'
       azure_static_web_apps_api_token: $(deployment_token)
