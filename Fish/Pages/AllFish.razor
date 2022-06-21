@@ -1,0 +1,64 @@
+﻿@page "/all-fish"
+@inject HttpClient Http
+
+<PageTitle>All Fishes</PageTitle>
+
+@if (fishes == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Area</th>
+                <th>Name</th>
+                <th>Hole</th>
+                <th>Bait</th>
+                <th>Time</th>
+                <th>Hint</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var fish in fishes)
+            {
+                <tr>
+                    <td>@string.Join(',', fish.Area)</td>
+                    <td>@fish.Name</td>
+                    <td>@string.Join(',', fish.Hole)</td>
+                    <td>@string.Join(',', fish.Bait)</td>
+                    <td>@string.Join(',', fish.Time)</td>
+                    <td>@fish.Hint</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code {
+
+    private List<Fish>? fishes;
+
+    protected override async Task OnInitializedAsync()
+    {
+        fishes = await Http.GetFromJsonAsync<List<Fish>>("fish-data/merged_fish.json");
+    }
+
+    public class Fish
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public byte[] Icon { set; get; }
+        public string Rarity { set; get; }
+        public string ChatLink { set; get; }
+        public string[] Area { set; get; }
+        public string[] Hole { get; set; }
+        public string[] Bait { get; set; }
+        public string[] Time { get; set; }
+        public string Hint { get; set; }
+        public int[] AchievementIds { get; set; }
+    }
+}
