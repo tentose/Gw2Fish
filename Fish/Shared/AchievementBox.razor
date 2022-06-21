@@ -54,7 +54,7 @@
     <RowTemplate>
         @if (ShowCaughtInformation)
         {
-            <MudTd DataLabel="Caught"><MudCheckBox Color="@(context.Caught ? Color.Primary : Color.Default)" Checked="@context.Caught"></MudCheckBox></MudTd>
+            <MudTd DataLabel="Caught"><MudCheckBox Color="@(context.Caught ? Color.Primary : Color.Default)" Checked="@context.Caught" CheckedChanged="@((bool c) => context.Caught = caughtOverride[context.Id] = c )"></MudCheckBox></MudTd>
         }
         <MudTd DataLabel="Icon"><MudImage Src="@string.Format("data:image/png;base64,{0}", context.Icon)" Class="@("rarity-" + context.Rarity.ToLower())" Width="40" Height="40"></MudImage></MudTd>
         <MudTd DataLabel="Name">@context.Name</MudTd>
@@ -137,6 +137,8 @@
         Color.Tertiary,
         Color.Warning,
     };
+
+    private Dictionary<int, bool> caughtOverride = new Dictionary<int, bool>();
 
     protected override async Task OnInitializedAsync()
     {
@@ -231,7 +233,7 @@
             }
             else
             {
-                fish.Caught = Model.CompletedBitIds.Contains(fish.Id);
+                fish.Caught = caughtOverride.ContainsKey(fish.Id) ? caughtOverride[fish.Id] : Model.CompletedBitIds.Contains(fish.Id);
             }
         }
 
