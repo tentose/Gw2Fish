@@ -1,0 +1,14 @@
+﻿<div class="container col-lg-1">
+    <div class="col-sm">
+    <strong>@model.Name</strong>
+    </div>
+
+    <span>@model.Description</span>
+
+    
+</div>
+
+@code {
+    [Parameter]
+    public Models.Achievement model { get; set; }
+}

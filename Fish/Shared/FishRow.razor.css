@@ -1,0 +1,37 @@
+﻿.fish {
+}
+
+.rarity-basic {
+    border-style: solid;
+    border-color: rgb(128, 128, 128);
+}
+
+.rarity-fine {
+    border-style: solid;
+    border-color: rgb(26, 115, 255)
+}
+
+.rarity-masterwork {
+    border-style: solid;
+    border-color: rgb(0, 147, 17);
+}
+
+.rarity-rare {
+    border-style: solid;
+    border-color: rgb(221, 210, 0);
+}
+
+.rarity-exotic {
+    border-style: solid;
+    border-color: rgb(255, 106, 0);
+}
+
+.rarity-ascended {
+    border-style: solid;
+    border-color: rgb(222, 8, 255);
+}
+
+.rarity-legendary {
+    border-style: solid;
+    border-color: rgb(120, 0, 255);
+}

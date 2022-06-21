@@ -1,0 +1,35 @@
+﻿@page "/achievements"
+@inject HttpClient Http
+
+<PageTitle>Achievements</PageTitle>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Area</th>
+                <th>Name</th>
+                <th>Hole</th>
+                <th>Bait</th>
+                <th>Time</th>
+                <th>Hint</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+@code {
+
+    //private List<Fish>? fishes;
+   // private List<Achievement>? achievements;
+
+    protected override async Task OnInitializedAsync()
+    {
+        //fishes = await Http.GetFromJsonAsync<List<Fish>>("fish-data/merged_fish.json");
+       // achievements = await Http.GetFromJsonAsync<List<Achievement>>("fish-data/merged_achievements.json");
+    }
+
+
+}
