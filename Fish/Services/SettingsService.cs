@@ -10,16 +10,23 @@ namespace Fish.Services
 
         public void SetGw2ApiKey(string api);
 
+        public void SetHideCaughtFish(bool hide);
+
         public event EventHandler DarkModeSettingChanged;
+
+        public event EventHandler HideCaughtFishChanged;
 
         public bool IsDarkMode { get; }
         public string Gw2ApiKey { get; }
+        public bool HideCaughtFish { get; }
     }
 
     public class SavedSettings
     {
         public bool IsDarkMode { get; set; }
         public string Gw2ApiKey { get; set; }
+
+        public bool HideCaughtFish { get; set; }
     }
 
     public class SettingsService : ISettingsService
@@ -32,6 +39,8 @@ namespace Fish.Services
 
         public bool IsDarkMode { get; private set; }
         public string Gw2ApiKey { get; private set; }
+
+        public bool HideCaughtFish { get; private set; }
 
         public SettingsService(ILocalStorageService localStorage)
         {
@@ -55,6 +64,9 @@ namespace Fish.Services
         public event EventHandler DarkModeSettingChanged;
         private void OnDarkModeSettingChanged() => DarkModeSettingChanged?.Invoke(this, EventArgs.Empty);
 
+        public event EventHandler HideCaughtFishChanged;
+        private void OnHideCaughtFishChangedd() => HideCaughtFishChanged?.Invoke(this, EventArgs.Empty);
+
         private void SaveSettings()
         {
             _localStorage.SetItemAsync(SETTINGS_KEY, savedSettings);
@@ -76,6 +88,17 @@ namespace Fish.Services
             Gw2ApiKey = api;
             savedSettings.Gw2ApiKey = api;
             SaveSettings();
+        }
+
+        public void SetHideCaughtFish(bool hide)
+        {
+            if (hide != HideCaughtFish)
+            {
+                HideCaughtFish = hide;
+                savedSettings.HideCaughtFish = hide;
+                SaveSettings();
+                OnHideCaughtFishChangedd();
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿@inject IDialogService DialogService
+@inject IDataService DataService
 @inject HttpClient Http
 
 <MudNavMenu>
@@ -11,48 +12,68 @@
     </div>
     <MudDivider></MudDivider>
     <MudNavLink Href="/" Match="NavLinkMatch.All">All Fish</MudNavLink>
-    <MudNavGroup Title="Achievements" Expanded="false">
-        <MudNavLink Href="/achievements" Match="NavLinkMatch.All">Overview</MudNavLink>
-        @if(achievements != null)
+    <MudNavGroup Title="Achievements" @bind-Expanded="expandAchievementsMenu">
+        <MudNavLink Href="/achievements" Match="NavLinkMatch.All" Icon="@Icons.Filled.ShowChart">Overview</MudNavLink>
+        @if(DataService.AllAchievements != null)
         {
-            @foreach(var achievement in achievements)
+            @foreach(var achievement in DataService.AllAchievements)
             {
-                <MudNavLink Href="@("/achievements/" + achievement.Name)">@achievement.Name</MudNavLink>
+                <MudNavLink Href="@("/achievements/" + achievement.Name)" Icon="@(GetIconForAchievement(achievement))" IconColor="@(achievement.Completed ? Color.Default : Color.Primary)">@achievement.Name</MudNavLink>
             }
         }
-        <MudNavLink Href="/achievements/all" Match="NavLinkMatch.All">All Achievements</MudNavLink>
+        <MudNavLink Href="/achievements/all" Match="NavLinkMatch.All" Icon="@Icons.Filled.DensitySmall">All Achievements</MudNavLink>
     </MudNavGroup>
     <MudNavLink Href="/settings" Match="NavLinkMatch.Prefix">Settings</MudNavLink>
     <MudNavLink Href="/about"  Match="NavLinkMatch.Prefix">About</MudNavLink>
 </MudNavMenu>
 
 @code {
-    private bool collapseNavMenu = true;
-    private bool showSettingsMenu = false;
-
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-    private string? NavSettingsMenuCssClass => showSettingsMenu ? "show" : null;
-
-    private IEnumerable<Models.Achievement>? achievements;
+    private bool expandAchievementsMenu = false;
 
     protected override async Task OnInitializedAsync()
     {
-        achievements = await Http.GetFromJsonAsync<List<Models.Achievement>>("fish-data/merged_achievement.json");
-    }
+        await DataService.LoadAppData();
+        DataService.ApiDataUpdated += (s, e) => StateHasChanged();
 
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-
-    private void ToggleSettingsMenu()
-    {
-        showSettingsMenu = !showSettingsMenu;
+        // Intentionally background
+        LoadApiData();
     }
 
     private void OpenSetAPIKeyDialog()
     {
-		var options = new DialogOptions { MaxWidth = MaxWidth.Medium, FullWidth = true, CloseOnEscapeKey = true };
+        var options = new DialogOptions { MaxWidth = MaxWidth.Medium, FullWidth = true, CloseOnEscapeKey = true };
         DialogService.Show<SetApiKey>("Set API Key", options);
+    }
+
+    private async Task LoadApiData()
+    {
+        await Task.Delay(200);
+        await DataService.LoadAllData();
+        StateHasChanged();
+    }
+
+    string[] AchievementIcons = new string[]
+        {
+            Icons.Filled.Filter1,
+            Icons.Filled.Filter2,
+            Icons.Filled.Filter3,
+            Icons.Filled.Filter4,
+            Icons.Filled.Filter5,
+            Icons.Filled.Filter6,
+            Icons.Filled.Filter7,
+            Icons.Filled.Filter8,
+            Icons.Filled.Filter9,
+        };
+
+    private string GetIconForAchievement(Models.Achievement a)
+    {
+        if (a.Completed)
+            return Icons.Filled.Done;
+
+        int left = a.PointRequirement - a.CurrentProgress;
+        if (left > 0 && left <= 9)
+            return AchievementIcons[left - 1];
+        else
+            return Icons.Filled.Filter9Plus;
     }
 }

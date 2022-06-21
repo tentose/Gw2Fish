@@ -65,7 +65,7 @@ else
             <MudText>@context.Name</MudText>
         </MudTd>
         <MudTd DataLabel="Hole">
-            <div class="d-flex">
+            <div class="">
                 @foreach(var text in context.Hole)
                 {
                     <MudText>@text</MudText>
@@ -98,6 +98,7 @@ else
 
 @code {
     private bool _loading = true;
+    private bool isSettingsOpen = false;
 
     private string filterString = "";
 
@@ -136,6 +137,8 @@ else
             if (fish.Hole.Any(x => searchPredicate(x, processedFilterWord)))
                 return true;
             if (fish.Bait.Any(x => searchPredicate(x, processedFilterWord)))
+                return true;
+            if (fish.Time.Any(x => searchPredicate(x, processedFilterWord)))
                 return true;
         }
 

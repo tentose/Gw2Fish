@@ -26,6 +26,15 @@
                     Class="mt-0"
                     Clearable="true"
                     DebounceInterval="800"></MudTextField>
+            <div>
+                <MudToggleIconButton @bind-Toggled="@isSettingsOpen" Icon="@Icons.Filled.Settings" Color="@Color.Default" ToggledIcon="@Icons.Filled.Settings" ToggledColor="@Color.Primary"></MudToggleIconButton>
+                <MudPopover Open="@isSettingsOpen" Fixed="true" Class="px-4 pt-4" TransformOrigin="Origin.TopCenter" AnchorOrigin="Origin.BottomLeft">
+                    <div class="d-flex flex-column">
+                        <MudSwitch @bind-Checked="@hideCaughtFish" Label="Hide Caught Fish" Color="Color.Info" />
+                        <MudButton OnClick="@(e => isSettingsOpen = false)" Class="ml-auto mr-n3 mb-1" Color="Color.Error">Close</MudButton>
+                    </div>
+                </MudPopover>
+            </div>
         }
     </ToolBarContent>
 
@@ -127,6 +136,13 @@
     private TimeStage currentTimeStage;
     private RegionType currentRegion;
     private bool isRegionKnown = false;
+    private bool isSettingsOpen = false;
+
+    private bool hideCaughtFish
+    {
+        get { return SettingsService.HideCaughtFish; }
+        set { SettingsService.SetHideCaughtFish(value); }
+    }
 
     private Dictionary<string, Color>? holeToColorMap;
     private Dictionary<string, Color>? baitToColorMap;
@@ -169,8 +185,15 @@
 
     private bool FilterFunc(Models.Fish fish)
     {
-        if (!ShowFilter || string.IsNullOrWhiteSpace(filterString))
+        if (!ShowFilter)
             return true;
+
+        if (hideCaughtFish && fish.Caught)
+            return false;
+
+        if (string.IsNullOrWhiteSpace(filterString))
+            return true;
+
         var filterWords = filterString.Split(" OR ");
         foreach(var filterWord in filterWords)
         {
@@ -188,6 +211,8 @@
             if (fish.Hole.Any(x => searchPredicate(x, processedFilterWord)))
                 return true;
             if (fish.Bait.Any(x => searchPredicate(x, processedFilterWord)))
+                return true;
+            if (fish.Time.Any(x => searchPredicate(x, processedFilterWord)))
                 return true;
         }
 
