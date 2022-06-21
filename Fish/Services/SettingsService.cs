@@ -37,6 +37,9 @@ namespace Fish.Services
 
         private SavedSettings? savedSettings;
 
+        private SemaphoreSlim dataLock = new SemaphoreSlim(1, 1);
+        private bool loaded = false;
+
         public bool IsDarkMode { get; private set; }
         public string Gw2ApiKey { get; private set; }
 
@@ -49,18 +52,31 @@ namespace Fish.Services
 
         public async Task InitializeSettings()
         {
-            savedSettings = await _localStorage.GetItemAsync<SavedSettings>(SETTINGS_KEY);
-            if (savedSettings == null)
+            await dataLock.WaitAsync();
+
+            try
             {
-                savedSettings = new SavedSettings();
-                savedSettings.IsDarkMode = true;
-                savedSettings.Gw2ApiKey = "";
-                savedSettings.HideCaughtFish = false;
-                SaveSettings();
+                if (!loaded)
+                {
+                    savedSettings = await _localStorage.GetItemAsync<SavedSettings>(SETTINGS_KEY);
+                    if (savedSettings == null)
+                    {
+                        savedSettings = new SavedSettings();
+                        savedSettings.IsDarkMode = true;
+                        savedSettings.Gw2ApiKey = "";
+                        savedSettings.HideCaughtFish = false;
+                        SaveSettings();
+                    }
+                    IsDarkMode = savedSettings.IsDarkMode;
+                    Gw2ApiKey = savedSettings.Gw2ApiKey;
+                    HideCaughtFish = savedSettings.HideCaughtFish;
+                    loaded = true;
+                }
             }
-            IsDarkMode = savedSettings.IsDarkMode;
-            Gw2ApiKey = savedSettings.Gw2ApiKey;
-            HideCaughtFish = savedSettings.HideCaughtFish;
+            finally
+            {
+                dataLock.Release();
+            }
         }
 
         public event EventHandler DarkModeSettingChanged;

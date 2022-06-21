@@ -20,6 +20,7 @@ namespace Fish.Services
     public class DataService : IDataService
     {
         private const int API_REFRESH_INTERVAL_MILLIS = 3 * 60 * 1000;
+        private const int API_RETRY_INTERVAL_MILLIS = 20 * 1000;
 
         private HttpClient httpClient;
         private ISettingsService settingsService;
@@ -31,7 +32,7 @@ namespace Fish.Services
         private List<Gw2Api.AccountAchievement>? allAccountAchievements;
 
         private Timer? apiRefreshTimer;
-        private ReaderWriterLock allDataLock = new ReaderWriterLock();
+        private SemaphoreSlim dataLock = new SemaphoreSlim(1, 1);
         private DateTime lastDailyRefresh = DateTime.MinValue;
 
         public DataService(HttpClient httpClient, ISettingsService settingsService)
@@ -75,27 +76,38 @@ namespace Fish.Services
 
         public async Task LoadAppData(bool force = false)
         {
-            if (allAchievements == null || allAchievements.Count() == 0 || force)
-            {
-                allAchievements = await httpClient.GetFromJsonAsync<List<Models.Achievement>>("fish-data/merged_achievement.json");
-            }
+            await dataLock.WaitAsync();
 
-            if (titleAchievements == null || titleAchievements.Count() == 0 || force)
+            try
             {
-                titleAchievements = await httpClient.GetFromJsonAsync<List<Models.Achievement>>("fish-data/title_achievements.json");
-            }
+                //allDataLock.AcquireWriterLock(30000);
 
-            if (allFishes == null || allFishes.Count() == 0 || force)
-            {
-                allFishes = await httpClient.GetFromJsonAsync<List<Models.Fish>>("fish-data/merged_fish.json");
-                if (allFishes != null)
+                if (allAchievements == null || allAchievements.Count() == 0 || force)
                 {
-                    foreach (var fish in allFishes)
-                    {
-                        fish.RaritySort = RarityStringToInt(fish.Rarity);
-                    }
-                    allFishes.Sort((a, b) => a.RaritySort - b.RaritySort);
+                    allAchievements = await httpClient.GetFromJsonAsync<List<Models.Achievement>>("fish-data/merged_achievement.json");
                 }
+
+                if (titleAchievements == null || titleAchievements.Count() == 0 || force)
+                {
+                    titleAchievements = await httpClient.GetFromJsonAsync<List<Models.Achievement>>("fish-data/title_achievements.json");
+                }
+
+                if (allFishes == null || allFishes.Count() == 0 || force)
+                {
+                    allFishes = await httpClient.GetFromJsonAsync<List<Models.Fish>>("fish-data/merged_fish.json");
+                    if (allFishes != null)
+                    {
+                        foreach (var fish in allFishes)
+                        {
+                            fish.RaritySort = RarityStringToInt(fish.Rarity);
+                        }
+                        allFishes.Sort((a, b) => a.RaritySort - b.RaritySort);
+                    }
+                }
+            }
+            finally
+            {
+                dataLock.Release();
             }
         }
 
@@ -103,51 +115,49 @@ namespace Fish.Services
         {
             await LoadAppData();
 
-            if (allAccountAchievements == null || allAccountAchievements.Count() == 0 || force)
+            await dataLock.WaitAsync();
+
+            try
             {
-                await settingsService.InitializeSettings();
-
-                await RefreshApiData();
-
-                if (apiRefreshTimer == null)
+                if (allAccountAchievements == null || allAccountAchievements.Count() == 0 || force)
                 {
-                    apiRefreshTimer = new Timer(cb => RefreshApiData(true), null, API_REFRESH_INTERVAL_MILLIS, API_REFRESH_INTERVAL_MILLIS);
+                    await settingsService.InitializeSettings();
+
+                    await RefreshApiData();
+
+                    if (apiRefreshTimer == null)
+                    {
+                        apiRefreshTimer = new Timer(cb => RefreshApiData(true), null, API_REFRESH_INTERVAL_MILLIS, API_REFRESH_INTERVAL_MILLIS);
+                    }
                 }
+            }
+            finally
+            {
+                dataLock.Release();
             }
         }
 
         public async Task RefreshApiData(bool fireEvent = false)
         {
             try
-            { 
-                allDataLock.AcquireWriterLock(500);
-
-                try
-                {
-                    if (settingsService.Gw2ApiKey != "")
-                    {
-                        await RefreshAccountBasedApiData();
-                    }
-
-                    await RefreshDailydApiData();
-                }
-                catch(Exception e)
-                {
-                    Console.WriteLine("Failed API refresh: " + e.Message);
-                }
-                finally
-                {
-                    allDataLock.ReleaseWriterLock();
-                }
-
-                if (fireEvent)
-                {
-                    OnApiDataUpdated();
-                }
-            }
-            catch (ApplicationException)
             {
-                Console.WriteLine("Timedout acquiring write lock for RefreshApiData");
+                if (settingsService.Gw2ApiKey != "")
+                {
+                    await RefreshAccountBasedApiData();
+                }
+
+                await RefreshDailydApiData();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("Failed API refresh: " + e.Message);
+                Console.WriteLine("Retry in " + API_RETRY_INTERVAL_MILLIS);
+                apiRefreshTimer?.Change(API_RETRY_INTERVAL_MILLIS, API_REFRESH_INTERVAL_MILLIS);
+            }
+
+            if (fireEvent)
+            {
+                OnApiDataUpdated();
             }
         }
 
