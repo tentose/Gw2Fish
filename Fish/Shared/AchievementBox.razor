@@ -54,7 +54,7 @@
     <RowTemplate>
         @if (ShowCaughtInformation)
         {
-            <MudTd DataLabel="Caught"><MudCheckBox ReadOnly="true" Color="@(context.Caught ? Color.Primary : Color.Default)" Checked="@context.Caught"></MudCheckBox></MudTd>
+            <MudTd DataLabel="Caught"><MudCheckBox Color="@(context.Caught ? Color.Primary : Color.Default)" Checked="@context.Caught"></MudCheckBox></MudTd>
         }
         <MudTd DataLabel="Icon"><MudImage Src="@string.Format("data:image/png;base64,{0}", context.Icon)" Class="@("rarity-" + context.Rarity.ToLower())" Width="40" Height="40"></MudImage></MudTd>
         <MudTd DataLabel="Name">@context.Name</MudTd>
@@ -62,7 +62,7 @@
             <div class="">
                 @foreach(var text in context.Hole)
                 {
-                    <MudText>@text</MudText>
+                    <MudText Color="@(holeToColorMap?[text] ?? Color.Default)">@text</MudText>
                 }
             </div>
         </MudTd>
@@ -70,7 +70,7 @@
             <div class="">
                 @foreach(var text in context.Bait)
                 {
-                    <MudText>@text</MudText>
+                    <MudText Color="@(baitToColorMap?[text] ?? Color.Default)">@text</MudText>
                 }
             </div>
         </MudTd>
@@ -107,6 +107,17 @@
     private TimeStage currentTimeStage;
     private RegionType currentRegion;
     private bool isRegionKnown = false;
+
+    private Dictionary<string, Color>? holeToColorMap;
+    private Dictionary<string, Color>? baitToColorMap;
+    private static readonly Color[] colorCycle = new Color[]
+    {
+        Color.Primary,
+        Color.Secondary,
+        Color.Tertiary,
+        Color.Warning,
+    };
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -200,9 +211,49 @@
             }
         }
 
+        if (ShowFilter)
+        {
+            GenerateColorsForTable();
+        }
+
         if (isRegionKnown)
         {
             StageUpdate(null, TimeService.GetTimeForRegion(currentRegion));
+        }
+    }
+
+    private void GenerateColorsForTable()
+    {
+        holeToColorMap = new Dictionary<string, Color>();
+        holeToColorMap.Add("Any", Color.Default);
+        holeToColorMap.Add("Open Water", Color.Default);
+        holeToColorMap.Add("None", Color.Default);
+        int nextHoleIndex = 0;
+
+        baitToColorMap = new Dictionary<string, Color>();
+        baitToColorMap.Add("Any", Color.Default);
+        baitToColorMap.Add("None", Color.Default);
+        int nextBaitIndex = 2;
+
+        foreach(var fish in Fishes)
+        {
+            foreach(var hole in fish.Hole)
+            {
+                if (!holeToColorMap.ContainsKey(hole))
+                {
+                    holeToColorMap.Add(hole, colorCycle[nextHoleIndex]);
+                    nextHoleIndex = (nextHoleIndex + 1) % colorCycle.Length;
+                }
+            }
+
+            foreach(var bait in fish.Bait)
+            {
+                if (!baitToColorMap.ContainsKey(bait))
+                {
+                    baitToColorMap.Add(bait, colorCycle[nextBaitIndex]);
+                    nextBaitIndex = (nextBaitIndex + 1) % colorCycle.Length;
+                }
+            }
         }
     }
 }
