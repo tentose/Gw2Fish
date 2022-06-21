@@ -8,6 +8,7 @@
         public string Description { get; set; }
         public byte[] Icon { get; set; }
         public int[] BitIds { get; set; }
+        public string Region { get; set; }
 
         // Filled in at run time
         public int[] CompletedBitIds { get; set; }
@@ -32,5 +33,6 @@
 
         // Filled in at run time
         public bool Caught { get; set; } = false;
+        public int RaritySort { set; get; }
     }
 }

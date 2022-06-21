@@ -1,15 +1,11 @@
-﻿
+﻿@inject ITimeService TimeService
+
 <div class="d-flex flex-column">
-<MudIcon Icon="@icon"></MudIcon>
+<MudIcon Icon="@icon" Class="d-none d-md-flex" Color="@color"></MudIcon>
 <MudText>@(Region.ToString() + " " + stage + " " + remaining)</MudText>
 </div>
 
 @code {
-	public enum RegionType
-	{
-		Cantha,
-		Tyria
-	}
 
 	[Parameter]
 	public RegionType Region { get; set; }
@@ -17,61 +13,34 @@
 	string icon;
 	string stage;
 	string remaining;
+	Color color = Color.Default;
+
+	private static readonly Dictionary<TimeStage, Color> TIME_ICONS_COLORS = new Dictionary<TimeStage, Color>
+	{
+		{ TimeStage.Night, Color.Default },
+		{ TimeStage.Dawn, Color.Error },
+		{ TimeStage.Day, Color.Warning },
+		{ TimeStage.Dusk, Color.Error },
+	};
 
 	protected override async Task OnInitializedAsync()
 	{
-		TickTimer();
+		TimeService.TimeChanged += TimeChanged;
 	}
 
-	public async void TickTimer()
+	public void TimeChanged(object? sender, EventArgs args)
 	{
-		(int time, string stage, string icon)[] canthanCutoffs = new[]
-			{
-				(35 * 60, "Night", Icons.Filled.NightsStay),
-				(40 * 60, "Dawn", Icons.Filled.WbTwilight),
-				(95 * 60, "Day", Icons.Filled.WbSunny),
-				(100 * 60, "Dusk", Icons.Filled.WbTwilight),
-				(120 * 60, "Night", Icons.Filled.NightsStay)
-			};
-		(int time, string stage, string icon)[] normalCutoffs = new[]
-			{
-				(25 * 60, "Night", Icons.Filled.NightsStay),
-				(30 * 60, "Dawn", Icons.Filled.WbTwilight),
-				(100 * 60, "Day", Icons.Filled.WbSunny),
-				(105 * 60, "Dusk", Icons.Filled.WbTwilight),
-				(120 * 60, "Night", Icons.Filled.NightsStay)
-			};
+		var state = TimeService.GetTimeForRegion(Region);
+		icon = TimeService.GetIconForStage(state.Stage);
+		stage = state.Stage.ToString();
+		//var remainingTime = System.TimeSpan.FromSeconds(state.SecondsRemainingInStage);
+		//remaining = $"{remainingTime:mm\\:ss}";
+		var remainingSeconds = state.SecondsRemainingInStage % 60;
+		var remainingMinutes = state.SecondsRemainingInStage / 60;
+		remaining = string.Format("{0,2:00}:{1,2:00}", remainingMinutes, remainingSeconds);
+		color = TIME_ICONS_COLORS[state.Stage];
 
-		for(; ; )
-		{
-			var now = System.DateTime.UtcNow;
-			var hour = now.Hour % 2;
-			var time = now.Second + (now.Minute * 60) + (hour * 60 * 60);
-
-			var cutoffs = Region == RegionType.Cantha ? canthanCutoffs : normalCutoffs;
-
-			for (int i = 0; i < cutoffs.Length; i++)
-			{
-				if (time < cutoffs[i].time)
-				{
-					stage = cutoffs[i].stage;
-					var remainingTime = System.TimeSpan.FromSeconds(cutoffs[i].time - time);
-					remaining = $"{remainingTime:mm\\:ss}";
-					icon = cutoffs[i].icon;
-					break;
-				}
-			}
-
-			if (_disposed)
-			{
-				return;
-			}
-			
-			StateHasChanged();
-			await Task.Delay(1000);
-		}
+		StateHasChanged();
 	}
 
-	bool _disposed = false;
-    public void Dispose() => _disposed = true;
 }

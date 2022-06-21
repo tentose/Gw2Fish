@@ -2,8 +2,13 @@
 @inject HttpClient Http
 
 <MudNavMenu>
+    <div class="d-flex">
+    <MudImage Src="images/gw2fishexclaim.png" Alt="logo" Width="50" Fluid="true" ObjectFit="ObjectFit.Contain"></MudImage>
+    <div class="d-flex-column">
     <MudText Typo="Typo.h6" Class="px-4 pt-4">GW2 Fish!</MudText>
-    <MudText Typo="Typo.body2" Class="px-4 pb-4 mud-text-secondary">For all your fishing needs</MudText>
+    <MudText Typo="Typo.body2" Class="px-4 pb-4 mud-text-secondary">For your fishing needs</MudText>
+    </div>
+    </div>
     <MudDivider></MudDivider>
     <MudNavLink Href="/" Match="NavLinkMatch.All">All Fish</MudNavLink>
     <MudNavGroup Title="Achievements" Expanded="false">

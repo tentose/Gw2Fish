@@ -1,13 +1,39 @@
-﻿<MudPaper Class="mud-width-full py-8 px-8">
-    <MudText Typo="Typo.h5">@model.Name</MudText>
+﻿@inject ISettingsService SettingsService
+@inject ITimeService TimeService
 
+<MudPaper Class="mud-width-full py-8 px-8">
     <MudTable Hover="true" Breakpoint="Breakpoint.Sm" FixedHeader="true"
-          Items="@fishes"
+          Items="@Fishes"
           GroupHeaderStyle="background-color:var(--mud-palette-background-grey)"
           GroupFooterClass="mb-4"
-          Dense="true">
+          RowStyleFunc="@RowStyleFunc"
+          Dense="true"
+          Filter="new Func<Models.Fish,bool>(FilterFunc)">
+    <ToolBarContent>
+        <div class="flex-column">
+            <p>@Model.Region</p>
+            <MudText Typo="Typo.h5">@Model.Name</MudText>
+        </div>
+        
+        @if (ShowFilter)
+        {
+            <MudSpacer />
+            <MudTextField @bind-Value="filterString" 
+                    Placeholder="Filter"
+                    Adornment="Adornment.Start"
+                    AdornmentIcon="@Icons.Material.Filled.Search"
+                    IconSize="Size.Medium"
+                    Class="mt-0"
+                    Clearable="true"
+                    DebounceInterval="800"></MudTextField>
+        }
+    </ToolBarContent>
+
     <ColGroup>
-        <col />
+        @if (ShowCaughtInformation)
+        {
+            <col />
+        }
         <col />
         <col />
         <col />
@@ -15,20 +41,47 @@
         <col />
     </ColGroup>
     <HeaderContent>
-        <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>x.Caught)">Caught</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>RarityStringToInt(x.Rarity))">Icon</MudTableSortLabel></MudTh>
+        @if (ShowCaughtInformation)
+        {
+            <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>x.Caught)" InitialDirection="SortDirection.Ascending">Caught</MudTableSortLabel></MudTh>
+        }
+        <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>x.RaritySort)">Icon</MudTableSortLabel></MudTh>
         <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>x.Name)">Name</MudTableSortLabel></MudTh>
         <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>string.Join(',', x.Hole))">Hole</MudTableSortLabel></MudTh>
         <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>string.Join(',', x.Bait))">Bait</MudTableSortLabel></MudTh>
         <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>string.Join(',', x.Time))">Time</MudTableSortLabel></MudTh>
     </HeaderContent>
     <RowTemplate>
-        <MudTd DataLabel="Caught"><MudCheckBox Disabled="true" Checked="@context.Caught"></MudCheckBox></MudTd>
+        @if (ShowCaughtInformation)
+        {
+            <MudTd DataLabel="Caught"><MudCheckBox ReadOnly="true" Color="@(context.Caught ? Color.Primary : Color.Default)" Checked="@context.Caught"></MudCheckBox></MudTd>
+        }
         <MudTd DataLabel="Icon"><MudImage Src="@string.Format("data:image/png;base64,{0}", context.Icon)" Class="@("rarity-" + context.Rarity.ToLower())" Width="40" Height="40"></MudImage></MudTd>
         <MudTd DataLabel="Name">@context.Name</MudTd>
-        <MudTd DataLabel="Hole">@string.Join(',', context.Hole)</MudTd>
-        <MudTd DataLabel="Bait">@string.Join(',', context.Bait)</MudTd>
-        <MudTd DataLabel="Time">@string.Join(',', context.Time)</MudTd>
+        <MudTd DataLabel="Hole">
+            <div class="">
+                @foreach(var text in context.Hole)
+                {
+                    <MudText>@text</MudText>
+                }
+            </div>
+        </MudTd>
+        <MudTd DataLabel="Bait">
+            <div class="">
+                @foreach(var text in context.Bait)
+                {
+                    <MudText>@text</MudText>
+                }
+            </div>
+        </MudTd>
+        <MudTd DataLabel="Time">
+            <div class="">
+                @foreach(var text in context.Time)
+                {
+                    <MudText>@text</MudText>
+                }
+            </div>
+        </MudTd>
     </RowTemplate>
     <GroupFooterTemplate>
         <MudTh Class="mud-table-cell-custom-group mud-table-cell-custom-group-footer" colspan="5">Total Fish: @context.Items.Count()</MudTh>
@@ -37,42 +90,119 @@
 </MudPaper>
 
 @code {
-    [Parameter]
-    public Models.Achievement model { get; set; }
+    private string filterString = "";
 
     [Parameter]
-    public IEnumerable<Models.Fish> fishes { get; set; }
+    public Models.Achievement Model { get; set; }
 
-    private int RarityStringToInt(string rarity)
+    [Parameter]
+    public List<Models.Fish> Fishes { get; set; }
+
+    [Parameter]
+    public bool ShowCaughtInformation { get; set; }
+
+    [Parameter]
+    public bool ShowFilter { get; set; }
+
+    private TimeStage currentTimeStage;
+    private RegionType currentRegion;
+    private bool isRegionKnown = false;
+
+    protected override async Task OnInitializedAsync()
     {
-        if (rarity == "Basic")
+        TimeService.StageChanged += StageUpdate;
+    }
+
+    private string RowStyleFunc(Models.Fish fish, int index)
+    {
+        if (!isRegionKnown || fish.Time.Contains("Any") || fish.Time.Contains(currentTimeStage.ToString()) || currentTimeStage == TimeStage.Dawn || currentTimeStage == TimeStage.Dusk)
         {
-            return 0;
+            return "";
         }
-        else if (rarity == "Fine")
+
+        if (SettingsService.IsDarkMode)
         {
-            return -1;
-        }
-        else if (rarity == "Masterwork")
-        {
-            return -2;
-        }
-        else if (rarity == "Rare")
-        {
-            return -3;
-        }
-        else if (rarity == "Exotic")
-        {
-            return -4;
-        }
-        else if (rarity == "Ascended")
-        {
-            return -5;
+            return "mix-blend-mode: overlay";
         }
         else
         {
-            return -6;
+            return "background-color: lightgray; mix-blend-mode: luminosity";
         }
     }
 
+    private bool FilterFunc(Models.Fish fish)
+    {
+        if (!ShowFilter || string.IsNullOrWhiteSpace(filterString))
+            return true;
+        var filterWords = filterString.Split(" OR ");
+        foreach(var filterWord in filterWords)
+        {
+            string processedFilterWord = filterWord;
+            var searchPredicate = (string hay, string needle) => { return hay.Contains(needle, StringComparison.OrdinalIgnoreCase); };
+            if (filterWord.ElementAt(0) == '+')
+            {
+                processedFilterWord = filterWord.Substring(1);
+                searchPredicate = (string hay, string needle) => { return hay.Equals(needle, StringComparison.OrdinalIgnoreCase); };
+            }
+            if (searchPredicate(fish.Name, processedFilterWord))
+                return true;
+            if (fish.Area.Any(x => searchPredicate(x, processedFilterWord)))
+                return true;
+            if (fish.Hole.Any(x => searchPredicate(x, processedFilterWord)))
+                return true;
+            if (fish.Bait.Any(x => searchPredicate(x, processedFilterWord)))
+                return true;
+        }
+
+        return false;
+    }
+
+    private void StageUpdate(object sender, TimeState state)
+    {
+        if (currentRegion == state.Region && isRegionKnown)
+        {
+            currentTimeStage = TimeService.GetTimeForRegion(currentRegion).Stage;
+            StateHasChanged();
+        }
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Model.Region == "Cantha")
+        {
+            currentRegion = RegionType.Cantha;
+            isRegionKnown = true;
+        }
+        else if (Model.Region == "Tyria")
+        {
+            currentRegion = RegionType.Tyria;
+            isRegionKnown = true;
+        }
+        else
+        {
+            isRegionKnown = false;
+        }
+
+        // Update caught for this specific achievement
+        foreach (var fish in Fishes)
+        {
+            if (Model.Completed)
+            {
+                fish.Caught = true;
+            }
+            else if (Model.CompletedBitIds == null)
+            {
+                fish.Caught = false;
+            }
+            else
+            {
+                fish.Caught = Model.CompletedBitIds.Contains(fish.Id);
+            }
+        }
+
+        if (isRegionKnown)
+        {
+            StageUpdate(null, TimeService.GetTimeForRegion(currentRegion));
+        }
+    }
 }

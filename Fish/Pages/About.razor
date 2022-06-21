@@ -1,13 +1,48 @@
 ﻿@page "/about"
+@using System.Reflection
 
 <MudGrid>
     <MudItem xs="12">
-        <MudPaper Class="mud-width-full py-8 px-8">
-            <MudText>Yay</MudText>
+        <MudText Typo="Typo.h4" GutterBottom="true">How it's made</MudText>
+
+        <MudPaper Class="mud-width-full py-8 px-8 my-4">
+            
+            <MudText Typo="Typo.h6" GutterBottom="true">Data gathering</MudText>
+
+<p>Gw2Fish started with data gathering. While most of the of the data is available from the <MudLink Href="https://wiki.guildwars2.com/wiki/API:Main" Target="_blank">GW2 Web API</MudLink>, crucial pieces of information regarding where each fish is caught is not available. So step 1 is to capture this data the old-fashioned way -- OCR.</p>
+<br />
+<MudImage Fluid="true" Src="images/sample-screenshot.jpg" Alt="Sample screenshot" Class="rounded-lg" Elevation="5"></MudImage>
+<p>252 screenshots were taken like the one above, with careful window arrangement to minimize the amount of miscellaneous text on screen. These images are then fed to the <MudLink Href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/overview-ocr" Target="_blank">Azure OCR service</MudLink> to retrieve the text on them. The output from OCR is then cleaned up with some simple heuristics (the Azure OCR service performed a bit too well and picked up some faint text that is hard to notice) and then formatted into JSON for reading. </p>
+<br />
+<p>Some additional data gathering was done to pre-process some of the static achievement information (name, ID, etc.) from the GW2 API. <MudLink Href="https://github.com/Archomeda/Gw2Sharp" Target="_blank">Gw2Sharp</MudLink> made this process extremely easy.  </p>
+
         </MudPaper>
+
+        <MudPaper Class="mud-width-full py-8 px-8 my-4">
+
+            <MudText Typo="Typo.h6" GutterBottom="true">Development</MudText>
+<p>Gw2Fish is a SPA built using <MudLink Href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor" Target="_blank">Blazor</MudLink>, heavily using components from <MudLink Href="https://www.mudblazor.com/" Target="_blank">MudBlazor</MudLink>. Blazor was chosen because C# is a nice environment to use and I wanted to try web development in it. MudBlazor’s components made building a modern looking web app very easy. </p>
+<br />
+<p>Gw2Fish was going also use Gw2Sharp to retrieve player achievement information from the GW2 API in the web app. However, the GW2 API endpoint currently has an <MudLink Href="https://github.com/gw2-api/issues/issues/19" Target="_blank">issue</MudLink> that prevented CORS when using Authorization header. So instead Gw2Fish just makes a direct call to the GW2 API to fetch this data. Fortunately the processing that needs to be done on the data is minimal and it’s straightforward to parse this data. </p>
+
+        </MudPaper>
+
+        <MudPaper Class="mud-width-full py-8 px-8 my-4">
+            <MudGrid>
+                <MudItem xs="3">
+                    <MudImage Fluid="true" Src="images/trent.jpg" Alt="Character screenshot" Class="rounded-lg" Elevation="5"></MudImage>
+                </MudItem>
+                <MudItem xs="9">
+                    <p>Pentose.3479</p>
+                    <p>Version: @version</p>
+                </MudItem>
+            </MudGrid>
+        </MudPaper>
+
+        
     </MudItem>
 </MudGrid>
 
 @code {
-
+    private string version = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion ?? "";
 }

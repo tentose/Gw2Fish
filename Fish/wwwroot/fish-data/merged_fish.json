@@ -7,10 +7,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgGWdgEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -32,10 +33,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgFeeAEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -57,7 +59,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgH\u002BewEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
       "Shore Fish"
@@ -82,7 +84,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgGpeAEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
       "Shore Fish"
@@ -107,7 +109,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgFEfQEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
       "Shore Fish"
@@ -116,7 +118,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
@@ -132,7 +134,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgFzdQEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
       "Shore Fish"
@@ -141,7 +143,7 @@
       "Shrimplings"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
@@ -157,7 +159,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgHZfQEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
       "Shore Fish"
@@ -166,7 +168,7 @@
       "Shrimplings"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
@@ -182,10 +184,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgFJfgEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -207,10 +210,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgHPeQEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -232,7 +236,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgHAdgEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
       "Offshore Fish"
@@ -257,7 +261,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgGcfQEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
       "Offshore Fish"
@@ -282,7 +286,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgG6fQEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
       "Offshore Fish"
@@ -291,7 +295,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
@@ -307,7 +311,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgELeQEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
       "Offshore Fish"
@@ -332,7 +336,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgG2dgEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
       "Offshore Fish"
@@ -357,10 +361,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgH1eQEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -382,10 +387,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgFHdwEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -407,7 +413,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgGwegEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
       "Offshore Fish"
@@ -432,7 +438,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgElewEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
       "Offshore Fish"
@@ -457,7 +463,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgGyfQEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
       "Offshore Fish"
@@ -482,7 +488,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgE\u002BeAEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
       "Offshore Fish"
@@ -491,7 +497,7 @@
       "Sardines"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
@@ -507,7 +513,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgGdewEA]",
     "Area": [
-      "seitung"
+      "Seitung Province"
     ],
     "Hole": [
       "Offshore Fish"
@@ -516,7 +522,7 @@
       "Shrimplings"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
@@ -532,10 +538,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgFMfQEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -557,16 +564,17 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgGlegEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
@@ -582,7 +590,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgHsfQEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
       "Coastal Fish"
@@ -607,7 +615,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgE1dwEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
       "Coastal Fish"
@@ -616,7 +624,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
@@ -632,7 +640,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgHPdgEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
       "Coastal Fish"
@@ -641,7 +649,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
@@ -657,7 +665,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgG3fAEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
       "Coastal Fish"
@@ -682,7 +690,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgGReAEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
       "Coastal Fish"
@@ -707,10 +715,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgFsegEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -732,10 +741,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgE1dgEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -757,7 +767,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgHjfAEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
       "Coastal Fish"
@@ -782,7 +792,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgEmfgEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
       "Coastal Fish"
@@ -791,7 +801,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City .",
     "AchievementIds": [
@@ -807,7 +817,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgFYeAEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
       "Channel Fish"
@@ -832,7 +842,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgFBfgEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
       "Coastal Fish"
@@ -857,7 +867,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgF2fQEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
       "Coastal Fish"
@@ -866,7 +876,7 @@
       "Mackerel"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City .",
     "AchievementIds": [
@@ -882,10 +892,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgGRdQEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -907,10 +918,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgFHegEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -932,7 +944,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgGRdwEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
       "Channel Fish"
@@ -941,7 +953,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
@@ -957,7 +969,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgEAfgEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
       "Channel Fish"
@@ -982,7 +994,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgHudwEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
       "Channel Fish"
@@ -991,7 +1003,8 @@
       "Any"
     ],
     "Time": [
-      "Dusk/Dawn"
+      "Dawn",
+      "Dusk"
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City .",
     "AchievementIds": [
@@ -1007,7 +1020,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgFfegEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
       "Channel Fish"
@@ -1016,7 +1029,7 @@
       "Sardines"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
@@ -1032,7 +1045,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgHEdwEA]",
     "Area": [
-      "kaineng"
+      "Kaineng"
     ],
     "Hole": [
       "Channel Fish"
@@ -1057,16 +1070,17 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgEnegEA]",
     "Area": [
-      "forest"
+      "Echovald Wilds"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Echovald Wilds.",
     "AchievementIds": [
@@ -1082,10 +1096,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgHDdwEA]",
     "Area": [
-      "forest"
+      "Echovald Wilds"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -1107,7 +1122,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgERdwEA]",
     "Area": [
-      "forest"
+      "Echovald Wilds"
     ],
     "Hole": [
       "Lake Fish"
@@ -1116,7 +1131,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Echovald Wilds.",
     "AchievementIds": [
@@ -1132,7 +1147,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgFCegEA]",
     "Area": [
-      "forest"
+      "Echovald Wilds"
     ],
     "Hole": [
       "Lake Fish"
@@ -1157,7 +1172,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgF1dgEA]",
     "Area": [
-      "forest"
+      "Echovald Wilds"
     ],
     "Hole": [
       "Lake Fish"
@@ -1166,7 +1181,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Echovald Wilds.",
     "AchievementIds": [
@@ -1182,7 +1197,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgFgdQEA]",
     "Area": [
-      "forest"
+      "Echovald Wilds"
     ],
     "Hole": [
       "Lake Fish"
@@ -1191,7 +1206,7 @@
       "Minnows"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Echovald Wilds.",
     "AchievementIds": [
@@ -1207,7 +1222,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgG0fQEA]",
     "Area": [
-      "forest"
+      "Echovald Wilds"
     ],
     "Hole": [
       "Lake Fish"
@@ -1216,7 +1231,7 @@
       "Minnows"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Echovald Wilds.",
     "AchievementIds": [
@@ -1232,10 +1247,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgFgdwEA]",
     "Area": [
-      "forest"
+      "Echovald Wilds"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -1257,10 +1273,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgFsdQEA]",
     "Area": [
-      "forest"
+      "Echovald Wilds"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -1282,7 +1299,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgE2eAEA]",
     "Area": [
-      "forest"
+      "Echovald Wilds"
     ],
     "Hole": [
       "Grotto Fish"
@@ -1291,7 +1308,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Echovald Wilds.",
     "AchievementIds": [
@@ -1307,7 +1324,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgEYegEA]",
     "Area": [
-      "forest"
+      "Echovald Wilds"
     ],
     "Hole": [
       "Grotto Fish"
@@ -1332,7 +1349,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgExfAEA]",
     "Area": [
-      "forest"
+      "Echovald Wilds"
     ],
     "Hole": [
       "Grotto Fish"
@@ -1357,7 +1374,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgEVdgEA]",
     "Area": [
-      "forest"
+      "Echovald Wilds"
     ],
     "Hole": [
       "Grotto Fish"
@@ -1366,7 +1383,7 @@
       "Glow Worms"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Echovald Wilds.",
     "AchievementIds": [
@@ -1382,7 +1399,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgEXfQEA]",
     "Area": [
-      "forest"
+      "Echovald Wilds"
     ],
     "Hole": [
       "Grotto Fish"
@@ -1391,7 +1408,7 @@
       "Glow Worms"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Echovald Wilds.",
     "AchievementIds": [
@@ -1407,16 +1424,17 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgHYewEA]",
     "Area": [
-      "dragon\u0027s end"
+      "Dragon\u0027s End"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
@@ -1432,10 +1450,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgEWfgEA]",
     "Area": [
-      "dragon\u0027s end"
+      "Dragon\u0027s End"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -1457,7 +1476,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgE9fgEA]",
     "Area": [
-      "dragon\u0027s end"
+      "Dragon\u0027s End"
     ],
     "Hole": [
       "Quarry Fish"
@@ -1482,7 +1501,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgGfewEA]",
     "Area": [
-      "dragon\u0027s end"
+      "Dragon\u0027s End"
     ],
     "Hole": [
       "Quarry Fish"
@@ -1491,7 +1510,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
@@ -1507,7 +1526,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgG7eAEA]",
     "Area": [
-      "dragon\u0027s end"
+      "Dragon\u0027s End"
     ],
     "Hole": [
       "Quarry Fish"
@@ -1532,7 +1551,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgG1dwEA]",
     "Area": [
-      "dragon\u0027s end"
+      "Dragon\u0027s End"
     ],
     "Hole": [
       "Quarry Fish"
@@ -1541,7 +1560,7 @@
       "Nightcrawlers"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
@@ -1557,7 +1576,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgExegEA]",
     "Area": [
-      "dragon\u0027s end"
+      "Dragon\u0027s End"
     ],
     "Hole": [
       "Quarry Fish"
@@ -1566,7 +1585,7 @@
       "Shrimplings"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
@@ -1582,10 +1601,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgGRegEA]",
     "Area": [
-      "dragon\u0027s end"
+      "Dragon\u0027s End"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -1607,10 +1627,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgHxdQEA]",
     "Area": [
-      "dragon\u0027s end"
+      "Dragon\u0027s End"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -1632,7 +1653,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgG2dQEA]",
     "Area": [
-      "dragon\u0027s end"
+      "Dragon\u0027s End"
     ],
     "Hole": [
       "Cavern Fish"
@@ -1657,7 +1678,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgFMdwEA]",
     "Area": [
-      "dragon\u0027s end"
+      "Dragon\u0027s End"
     ],
     "Hole": [
       "Cavern Fish"
@@ -1682,7 +1703,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgECfgEA]",
     "Area": [
-      "dragon\u0027s end"
+      "Dragon\u0027s End"
     ],
     "Hole": [
       "Cavern Fish"
@@ -1691,7 +1712,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
@@ -1707,7 +1728,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgHTdQEA]",
     "Area": [
-      "dragon\u0027s end"
+      "Dragon\u0027s End"
     ],
     "Hole": [
       "Cavern Fish"
@@ -1716,7 +1737,7 @@
       "Nightcrawlers"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
@@ -1732,7 +1753,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgGQdQEA]",
     "Area": [
-      "dragon\u0027s end"
+      "Dragon\u0027s End"
     ],
     "Hole": [
       "Cavern Fish"
@@ -1757,10 +1778,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgEHfgEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -1782,10 +1804,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgFUfAEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -1807,7 +1830,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgFMfAEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
       "Lake Fish"
@@ -1832,7 +1855,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgG0dQEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
       "Lake Fish"
@@ -1857,7 +1880,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgGYdgEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
       "Lake Fish"
@@ -1882,7 +1905,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgHadwEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
       "Lake Fish"
@@ -1891,7 +1914,7 @@
       "Ramshorn Snails"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Shiverpeak",
     "AchievementIds": [
@@ -1907,7 +1930,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgFyegEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
       "Lake Fish"
@@ -1916,7 +1939,7 @@
       "Shrimplings"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Shiverpeak",
     "AchievementIds": [
@@ -1932,10 +1955,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgEWdgEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -1957,16 +1981,17 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgGxfQEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Shiverpeak",
     "AchievementIds": [
@@ -1982,7 +2007,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgFKfgEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
       "Lake Fish"
@@ -1991,7 +2016,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Shiverpeak",
     "AchievementIds": [
@@ -2007,7 +2032,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgFOdgEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
       "Lake Fish"
@@ -2016,7 +2041,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Shiverpeak",
     "AchievementIds": [
@@ -2032,7 +2057,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgFreQEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
       "Boreal Fish"
@@ -2041,7 +2066,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Shiverpeak",
     "AchievementIds": [
@@ -2057,7 +2082,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgEVfAEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
       "Lake Fish"
@@ -2066,7 +2091,7 @@
       "Ramshorn Snails"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Shiverpeak",
     "AchievementIds": [
@@ -2082,7 +2107,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgHrdQEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
       "Boreal Fish"
@@ -2091,7 +2116,7 @@
       "Ramshorn Snails"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Shiverpeak",
     "AchievementIds": [
@@ -2107,16 +2132,17 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgEUeAEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Shiverpeak",
     "AchievementIds": [
@@ -2132,16 +2158,17 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgGDeQEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Shiverpeak",
     "AchievementIds": [
@@ -2157,7 +2184,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgGwfAEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
       "Boreal Fish"
@@ -2182,7 +2209,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgHYfAEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
       "Boreal Fish"
@@ -2207,7 +2234,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgF1eAEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
       "Boreal Fish"
@@ -2216,7 +2243,8 @@
       "Any"
     ],
     "Time": [
-      "Dusk / Dawn"
+      "Dawn",
+      "Dusk"
     ],
     "Hint": "Hint: Found in the waters of the Shiverpeak",
     "AchievementIds": [
@@ -2232,7 +2260,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgG6egEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
       "Boreal Fish"
@@ -2241,7 +2269,7 @@
       "Ramshorn Snails"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Shiverpeak",
     "AchievementIds": [
@@ -2257,7 +2285,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgHJewEA]",
     "Area": [
-      "shiverpeak"
+      "Shiverpeaks"
     ],
     "Hole": [
       "Boreal Fish"
@@ -2282,10 +2310,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgEpeAEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -2307,16 +2336,17 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgFdfgEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of Ascalon.",
     "AchievementIds": [
@@ -2332,7 +2362,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgEyewEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
       "Lake Fish"
@@ -2357,7 +2387,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgGDdgEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
       "Lake Fish"
@@ -2382,7 +2412,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgHZegEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
       "Lake Fish"
@@ -2391,7 +2421,8 @@
       "Fish Eggs"
     ],
     "Time": [
-      "Dusk/Dawn"
+      "Dawn",
+      "Dusk"
     ],
     "Hint": "Hint: Found in the waters of Ascalon.",
     "AchievementIds": [
@@ -2407,7 +2438,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgFpdwEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
       "Lake Fish"
@@ -2416,7 +2447,7 @@
       "Minnows"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of Ascalon.",
     "AchievementIds": [
@@ -2432,7 +2463,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgF5dQEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
       "Lake Fish"
@@ -2441,7 +2472,8 @@
       "Minnows"
     ],
     "Time": [
-      "Dusk/Dawn"
+      "Dawn",
+      "Dusk"
     ],
     "Hint": "Hint: Found in the waters of Ascalon.",
     "AchievementIds": [
@@ -2457,10 +2489,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgEwfQEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -2482,16 +2515,18 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgGwdwEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Fish Eggs"
     ],
     "Time": [
-      "Dusk/ Dawn"
+      "Dawn",
+      "Dusk"
     ],
     "Hint": "Hint: Found in the waters of Ascalon.",
     "AchievementIds": [
@@ -2507,7 +2542,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgGuegEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
       "Lake Fish"
@@ -2516,7 +2551,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Ascalon.",
     "AchievementIds": [
@@ -2532,7 +2567,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgHidwEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
       "Lake Fish"
@@ -2541,7 +2576,7 @@
       "Fish Eggs"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of Ascalon.",
     "AchievementIds": [
@@ -2557,7 +2592,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgGgeQEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
       "Lake Fish"
@@ -2566,7 +2601,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Ascalon.",
     "AchievementIds": [
@@ -2582,7 +2617,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgFjdgEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
       "Lake Fish"
@@ -2591,7 +2626,7 @@
       "Minnows"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Ascalon.",
     "AchievementIds": [
@@ -2607,7 +2642,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgHsegEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
       "Lake Fish"
@@ -2616,7 +2651,7 @@
       "Minnows"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Ascalon.",
     "AchievementIds": [
@@ -2632,10 +2667,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgEUeQEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Fish Eggs"
@@ -2657,10 +2693,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgFhewEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -2682,7 +2719,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgGjegEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
       "Noxious Water Fish"
@@ -2707,7 +2744,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgFffgEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
       "Noxious Water Fish"
@@ -2716,7 +2753,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of Ascalon.",
     "AchievementIds": [
@@ -2732,7 +2769,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgHHfAEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
       "Noxious Water Fish"
@@ -2757,7 +2794,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgGLewEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
       "Noxious Water Fish"
@@ -2782,7 +2819,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgFRdwEA]",
     "Area": [
-      "ascalon"
+      "Ascalonian"
     ],
     "Hole": [
       "Noxious Water Fish"
@@ -2791,7 +2828,7 @@
       "Lightning Bugs"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Ascalon.",
     "AchievementIds": [
@@ -2807,10 +2844,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgHZdgEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -2832,10 +2870,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgEgdwEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -2857,7 +2896,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgHAdwEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
       "River Fish"
@@ -2882,7 +2921,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgH7fQEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
       "River Fish"
@@ -2907,7 +2946,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgFLdgEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
       "River Fish"
@@ -2916,7 +2955,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of Kryta.",
     "AchievementIds": [
@@ -2932,7 +2971,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgHzdQEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
       "River Fish"
@@ -2957,7 +2996,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgEfeQEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
       "River Fish"
@@ -2966,7 +3005,7 @@
       "Minnows"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Kryta.",
     "AchievementIds": [
@@ -2982,10 +3021,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgG2fAEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -3007,16 +3047,17 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgHkeQEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Kryta.",
     "AchievementIds": [
@@ -3032,7 +3073,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgE9fAEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
       "Lake Fish"
@@ -3057,7 +3098,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgHlfAEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
       "Lake Fish"
@@ -3082,7 +3123,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgFPewEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
       "Lake Fish"
@@ -3091,7 +3132,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Kryta.",
     "AchievementIds": [
@@ -3107,7 +3148,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgE7eQEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
       "Lake Fish"
@@ -3116,7 +3157,7 @@
       "Minnows"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of Kryta.",
     "AchievementIds": [
@@ -3132,7 +3173,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgHNfAEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
       "Lake Fish"
@@ -3141,7 +3182,7 @@
       "Minnows"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Kryta.",
     "AchievementIds": [
@@ -3157,10 +3198,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgEBdwEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -3182,10 +3224,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgGJdgEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -3207,7 +3250,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgH5fQEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
       "Coastal Fish"
@@ -3232,7 +3275,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgHtegEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
       "Coastal Fish"
@@ -3241,7 +3284,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Kryta.",
     "AchievementIds": [
@@ -3257,7 +3300,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgGbeQEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
       "Coastal Fish"
@@ -3266,7 +3309,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Kryta.",
     "AchievementIds": [
@@ -3282,7 +3325,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgGBfAEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
       "Coastal Fish"
@@ -3291,7 +3334,7 @@
       "Shrimplings"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of Kryta.",
     "AchievementIds": [
@@ -3307,7 +3350,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgH3fAEA]",
     "Area": [
-      "kryta"
+      "Krytan"
     ],
     "Hole": [
       "Coastal Fish"
@@ -3332,16 +3375,17 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgEUdwEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Maguuma Jungle.",
     "AchievementIds": [
@@ -3357,10 +3401,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgEgfQEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -3382,7 +3427,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgFFeAEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
       "Freshwater Fish"
@@ -3407,7 +3452,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgFAeAEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
       "Freshwater Fish"
@@ -3416,7 +3461,7 @@
       "Any"
     ],
     "Time": [
-      "Any Collection"
+      "Any"
     ],
     "Hint": "Hint: Found in the waters of the Maguuma Jungle. ig something",
     "AchievementIds": [
@@ -3432,7 +3477,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgEhewEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
       "Freshwater Fish"
@@ -3441,7 +3486,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Maguuma Jungle.",
     "AchievementIds": [
@@ -3457,7 +3502,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgG0eQEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
       "Freshwater Fish"
@@ -3466,7 +3511,7 @@
       "Sparkfly Larvae"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Maguuma Jungle.",
     "AchievementIds": [
@@ -3482,7 +3527,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgE2ewEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
       "Freshwater Fish"
@@ -3491,7 +3536,7 @@
       "Sparkfly Larvae"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Maguuma Jungle.",
     "AchievementIds": [
@@ -3507,16 +3552,17 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgHJdwEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Maguuma Jungle.",
     "AchievementIds": [
@@ -3532,10 +3578,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgEHdgEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -3557,7 +3604,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgG/dwEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
       "Freshwater Fish"
@@ -3582,7 +3629,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgExfgEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
       "Freshwater Fish"
@@ -3607,7 +3654,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgFsfQEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
       "Freshwater Fish"
@@ -3632,7 +3679,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgG5fAEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
       "Freshwater Fish"
@@ -3657,7 +3704,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgGkdgEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
       "Saltwater Fish"
@@ -3682,10 +3729,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgHXegEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -3707,10 +3755,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgGNeQEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -3732,7 +3781,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgEKfQEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
       "Saltwater Fish"
@@ -3741,7 +3790,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Maguuma Jungle.",
     "AchievementIds": [
@@ -3757,7 +3806,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgGFeQEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
       "Saltwater Fish"
@@ -3782,7 +3831,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgFiewEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
       "Saltwater Fish"
@@ -3807,7 +3856,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgEHfQEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
       "Saltwater Fish"
@@ -3816,7 +3865,7 @@
       "Sardines"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Maguuma Jungle.",
     "AchievementIds": [
@@ -3832,7 +3881,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgG3eAEA]",
     "Area": [
-      "maguuma"
+      "Maguuma"
     ],
     "Hole": [
       "Saltwater Fish"
@@ -3841,7 +3890,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Maguuma Jungle.",
     "AchievementIds": [
@@ -3857,16 +3906,18 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgGEdwEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
     ],
     "Time": [
-      "Dusk/ Dawn"
+      "Dawn",
+      "Dusk"
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
@@ -3882,10 +3933,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgELewEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -3907,7 +3959,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgHTeQEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
       "Offshore Fish"
@@ -3932,7 +3984,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgHqfQEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
       "Offshore Fish"
@@ -3957,7 +4009,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgG\u002BfAEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
       "Offshore Fish"
@@ -3966,7 +4018,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
@@ -3982,7 +4034,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgEtegEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
       "Offshore Fish"
@@ -4007,7 +4059,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgFMeAEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
       "Offshore Fish"
@@ -4032,16 +4084,17 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgG0dgEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
@@ -4057,16 +4110,17 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgE3dwEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
     ],
     "Time": [
-      "Any oints"
+      "Any"
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
@@ -4082,7 +4136,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgEUfQEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
       "Offshore Fish"
@@ -4107,7 +4161,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgF3eQEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
       "Offshore Fish"
@@ -4116,7 +4170,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
@@ -4132,7 +4186,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgGHdwEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
       "Offshore Fish"
@@ -4157,7 +4211,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgFqegEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
       "Offshore Fish"
@@ -4166,7 +4220,8 @@
       "Sardines"
     ],
     "Time": [
-      "Dusk / Dawn"
+      "Dawn",
+      "Dusk"
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
@@ -4182,7 +4237,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgGoegEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
       "Offshore Fish"
@@ -4191,7 +4246,7 @@
       "Sardines"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
@@ -4207,10 +4262,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgGBdgEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -4232,10 +4288,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgGaeQEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -4257,7 +4314,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgG9eQEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
       "Shore Fish"
@@ -4266,7 +4323,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
@@ -4282,7 +4339,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgEneQEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
       "Shore Fish"
@@ -4307,7 +4364,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgEWfAEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
       "Shore Fish"
@@ -4332,7 +4389,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgGiewEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
       "Shore Fish"
@@ -4357,7 +4414,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgH5egEA]",
     "Area": [
-      "orr"
+      "Orrian"
     ],
     "Hole": [
       "Shore Fish"
@@ -4366,7 +4423,7 @@
       "Leeches"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
@@ -4382,10 +4439,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgEjeQEA]",
     "Area": [
-      "ring of fire"
+      "Ring of Fire"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -4407,10 +4465,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgHQeQEA]",
     "Area": [
-      "ring of fire"
+      "Ring of Fire"
     ],
     "Hole": [
-      "Volcanic Fish"
+      "Volcanic Fish",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -4432,7 +4491,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgFNeQEA]",
     "Area": [
-      "ring of fire"
+      "Ring of Fire"
     ],
     "Hole": [
       "Volcanic Fish"
@@ -4441,7 +4500,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of Draconis Mons. h pursuing something e",
     "AchievementIds": [
@@ -4457,7 +4516,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgEbeAEA]",
     "Area": [
-      "ring of fire"
+      "Ring of Fire"
     ],
     "Hole": [
       "Volcanic Fish"
@@ -4466,7 +4525,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Draconis Mons.",
     "AchievementIds": [
@@ -4482,7 +4541,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgG/fAEA]",
     "Area": [
-      "ring of fire"
+      "Ring of Fire"
     ],
     "Hole": [
       "Volcanic Fish"
@@ -4507,7 +4566,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgESeQEA]",
     "Area": [
-      "ring of fire"
+      "Ring of Fire"
     ],
     "Hole": [
       "Volcanic Fish"
@@ -4516,7 +4575,7 @@
       "Lava Beetles"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of Draconis Mons.",
     "AchievementIds": [
@@ -4532,7 +4591,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgFTeQEA]",
     "Area": [
-      "ring of fire"
+      "Ring of Fire"
     ],
     "Hole": [
       "Volcanic Fish"
@@ -4557,10 +4616,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgHreAEA]",
     "Area": [
-      "ring of fire"
+      "Ring of Fire"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -4582,10 +4642,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgFVeQEA]",
     "Area": [
-      "ring of fire"
+      "Ring of Fire"
     ],
     "Hole": [
-      "Coastal Fish"
+      "Coastal Fish",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -4607,7 +4668,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgF5egEA]",
     "Area": [
-      "ring of fire"
+      "Ring of Fire"
     ],
     "Hole": [
       "Coastal Fish"
@@ -4616,7 +4677,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Ember Bay.",
     "AchievementIds": [
@@ -4632,7 +4693,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgEreQEA]",
     "Area": [
-      "ring of fire"
+      "Ring of Fire"
     ],
     "Hole": [
       "Coastal Fish"
@@ -4657,7 +4718,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgFMewEA]",
     "Area": [
-      "ring of fire"
+      "Ring of Fire"
     ],
     "Hole": [
       "Coastal Fish"
@@ -4666,7 +4727,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of Ember Bay.",
     "AchievementIds": [
@@ -4682,7 +4743,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgHafAEA]",
     "Area": [
-      "ring of fire"
+      "Ring of Fire"
     ],
     "Hole": [
       "Coastal Fish"
@@ -4691,7 +4752,7 @@
       "Lava Beetles"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of Ember Bay .",
     "AchievementIds": [
@@ -4707,7 +4768,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgFpeAEA]",
     "Area": [
-      "ring of fire"
+      "Ring of Fire"
     ],
     "Hole": [
       "Coastal Fish"
@@ -4732,10 +4793,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgG9eAEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -4757,10 +4819,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgFveAEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
-      "Desert Fish"
+      "Desert Fish",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -4782,7 +4845,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgHQfQEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
       "Desert Fish"
@@ -4807,7 +4870,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgE4fgEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
       "Desert Fish"
@@ -4816,7 +4879,7 @@
       "Any"
     ],
     "Time": [
-      "Anyction"
+      "Any"
     ],
     "Hint": "Hint: Found in the waters of the Elon River,",
     "AchievementIds": [
@@ -4832,7 +4895,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgEBegEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
       "Desert Fish"
@@ -4841,7 +4904,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Elon River,",
     "AchievementIds": [
@@ -4857,7 +4920,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgHUeQEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
       "Desert Fish"
@@ -4882,7 +4945,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgG6fAEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
       "Desert Fish"
@@ -4891,7 +4954,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Elon River,",
     "AchievementIds": [
@@ -4907,10 +4970,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgFdeAEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -4932,10 +4996,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgE0eAEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
-      "Desert Fish"
+      "Desert Fish",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -4957,7 +5022,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgGkeQEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
       "Desert Fish"
@@ -4966,7 +5031,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Elon River,",
     "AchievementIds": [
@@ -4982,7 +5047,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgFVewEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
       "Desert Fish"
@@ -5007,7 +5072,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgGseAEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
       "Desert Fish"
@@ -5016,7 +5081,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the Elon River,",
     "AchievementIds": [
@@ -5032,7 +5097,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgFedwEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
       "Desert Fish"
@@ -5041,7 +5106,7 @@
       "Scorpions"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Elon River,",
     "AchievementIds": [
@@ -5057,7 +5122,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgHjfQEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
       "Desert Fish"
@@ -5082,10 +5147,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgFWegEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5107,10 +5173,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgHbfQEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
-      "Desert Fish"
+      "Desert Fish",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5132,7 +5199,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgFzdgEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
       "Desert Fish"
@@ -5157,7 +5224,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgF4dQEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
       "Desert Fish"
@@ -5182,7 +5249,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgGjewEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
       "Desert Fish"
@@ -5191,7 +5258,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the Elon River,",
     "AchievementIds": [
@@ -5207,7 +5274,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgF5ewEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
       "Desert Fish"
@@ -5232,7 +5299,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgG5dgEA]",
     "Area": [
-      "desert"
+      "Desert"
     ],
     "Hole": [
       "Desert Fish"
@@ -5257,10 +5324,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgFZfAEA]",
     "Area": [
-      "desert isles"
+      "Desert Isles"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5282,10 +5350,11 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgFVdwEA]",
     "Area": [
-      "desert isles"
+      "Desert Isles"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5307,7 +5376,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgEydgEA]",
     "Area": [
-      "desert isles"
+      "Desert Isles"
     ],
     "Hole": [
       "Shore Fish"
@@ -5332,7 +5401,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgHcfQEA]",
     "Area": [
-      "desert isles"
+      "Desert Isles"
     ],
     "Hole": [
       "Shore Fish"
@@ -5341,7 +5410,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the isles of Elona.",
     "AchievementIds": [
@@ -5357,7 +5426,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgHSfQEA]",
     "Area": [
-      "desert isles"
+      "Desert Isles"
     ],
     "Hole": [
       "Shore Fish"
@@ -5382,7 +5451,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgEBeQEA]",
     "Area": [
-      "desert isles"
+      "Desert Isles"
     ],
     "Hole": [
       "Shore Fish"
@@ -5391,7 +5460,7 @@
       "Mackerel"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the isles of Elona.",
     "AchievementIds": [
@@ -5407,7 +5476,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgHhdwEA]",
     "Area": [
-      "desert isles"
+      "Desert Isles"
     ],
     "Hole": [
       "Shore Fish"
@@ -5416,7 +5485,7 @@
       "Fish Eggs"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the isles of Elona.",
     "AchievementIds": [
@@ -5432,10 +5501,11 @@
     "Rarity": "Basic",
     "ChatLink": "[\u0026AgGSdgEA]",
     "Area": [
-      "desert isles"
+      "Desert Isles"
     ],
     "Hole": [
-      "None"
+      "None",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5457,16 +5527,17 @@
     "Rarity": "Fine",
     "ChatLink": "[\u0026AgGNeAEA]",
     "Area": [
-      "desert isles"
+      "Desert Isles"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
     ],
     "Time": [
-      "Any Points"
+      "Any"
     ],
     "Hint": "Hint: Found in the waters of the isles of Elona.",
     "AchievementIds": [
@@ -5482,7 +5553,7 @@
     "Rarity": "Masterwork",
     "ChatLink": "[\u0026AgE0fgEA]",
     "Area": [
-      "desert isles"
+      "Desert Isles"
     ],
     "Hole": [
       "Offshore Fish"
@@ -5507,7 +5578,7 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgHpegEA]",
     "Area": [
-      "desert isles"
+      "Desert Isles"
     ],
     "Hole": [
       "Offshore Fish"
@@ -5532,7 +5603,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgGjfAEA]",
     "Area": [
-      "desert isles"
+      "Desert Isles"
     ],
     "Hole": [
       "Offshore Fish"
@@ -5541,7 +5612,8 @@
       "Any"
     ],
     "Time": [
-      "Dusk /Dawn"
+      "Dawn",
+      "Dusk"
     ],
     "Hint": "Hint: Found in the waters of the isles of Elona.",
     "AchievementIds": [
@@ -5557,7 +5629,7 @@
     "Rarity": "Ascended",
     "ChatLink": "[\u0026AgFpdgEA]",
     "Area": [
-      "desert isles"
+      "Desert Isles"
     ],
     "Hole": [
       "Offshore Fish"
@@ -5566,7 +5638,7 @@
       "Mackerel"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in the waters of the isles of Elona.",
     "AchievementIds": [
@@ -5582,7 +5654,7 @@
     "Rarity": "Legendary",
     "ChatLink": "[\u0026AgHRfAEA]",
     "Area": [
-      "desert isles"
+      "Desert Isles"
     ],
     "Hole": [
       "Offshore Fish"
@@ -5591,7 +5663,7 @@
       "Fish Eggs"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in the waters of the isles of Elona.",
     "AchievementIds": [
@@ -5607,10 +5679,11 @@
     "Rarity": "Junk",
     "ChatLink": "[\u0026AgFUegEA]",
     "Area": [
-      "world class"
+      "World Class"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5632,10 +5705,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgF7eQEA]",
     "Area": [
-      "world class"
+      "World Class"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5657,10 +5731,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgH4dgEA]",
     "Area": [
-      "world class"
+      "World Class"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5682,10 +5757,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgEkegEA]",
     "Area": [
-      "world class"
+      "World Class"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5707,10 +5783,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgFsdwEA]",
     "Area": [
-      "world class"
+      "World Class"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5732,10 +5809,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgEweAEA]",
     "Area": [
-      "world class"
+      "World Class"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5757,7 +5835,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgFJewEA]",
     "Area": [
-      "world class"
+      "World Class"
     ],
     "Hole": [
       "Any"
@@ -5766,7 +5844,7 @@
       "Any"
     ],
     "Time": [
-      "Daytime"
+      "Day"
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
@@ -5782,10 +5860,11 @@
     "Rarity": "Junk",
     "ChatLink": "[\u0026AgFsfAEA]",
     "Area": [
-      "world class"
+      "World Class"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5807,10 +5886,11 @@
     "Rarity": "Junk",
     "ChatLink": "[\u0026AgF0dwEA]",
     "Area": [
-      "world class"
+      "World Class"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5832,10 +5912,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgGIdQEA]",
     "Area": [
-      "world class"
+      "World Class"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5857,10 +5938,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgHCdQEA]",
     "Area": [
-      "world class"
+      "World Class"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5882,10 +5964,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgGNdwEA]",
     "Area": [
-      "world class"
+      "World Class"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5907,7 +5990,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgHZfAEA]",
     "Area": [
-      "world class"
+      "World Class"
     ],
     "Hole": [
       "Any"
@@ -5916,7 +5999,8 @@
       "Any"
     ],
     "Time": [
-      "Dusk/Dawn"
+      "Dawn",
+      "Dusk"
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
@@ -5932,7 +6016,7 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgF\u002BdgEA]",
     "Area": [
-      "world class"
+      "World Class"
     ],
     "Hole": [
       "Any"
@@ -5941,7 +6025,7 @@
       "Any"
     ],
     "Time": [
-      "Nighttime"
+      "Night"
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
@@ -5957,10 +6041,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgGmdQEA]",
     "Area": [
-      "saltwater"
+      "Saltwater"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -5981,10 +6066,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgF4eQEA]",
     "Area": [
-      "saltwater"
+      "Saltwater"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -6005,10 +6091,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgFSdwEA]",
     "Area": [
-      "saltwater"
+      "Saltwater"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -6029,10 +6116,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgHfewEA]",
     "Area": [
-      "saltwater"
+      "Saltwater"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -6053,10 +6141,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgHZewEA]",
     "Area": [
-      "saltwater"
+      "Saltwater"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -6077,10 +6166,11 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgE8fQEA]",
     "Area": [
-      "saltwater"
+      "Saltwater"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -6101,10 +6191,11 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgFwdQEA]",
     "Area": [
-      "saltwater"
+      "Saltwater"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -6125,10 +6216,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgFhdwEA]",
     "Area": [
-      "saltwater"
+      "Saltwater"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -6149,10 +6241,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgEJeAEA]",
     "Area": [
-      "saltwater"
+      "Saltwater"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -6173,10 +6266,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgFudwEA]",
     "Area": [
-      "saltwater"
+      "Saltwater"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any ints"
@@ -6197,10 +6291,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgE8fAEA]",
     "Area": [
-      "saltwater"
+      "Saltwater"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -6221,10 +6316,11 @@
     "Rarity": "Rare",
     "ChatLink": "[\u0026AgExdgEA]",
     "Area": [
-      "saltwater"
+      "Saltwater"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -6245,10 +6341,11 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgHgdgEA]",
     "Area": [
-      "saltwater"
+      "Saltwater"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"
@@ -6269,10 +6366,11 @@
     "Rarity": "Exotic",
     "ChatLink": "[\u0026AgH\u002BfAEA]",
     "Area": [
-      "saltwater"
+      "Saltwater"
     ],
     "Hole": [
-      "Any"
+      "Any",
+      "Open Water"
     ],
     "Bait": [
       "Any"

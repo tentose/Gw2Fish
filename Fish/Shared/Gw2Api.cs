@@ -10,4 +10,11 @@
         public int repeated { get; set; }
         public bool unlocked { get; set; }
     }
+
+    public class TokenInfo
+    {
+        public string id { get; set; }
+        public string name { get; set; }
+        public string[] permissions { get; set; }
+    }
 }

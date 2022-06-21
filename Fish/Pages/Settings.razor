@@ -1,16 +1,30 @@
 ﻿@page "/settings"
+@inject HttpClient Http
 @inject ISettingsService SettingsService
+@inject IDataService DataService
+@inject ISnackbar Snackbar
 
 <MudGrid>
+    <MudItem xs="12" Class="px-8 mt-8">
+        <MudText Typo="Typo.h4">Settings</MudText>
+    </MudItem>
+
     <MudItem xs="12">
-        <MudPaper Class="mud-width-full py-8 px-8">
-            <MudTextField T="string" Label="API Key" Class="mb-3" Validation="ValidateGw2ApiKey"/>
-            <MudText>Don't have an API key? Get one here: <MudLink Href="https://account.arena.net/applications">https://account.arena.net/applications</MudLink></MudText>
-            <MudText>For more details, see the wiki: <MudLink Href="https://wiki.guildwars2.com/wiki/API:API_key">https://wiki.guildwars2.com/wiki/API:API_key</MudLink></MudText>
+        <MudPaper Class="mud-width-full py-8 px-8 my-4">
+            <MudTextField T="string" Label="API Key" Class="mb-3" Validation="ValidateGw2ApiKey" @bind-Value="@_apiKeyText" Clearable="true"/>
+            <MudButton Variant="Variant.Filled" OnClick="ClearGw2ApiKey" Class="mb-8">Clear Stored API Key</MudButton>
+            <p>Gw2Fish needs an API key that has access to
+                <ul style="list-style: disc" class="px-8">
+                    <li>account</li>
+                    <li>progression</li>
+                </ul>
+            </p>
+            <p>Don't have an API key? Get one here: <MudLink Href="https://account.arena.net/applications" Target="_blank">https://account.arena.net/applications</MudLink></p>
+            <p>For more details, see the wiki: <MudLink Href="https://wiki.guildwars2.com/wiki/API:API_key" Target="_blank">https://wiki.guildwars2.com/wiki/API:API_key</MudLink></p>
         </MudPaper>
     </MudItem>
     <MudItem xs="12">
-        <MudPaper Class="mud-width-full py-8 px-8">
+        <MudPaper Class="mud-width-full py-8 px-8 my-4">
             <MudSwitch Color="Color.Primary" Class="ma-4" T="bool" Label="Toggle Light/Dark Mode" CheckedChanged="DarkModeChecked" Checked="SettingsService.IsDarkMode"/>
         </MudPaper>
     </MudItem>
@@ -18,12 +32,14 @@
 </MudGrid>
 
 @code {
+    private string _apiKeyText = "";
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
             await SettingsService.InitializeSettings();
-            //_isDarkMode = SettingsService.IsDarkMode;
+            _apiKeyText = SettingsService.Gw2ApiKey;
             StateHasChanged();
         }
     }
@@ -33,19 +49,65 @@
         SettingsService.SetDarkMode(isChecked);
     }
 
-    private bool ValidateGw2ApiKey(string key)
+    private async Task<string> ValidateGw2ApiKey(string key)
     {
+        if (key == "")
+        {
+            return null;
+        }
+
         var regex = new System.Text.RegularExpressions.Regex(@"^[0-9A-Z]{8}-[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{20}-[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{4}-[0-9A-Z]{12}$");
         bool isMatch = regex.IsMatch(key);
-        if (isMatch || key == "")
+        if (!isMatch)
         {
-            SetGw2ApiKey(key);
+            return "Malformed key.";
         }
-        return isMatch;
+
+        try
+        {
+            var result = await Http.GetFromJsonAsync<Gw2Api.TokenInfo>("https://api.guildwars2.com/v2/tokeninfo?access_token=" + key);
+
+            if (result == null)
+            {
+                return "Failed to validate API key with GW2 web API.";
+            }
+
+            if (!result.permissions.Contains("account"))
+            {
+                return "API key does not have the 'account' permission.";
+            }
+
+            if (!result.permissions.Contains("progression"))
+            {
+                return "API key does not have the 'progression' permission.";
+            }
+        }
+        catch (Exception)
+        {
+            return "Failed to validate API key with GW2 web API.";
+        }
+
+        await SetGw2ApiKey(key);
+        return null;
     }
 
-    private void SetGw2ApiKey(string key)
+    private async Task ClearGw2ApiKey()
+    {
+        await SetGw2ApiKey("");
+    }
+
+    private async Task SetGw2ApiKey(string key)
     {
         SettingsService.SetGw2ApiKey(key);
+        await DataService.RefreshApiData();
+
+        if (key == "")
+        {
+            Snackbar.Add("API key cleared.", Severity.Success);
+        }
+        else
+        {
+            Snackbar.Add("API key saved.", Severity.Success);
+        }
     }
 }

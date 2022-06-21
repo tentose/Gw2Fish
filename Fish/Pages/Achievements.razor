@@ -3,6 +3,8 @@
 @inject HttpClient Http
 @inject ISettingsService SettingsService
 @inject IDataService DataService
+@inject ISnackbar Snackbar
+@inject NavigationManager NavManager
 
 <PageTitle>Achievements</PageTitle>
 
@@ -17,7 +19,7 @@ else
     {
        
         <MudItem xs="12">
-            <AchievementBox model="@selectedAchievement" fishes="@(DataService.AllFishes.Where(fish => fish.AchievementIds.Contains(selectedAchievement.Id)))"></AchievementBox>
+            <AchievementBox Model="@selectedAchievement" Fishes="@(DataService.AllFishes.Where(fish => fish.AchievementIds.Contains(selectedAchievement.Id)).ToList())" ShowCaughtInformation="isApiKeySet" ShowFilter="true"></AchievementBox>
         </MudItem>
         
     }
@@ -26,7 +28,7 @@ else
         @foreach(var achievement in DataService.AllAchievements)
         {
             <MudItem xs="12">
-                <AchievementBox model="@achievement" fishes="@(DataService.AllFishes.Where(fish => fish.AchievementIds.Contains(achievement.Id)))"></AchievementBox>
+                <AchievementBox Model="@achievement" Fishes="@(DataService.AllFishes.Where(fish => fish.AchievementIds.Contains(achievement.Id)).ToList())" ShowCaughtInformation="isApiKeySet"></AchievementBox>
             </MudItem>
         }
     }
@@ -41,9 +43,13 @@ else
     private bool _loading = true;
 
     private Models.Achievement? selectedAchievement;
+    private bool isApiKeySet;
+
+    private Timer? promptApiKeyTimer;
 
     private async Task UpdateContent()
     {
+        isApiKeySet = !string.IsNullOrEmpty(SettingsService.Gw2ApiKey);
         if (_achievementName != "")
         {
             selectedAchievement = DataService.AllAchievements.First(ach => ach.Name == _achievementName);
@@ -59,8 +65,27 @@ else
     protected override async Task OnInitializedAsync()
     {
         await DataService.LoadAllData();
+        DataService.ApiDataUpdated += ApiDataUpdated;
+
+        if (SettingsService.Gw2ApiKey == "")
+        {
+            SendPromptForApiKey();
+        }
 
         _loading = false;
+    }
+
+    private async Task SendPromptForApiKey()
+    {
+        await Task.Delay(5000);
+        Snackbar.Add("You can add an API key in settings to track your progress", Severity.Info, config =>
+        {
+            config.Onclick = snackbar =>
+            {
+                NavManager.NavigateTo("/settings");
+                return Task.CompletedTask;
+            };
+        });
     }
 
     protected override async Task OnParametersSetAsync()
@@ -70,5 +95,7 @@ else
         await UpdateContent();
         await base.OnParametersSetAsync();
     }
+
+    private void ApiDataUpdated(object sender, EventArgs e) => UpdateContent();
 
 }

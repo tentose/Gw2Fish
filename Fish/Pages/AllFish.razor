@@ -21,17 +21,17 @@
 }
 else
 {
-<MudTable Hover="true" Breakpoint="Breakpoint.Sm" FixedHeader="true"
+<MudTable Hover="true" Breakpoint="Breakpoint.Xs" FixedHeader="true"
           Items="@DataService.AllFishes"
           GroupBy="@_groupDefinition"
           GroupHeaderStyle="background-color:var(--mud-palette-background-grey)"
           GroupFooterClass="mb-4"
           Dense="true"
-        Filter="new Func<Fish,bool>(FilterFunc)">
+          Filter="new Func<Fish,bool>(FilterFunc)">
     <ToolBarContent>
         <MudText Typo="Typo.h6">All Fish</MudText>
         <MudSpacer />
-        <MudTextField @bind-Value="searchString" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+        <MudTextField @bind-Value="filterString" Placeholder="Filter" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
     </ToolBarContent>
     <ColGroup>
         <col style="width: 60px;" />
@@ -53,10 +53,33 @@ else
     </GroupHeaderTemplate>
     <RowTemplate>
         <MudTd DataLabel="Icon"><MudImage Src="@string.Format("data:image/png;base64,{0}", context.Icon)" Class="@("rarity-" + context.Rarity.ToLower())"></MudImage></MudTd>
-        <MudTd DataLabel="Name">@context.Name</MudTd>
-        <MudTd DataLabel="Hole">@string.Join(',', context.Hole)</MudTd>
-        <MudTd DataLabel="Bait">@string.Join(',', context.Bait)</MudTd>
-        <MudTd DataLabel="Time">@string.Join(',', context.Time)</MudTd>
+        <MudTd DataLabel="Name">
+            <MudText>@context.Name</MudText>
+        </MudTd>
+        <MudTd DataLabel="Hole">
+            <div class="d-flex">
+                @foreach(var text in context.Hole)
+                {
+                    <MudText>@text</MudText>
+                }
+            </div>
+        </MudTd>
+        <MudTd DataLabel="Bait">
+            <div class="">
+                @foreach(var text in context.Bait)
+                {
+                    <MudText>@text</MudText>
+                }
+            </div>
+        </MudTd>
+        <MudTd DataLabel="Time">
+            <div class="">
+                @foreach(var text in context.Time)
+                {
+                    <MudText>@text</MudText>
+                }
+            </div>
+        </MudTd>
     </RowTemplate>
     <GroupFooterTemplate>
         <MudTh Class="mud-table-cell-custom-group mud-table-cell-custom-group-footer" colspan="5">Total Fish: @context.Items.Count()</MudTh>
@@ -68,7 +91,7 @@ else
 @code {
     private bool _loading = true;
 
-    private string searchString = "";
+    private string filterString = "";
 
     protected override async Task OnInitializedAsync()
     {
@@ -86,16 +109,28 @@ else
 
     private bool FilterFunc(Fish fish)
     {
-        if (string.IsNullOrWhiteSpace(searchString))
+        if (string.IsNullOrWhiteSpace(filterString))
             return true;
-        if (fish.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase))
-            return true;
-        if (fish.Area.Any(x => x.Contains(searchString, StringComparison.OrdinalIgnoreCase)))
-            return true;
-        if (fish.Hole.Any(x => x.Contains(searchString, StringComparison.OrdinalIgnoreCase)))
-            return true;
-        if (fish.Bait.Any(x => x.Contains(searchString, StringComparison.OrdinalIgnoreCase)))
-            return true;
+        var filterWords = filterString.Split(" OR ");
+        foreach(var filterWord in filterWords)
+        {
+            string processedFilterWord = filterWord;
+            var searchPredicate = (string hay, string needle) => { return hay.Contains(needle, StringComparison.OrdinalIgnoreCase); };
+            if (filterWord.ElementAt(0) == '+')
+            {
+                processedFilterWord = filterWord.Substring(1);
+                searchPredicate = (string hay, string needle) => { return hay.Equals(needle, StringComparison.OrdinalIgnoreCase); };
+            }
+            if (searchPredicate(fish.Name, processedFilterWord))
+                return true;
+            if (fish.Area.Any(x => searchPredicate(x, processedFilterWord)))
+                return true;
+            if (fish.Hole.Any(x => searchPredicate(x, processedFilterWord)))
+                return true;
+            if (fish.Bait.Any(x => searchPredicate(x, processedFilterWord)))
+                return true;
+        }
+
         return false;
     }
 
