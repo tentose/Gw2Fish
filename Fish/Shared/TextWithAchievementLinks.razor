@@ -1,23 +1,23 @@
 ﻿@inject IDataService DataService
 
-@if(_loading)
+@if (_loading)
 {
     <MudText Typo="@Typo" Class="@Class">@Content</MudText>
 }
 else
 {
     <MudText Typo="@Typo" Class="@Class">
-    @foreach(var fragment in parsedContent)
-    {
-        if (fragment.link != null)
+        @foreach (var fragment in parsedContent)
         {
-            <AchievementLink Typo="@Typo" Class="@Class" Location="@fragment.link" Text="@fragment.text"></AchievementLink>
+            if (fragment.link != null)
+            {
+                <AchievementLink Typo="@Typo" Class="@Class" Location="@fragment.link" Text="@fragment.text"></AchievementLink>
+            }
+            else
+            {
+                @fragment.text
+            }
         }
-        else
-        {
-            @fragment.text
-        }
-    }
     </MudText>
 }
 

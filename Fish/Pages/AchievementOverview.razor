@@ -12,67 +12,67 @@
 }
 else
 {
-<div class="mud-width-full my-4 mt-8">
+    <div class="mud-width-full my-4 mt-8">
 
-    <MudText Typo="Typo.h4" GutterBottom="true" Class="px-8">Achievements</MudText>
+        <MudText Typo="Typo.h4" GutterBottom="true" Class="px-8">Achievements</MudText>
 
-    <div class="d-flex flex-grow-0 flex-wrap gap-4">
-        <div class="mt-8 d-flex flex-wrap gap-4" style="max-width:600px; width: auto">
+        <div class="d-flex flex-grow-0 flex-wrap gap-4">
+            <div class="mt-8 d-flex flex-wrap gap-4" style="max-width:600px; width: auto">
                 @foreach (var achievement in DataService.DailyAchievements)
                 {
                     <div class="flex-grow-1" style="width: fit-content; min-width: 250px">
-                    <MudCard>
-                        <MudCardContent>
-                            <MudText Typo="Typo.h6">@(achievement.Name)</MudText>
-                            <MudText Typo="Typo.body1">@(achievement.Description)</MudText>
-                        </MudCardContent>
-                    </MudCard>
+                        <MudCard>
+                            <MudCardContent>
+                                <MudText Typo="Typo.h6">@(achievement.Name)</MudText>
+                                <MudText Typo="Typo.body1">@(achievement.Description)</MudText>
+                            </MudCardContent>
+                        </MudCard>
                     </div>
                 }
 
                 @foreach (var achievement in allAchievements)
                 {
                     <div class="flex-grow-1" style="width: 250px">
-                    <MudCard>
-                        <MudCardContent>
-                            <MudText Typo="Typo.h6">@(achievement.Name)</MudText>
-                            @if (SettingsService.Gw2ApiKey != "")
-                            {
-                                @if (achievement.Repeated > 0)
+                        <MudCard>
+                            <MudCardContent>
+                                <MudText Typo="Typo.h6">@(achievement.Name)</MudText>
+                                @if (SettingsService.Gw2ApiKey != "")
                                 {
-                                    <MudText Typo="Typo.body1" Color="Color.Default">@("Repeated: " + achievement.Repeated)</MudText>
+                                    @if (achievement.Repeated > 0)
+                                    {
+                                        <MudText Typo="Typo.body1" Color="Color.Default">@("Repeated: " + achievement.Repeated)</MudText>
+                                    }
+                                    <MudProgressLinear Color="Color.Success" Size="Size.Large" Value="@(((achievement.CurrentProgress) * 1.0 / achievement.PointRequirement) * 100)" Class="my-4">
+                                        <MudText Typo="Typo.subtitle1" Class="z-10" Color="Color.Default">
+                                            <br /><br />
+                                            <b>@((achievement.CurrentProgress) + "/" + achievement.PointRequirement)</b>
+                                        </MudText>
+                                    </MudProgressLinear>
                                 }
-                                <MudProgressLinear Color="Color.Success" Size="Size.Large" Value="@(((achievement.CurrentProgress) * 1.0 / achievement.PointRequirement) * 100)" Class="my-4">
-                                    <MudText Typo="Typo.subtitle1" Class="z-10" Color="Color.Default">
-                                        <br /><br />
-                                        <b>@((achievement.CurrentProgress) + "/" + achievement.PointRequirement)</b>
-                                    </MudText>
-                                </MudProgressLinear>
-                            }
-                        </MudCardContent>
-                        <MudCardActions>
-                            <MudButton Variant="Variant.Text" Color="Color.Primary" Link="@("/achievements/" + achievement.Name)">Details</MudButton>
-                        </MudCardActions>
-                    </MudCard>
+                            </MudCardContent>
+                            <MudCardActions>
+                                <MudButton Variant="Variant.Text" Color="Color.Primary" Link="@("/achievements/" + achievement.Name)">Details</MudButton>
+                            </MudCardActions>
+                        </MudCard>
                     </div>
                 }
+            </div>
+
+            <MudPaper Width="280px" Class="mt-8 pr-8 py-8">
+                <MudText Typo="Typo.h6" Class="mx-6">@(maxTitleProgress + "/" + maxTitleRequirement)</MudText>
+                <MudTimeline TimelineOrientation="TimelineOrientation.Vertical" TimelinePosition="TimelinePosition.Start">
+                    @foreach (var achievement in DataService.TitleAchievements)
+                    {
+                        <MudTimelineItem Color="@(achievement.Completed ? Color.Success : Color.Default)">
+                            <MudText Typo="Typo.body1">@achievement.Name</MudText>
+                            <MudText Typo="Typo.body2" Class="mud-text-secondary">@(achievement.PointRequirement + "/" + maxTitleRequirement)</MudText>
+                        </MudTimelineItem>
+                    }
+                </MudTimeline>
+            </MudPaper>
         </div>
 
-        <MudPaper Width="280px" Class="mt-8 pr-8 py-8">
-            <MudText Typo="Typo.h6" Class="mx-6">@(maxTitleProgress + "/" + maxTitleRequirement)</MudText>
-            <MudTimeline TimelineOrientation="TimelineOrientation.Vertical" TimelinePosition="TimelinePosition.Start">
-                @foreach (var achievement in DataService.TitleAchievements)
-                {
-                    <MudTimelineItem Color="@(achievement.Completed ? Color.Success : Color.Default)">
-                        <MudText Typo="Typo.body1">@achievement.Name</MudText>
-                        <MudText Typo="Typo.body2" Class="mud-text-secondary">@(achievement.PointRequirement + "/" + maxTitleRequirement)</MudText>
-                    </MudTimelineItem>
-                }
-            </MudTimeline>
-        </MudPaper>
     </div>
-
-</div>
 }
 
 @code {

@@ -4,20 +4,20 @@
 
 <MudNavMenu>
     <div class="d-flex">
-    <MudImage Src="images/gw2fishexclaim.png" Alt="logo" Width="50" Fluid="true" ObjectFit="ObjectFit.Contain"></MudImage>
-    <div class="d-flex-column">
-    <MudText Typo="Typo.h6" Class="px-4 pt-4">GW2 Fish!</MudText>
-    <MudText Typo="Typo.body2" Class="px-4 pb-4 mud-text-secondary">For your fishing needs</MudText>
-    </div>
+        <MudImage Src="images/gw2fishexclaim.png" Alt="logo" Width="50" Fluid="true" ObjectFit="ObjectFit.Contain"></MudImage>
+        <div class="d-flex-column">
+            <MudText Typo="Typo.h6" Class="px-4 pt-4">GW2 Fish!</MudText>
+            <MudText Typo="Typo.body2" Class="px-4 pb-4 mud-text-secondary">For your fishing needs</MudText>
+        </div>
     </div>
     <MudDivider></MudDivider>
     <MudNavLink Href="/" Match="NavLinkMatch.All">Home</MudNavLink>
     <MudNavLink Href="/allfish" Match="NavLinkMatch.All">All Fish</MudNavLink>
     <MudNavGroup Title="Achievements" @bind-Expanded="expandAchievementsMenu">
         <MudNavLink Href="/achievements" Match="NavLinkMatch.All" Icon="@Icons.Filled.ShowChart">Overview</MudNavLink>
-        @if(DataService.AllAchievements != null)
+        @if (DataService.AllAchievements != null)
         {
-            @foreach(var achievement in DataService.AllAchievements)
+            @foreach (var achievement in DataService.AllAchievements)
             {
                 <MudNavLink Href="@("/achievements/" + achievement.Name)" Icon="@(GetIconForAchievement(achievement))" IconColor="@(GetIconColorForAchievement(achievement))">@achievement.Name</MudNavLink>
             }
@@ -25,8 +25,8 @@
         <MudNavLink Href="/achievements/all" Match="NavLinkMatch.All" Icon="@Icons.Filled.DensitySmall">All Achievements</MudNavLink>
     </MudNavGroup>
     <MudNavLink Href="/settings" Match="NavLinkMatch.Prefix">Settings</MudNavLink>
-    <MudNavLink Href="/changes"  Match="NavLinkMatch.Prefix">Change Log</MudNavLink>
-    <MudNavLink Href="/about"  Match="NavLinkMatch.Prefix">About</MudNavLink>
+    <MudNavLink Href="/changes" Match="NavLinkMatch.Prefix">Change Log</MudNavLink>
+    <MudNavLink Href="/about" Match="NavLinkMatch.Prefix">About</MudNavLink>
 </MudNavMenu>
 
 @code {

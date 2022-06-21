@@ -172,7 +172,7 @@ namespace Fish.Services
 
                 await RefreshDailydApiData();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("Failed API refresh: " + e.Message);
                 Console.WriteLine("Retry in " + API_RETRY_INTERVAL_MILLIS);

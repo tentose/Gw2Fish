@@ -4,9 +4,9 @@
 @inject ISettingsService SettingsService
 @inject ITimeService TimeService
 
-<MudThemeProvider @ref="@_mudThemeProvider" IsDarkMode="@SettingsService.IsDarkMode" IsDarkModeChanged="SettingsService.SetDarkMode" Theme="_theme"/>
-<MudDialogProvider/>
-<MudSnackbarProvider/>
+<MudThemeProvider @ref="@_mudThemeProvider" IsDarkMode="@SettingsService.IsDarkMode" IsDarkModeChanged="SettingsService.SetDarkMode" Theme="_theme" />
+<MudDialogProvider />
+<MudSnackbarProvider />
 <MudScrollToTop>
     <MudFab Color="Color.Tertiary" Icon="@Icons.Filled.ArrowCircleUp" />
 </MudScrollToTop>
@@ -20,7 +20,7 @@
         </MudContainer>
     </MudAppBar>
     <MudDrawer @bind-Open="@_drawerOpen">
-        <NavMenu/>
+        <NavMenu />
     </MudDrawer>
     <MudMainContent>
         <MudContainer MaxWidth="MaxWidth.Medium">

@@ -1,46 +1,46 @@
 ﻿@inject ITimeService TimeService
 
 <div class="d-flex flex-column">
-<MudIcon Icon="@icon" Class="d-none d-md-flex" Color="@color"></MudIcon>
-<MudText>@(Region.ToString() + " " + stage + " " + remaining)</MudText>
+    <MudIcon Icon="@icon" Class="d-none d-md-flex" Color="@color"></MudIcon>
+    <MudText>@(Region.ToString() + " " + stage + " " + remaining)</MudText>
 </div>
 
 @code {
 
-	[Parameter]
-	public RegionType Region { get; set; }
+    [Parameter]
+    public RegionType Region { get; set; }
 
-	string icon;
-	string stage;
-	string remaining;
-	Color color = Color.Default;
+    string icon;
+    string stage;
+    string remaining;
+    Color color = Color.Default;
 
-	private static readonly Dictionary<TimeStage, Color> TIME_ICONS_COLORS = new Dictionary<TimeStage, Color>
-	{
-		{ TimeStage.Night, Color.Default },
-		{ TimeStage.Dawn, Color.Error },
-		{ TimeStage.Day, Color.Warning },
-		{ TimeStage.Dusk, Color.Error },
-	};
+    private static readonly Dictionary<TimeStage, Color> TIME_ICONS_COLORS = new Dictionary<TimeStage, Color>
+    {
+        { TimeStage.Night, Color.Default },
+        { TimeStage.Dawn, Color.Error },
+        { TimeStage.Day, Color.Warning },
+        { TimeStage.Dusk, Color.Error },
+    };
 
-	protected override async Task OnInitializedAsync()
-	{
-		TimeService.TimeChanged += TimeChanged;
-	}
+    protected override async Task OnInitializedAsync()
+    {
+        TimeService.TimeChanged += TimeChanged;
+    }
 
-	public void TimeChanged(object? sender, EventArgs args)
-	{
-		var state = TimeService.GetTimeForRegion(Region);
-		icon = TimeService.GetIconForStage(state.Stage);
-		stage = state.Stage.ToString();
-		//var remainingTime = System.TimeSpan.FromSeconds(state.SecondsRemainingInStage);
-		//remaining = $"{remainingTime:mm\\:ss}";
-		var remainingSeconds = state.SecondsRemainingInStage % 60;
-		var remainingMinutes = state.SecondsRemainingInStage / 60;
-		remaining = string.Format("{0,2:00}:{1,2:00}", remainingMinutes, remainingSeconds);
-		color = TIME_ICONS_COLORS[state.Stage];
+    public void TimeChanged(object? sender, EventArgs args)
+    {
+        var state = TimeService.GetTimeForRegion(Region);
+        icon = TimeService.GetIconForStage(state.Stage);
+        stage = state.Stage.ToString();
+        //var remainingTime = System.TimeSpan.FromSeconds(state.SecondsRemainingInStage);
+        //remaining = $"{remainingTime:mm\\:ss}";
+        var remainingSeconds = state.SecondsRemainingInStage % 60;
+        var remainingMinutes = state.SecondsRemainingInStage / 60;
+        remaining = string.Format("{0,2:00}:{1,2:00}", remainingMinutes, remainingSeconds);
+        color = TIME_ICONS_COLORS[state.Stage];
 
-		StateHasChanged();
-	}
+        StateHasChanged();
+    }
 
 }

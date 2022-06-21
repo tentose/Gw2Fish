@@ -3,119 +3,119 @@
 
 <MudPaper Class="mud-width-full py-8 px-8">
     <MudTable Hover="true" Breakpoint="Breakpoint.Sm" FixedHeader="true"
-          Items="@Fishes"
-          GroupHeaderStyle="background-color:var(--mud-palette-background-grey)"
-          GroupFooterClass="mb-4"
-          RowStyleFunc="@RowStyleFunc"
-          Dense="true"
-          Filter="new Func<Models.Fish,bool>(FilterFunc)">
-    <ToolBarContent>
-        <div class="flex-column">
-            <p>@Model.Region</p>
-            <MudText Typo="Typo.h5">@Model.Name</MudText>
-        </div>
-        
-        @if (ShowFilter)
-        {
-            <MudSpacer />
-            <MudTextField @bind-Value="filterString" 
-                    Placeholder="Filter"
-                    Adornment="Adornment.Start"
-                    AdornmentIcon="@Icons.Material.Filled.Search"
-                    IconSize="Size.Medium"
-                    Class="mt-0"
-                    Clearable="true"
-                    DebounceInterval="800"></MudTextField>
-            <div>
-                <MudToggleIconButton @bind-Toggled="@isSettingsOpen" Icon="@Icons.Filled.Settings" Color="@Color.Default" ToggledIcon="@Icons.Filled.Settings" ToggledColor="@Color.Primary"></MudToggleIconButton>
-                <MudPopover Open="@isSettingsOpen" Fixed="true" Class="px-4 pt-4" TransformOrigin="Origin.TopCenter" AnchorOrigin="Origin.BottomLeft">
-                    <div class="d-flex flex-column">
-                        <MudSwitch @bind-Checked="@hideCaughtFish" Label="Hide Caught Fish" Color="Color.Info" />
-                        <MudButton OnClick="@(e => isSettingsOpen = false)" Class="ml-auto mr-n3 mb-1" Color="Color.Error">Close</MudButton>
-                    </div>
-                </MudPopover>
+              Items="@Fishes"
+              GroupHeaderStyle="background-color:var(--mud-palette-background-grey)"
+              GroupFooterClass="mb-4"
+              RowStyleFunc="@RowStyleFunc"
+              Dense="true"
+              Filter="new Func<Models.Fish,bool>(FilterFunc)">
+        <ToolBarContent>
+            <div class="flex-column">
+                <p>@Model.Region</p>
+                <MudText Typo="Typo.h5">@Model.Name</MudText>
             </div>
-        }
-    </ToolBarContent>
 
-    <ColGroup>
-        @if (ShowCaughtInformation)
-        {
+            @if (ShowFilter)
+            {
+                <MudSpacer />
+                <MudTextField @bind-Value="filterString"
+                          Placeholder="Filter"
+                          Adornment="Adornment.Start"
+                          AdornmentIcon="@Icons.Material.Filled.Search"
+                          IconSize="Size.Medium"
+                          Class="mt-0"
+                          Clearable="true"
+                          DebounceInterval="800"></MudTextField>
+                <div>
+                    <MudToggleIconButton @bind-Toggled="@isSettingsOpen" Icon="@Icons.Filled.Settings" Color="@Color.Default" ToggledIcon="@Icons.Filled.Settings" ToggledColor="@Color.Primary"></MudToggleIconButton>
+                    <MudPopover Open="@isSettingsOpen" Fixed="true" Class="px-4 pt-4" TransformOrigin="Origin.TopCenter" AnchorOrigin="Origin.BottomLeft">
+                        <div class="d-flex flex-column">
+                            <MudSwitch @bind-Checked="@hideCaughtFish" Label="Hide Caught Fish" Color="Color.Info" />
+                            <MudButton OnClick="@(e => isSettingsOpen = false)" Class="ml-auto mr-n3 mb-1" Color="Color.Error">Close</MudButton>
+                        </div>
+                    </MudPopover>
+                </div>
+            }
+        </ToolBarContent>
+
+        <ColGroup>
+            @if (ShowCaughtInformation)
+            {
+                <col />
+            }
             <col />
-        }
-        <col />
-        <col />
-        <col />
-        <col />
-        <col />
-    </ColGroup>
-    <HeaderContent>
-        @if (ShowCaughtInformation)
-        {
-            <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>x.Caught)" InitialDirection="SortDirection.Ascending">Caught</MudTableSortLabel></MudTh>
-        }
-        <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>x.RaritySort)">Icon</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>x.Name)">Name</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>string.Join(',', x.Hole))">Hole</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>string.Join(',', x.Bait))">Bait</MudTableSortLabel></MudTh>
-        <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>string.Join(',', x.Time))">Time</MudTableSortLabel></MudTh>
-    </HeaderContent>
-    <RowTemplate>
-        @if (ShowCaughtInformation)
-        {
-            <MudTd DataLabel="Caught"><MudCheckBox Color="@(context.Caught ? Color.Primary : Color.Default)" Checked="@context.Caught" CheckedChanged="@((bool c) => context.Caught = caughtOverride[context.Id] = c )"></MudCheckBox></MudTd>
-        }
-        <MudTd DataLabel="Icon"><MudImage Src="@string.Format("data:image/png;base64,{0}", context.Icon)" Class="@("rarity-" + context.Rarity.ToLower())" Width="40" Height="40"></MudImage></MudTd>
-        <MudTd DataLabel="Name">@context.Name</MudTd>
-        <MudTd DataLabel="Hole">
-            <div class="">
-                @if (IsFishCatchable(context))
-                {
-                    @foreach(var text in context.Hole)
+            <col />
+            <col />
+            <col />
+            <col />
+        </ColGroup>
+        <HeaderContent>
+            @if (ShowCaughtInformation)
+            {
+                <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>x.Caught)" InitialDirection="SortDirection.Ascending">Caught</MudTableSortLabel></MudTh>
+            }
+            <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>x.RaritySort)">Icon</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>x.Name)">Name</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>string.Join(',', x.Hole))">Hole</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>string.Join(',', x.Bait))">Bait</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<Models.Fish, object>(x=>string.Join(',', x.Time))">Time</MudTableSortLabel></MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            @if (ShowCaughtInformation)
+            {
+                <MudTd DataLabel="Caught"><MudCheckBox Color="@(context.Caught ? Color.Primary : Color.Default)" Checked="@context.Caught" CheckedChanged="@((bool c) => context.Caught = caughtOverride[context.Id] = c )"></MudCheckBox></MudTd>
+            }
+            <MudTd DataLabel="Icon"><MudImage Src="@string.Format("data:image/png;base64,{0}", context.Icon)" Class="@("rarity-" + context.Rarity.ToLower())" Width="40" Height="40"></MudImage></MudTd>
+            <MudTd DataLabel="Name">@context.Name</MudTd>
+            <MudTd DataLabel="Hole">
+                <div class="">
+                    @if (IsFishCatchable(context))
                     {
-                        <MudText Color="@(holeToColorMap?[text] ?? Color.Default)">@text</MudText>
+                        @foreach (var text in context.Hole)
+                        {
+                            <MudText Color="@(holeToColorMap?[text] ?? Color.Default)">@text</MudText>
+                        }
                     }
-                }
-                else
-                {
-                    @foreach(var text in context.Hole)
+                    else
+                    {
+                        @foreach (var text in context.Hole)
+                        {
+                            <MudText>@text</MudText>
+                        }
+                    }
+                </div>
+            </MudTd>
+            <MudTd DataLabel="Bait">
+                <div class="">
+                    @if (IsFishCatchable(context))
+                    {
+                        @foreach (var text in context.Bait)
+                        {
+                            <MudText Color="@(baitToColorMap?[text] ?? Color.Default)">@text</MudText>
+                        }
+                    }
+                    else
+                    {
+                        @foreach (var text in context.Bait)
+                        {
+                            <MudText>@text</MudText>
+                        }
+                    }
+                </div>
+            </MudTd>
+            <MudTd DataLabel="Time">
+                <div class="">
+                    @foreach (var text in context.Time)
                     {
                         <MudText>@text</MudText>
                     }
-                }
-            </div>
-        </MudTd>
-        <MudTd DataLabel="Bait">
-            <div class="">
-                @if (IsFishCatchable(context))
-                {
-                    @foreach(var text in context.Bait)
-                    {
-                        <MudText Color="@(baitToColorMap?[text] ?? Color.Default)">@text</MudText>
-                    }
-                }
-                else
-                {
-                    @foreach(var text in context.Bait)
-                    {
-                        <MudText>@text</MudText>
-                    }
-                }
-            </div>
-        </MudTd>
-        <MudTd DataLabel="Time">
-            <div class="">
-                @foreach(var text in context.Time)
-                {
-                    <MudText>@text</MudText>
-                }
-            </div>
-        </MudTd>
-    </RowTemplate>
-    <GroupFooterTemplate>
-        <MudTh Class="mud-table-cell-custom-group mud-table-cell-custom-group-footer" colspan="5">Total Fish: @context.Items.Count()</MudTh>
-    </GroupFooterTemplate>
-</MudTable>
+                </div>
+            </MudTd>
+        </RowTemplate>
+        <GroupFooterTemplate>
+            <MudTh Class="mud-table-cell-custom-group mud-table-cell-custom-group-footer" colspan="5">Total Fish: @context.Items.Count()</MudTh>
+        </GroupFooterTemplate>
+    </MudTable>
 </MudPaper>
 
 @code {
@@ -134,7 +134,7 @@
     public bool ShowFilter { get; set; }
 
     [Parameter]
-    public Func<Models.Fish,bool>? FilterFnOverride { get; set; }
+    public Func<Models.Fish, bool>? FilterFnOverride { get; set; }
 
     private TimeStage currentTimeStage;
     private RegionType currentRegion;
@@ -201,7 +201,7 @@
             return true;
 
         var filterWords = filterString.Split(" OR ");
-        foreach(var filterWord in filterWords)
+        foreach (var filterWord in filterWords)
         {
             string processedFilterWord = filterWord;
             var searchPredicate = (string hay, string needle) => { return hay.Contains(needle, StringComparison.OrdinalIgnoreCase); };
@@ -292,9 +292,9 @@
         baitToColorMap.Add("None", Color.Default);
         int nextBaitIndex = 2;
 
-        foreach(var fish in Fishes)
+        foreach (var fish in Fishes)
         {
-            foreach(var hole in fish.Hole)
+            foreach (var hole in fish.Hole)
             {
                 if (!holeToColorMap.ContainsKey(hole))
                 {
@@ -303,7 +303,7 @@
                 }
             }
 
-            foreach(var bait in fish.Bait)
+            foreach (var bait in fish.Bait)
             {
                 if (!baitToColorMap.ContainsKey(bait))
                 {

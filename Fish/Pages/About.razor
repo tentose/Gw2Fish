@@ -6,43 +6,43 @@
         <MudText Typo="Typo.h4" GutterBottom="true" Class="px-8">How it's made</MudText>
 
         <MudPaper Class="mud-width-full py-8 px-8 my-4">
-            
+
             <MudText Typo="Typo.h6" GutterBottom="true">Data gathering</MudText>
 
-<p>Gw2Fish started with data gathering. While most of the of the data is available from the <MudLink Href="https://wiki.guildwars2.com/wiki/API:Main" Target="_blank">GW2 Web API</MudLink>, crucial pieces of information regarding where each fish is caught is not available. So step 1 is to capture this data the old-fashioned way -- OCR.</p>
-<br />
-<MudImage Fluid="true" Src="images/sample-screenshot.jpg" Alt="Sample screenshot" Class="rounded-lg" Elevation="5"></MudImage>
-<p>252 screenshots were taken like the one above, with careful window arrangement to minimize the amount of miscellaneous text on screen. These images are then fed to the <MudLink Href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/overview-ocr" Target="_blank">Azure OCR service</MudLink> to retrieve the text on them. The output from OCR is then cleaned up with some simple heuristics (the Azure OCR service performed a bit too well and picked up some faint text that is hard to notice) and then formatted into JSON for reading. </p>
-<br />
-<p>Some additional data gathering was done to pre-process some of the static achievement information (name, ID, etc.) from the GW2 API. <MudLink Href="https://github.com/Archomeda/Gw2Sharp" Target="_blank">Gw2Sharp</MudLink> made this process extremely easy.  </p>
+            <p>Gw2Fish started with data gathering. While most of the of the data is available from the <MudLink Href="https://wiki.guildwars2.com/wiki/API:Main" Target="_blank">GW2 Web API</MudLink>, crucial pieces of information regarding where each fish is caught is not available. So step 1 is to capture this data the old-fashioned way -- OCR.</p>
+            <br />
+            <MudImage Fluid="true" Src="images/sample-screenshot.jpg" Alt="Sample screenshot" Class="rounded-lg" Elevation="5"></MudImage>
+            <p>252 screenshots were taken like the one above, with careful window arrangement to minimize the amount of miscellaneous text on screen. These images are then fed to the <MudLink Href="https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/overview-ocr" Target="_blank">Azure OCR service</MudLink> to retrieve the text on them. The output from OCR is then cleaned up with some simple heuristics (the Azure OCR service performed a bit too well and picked up some faint text that is hard to notice) and then formatted into JSON for reading. </p>
+            <br />
+            <p>Some additional data gathering was done to pre-process some of the static achievement information (name, ID, etc.) from the GW2 API. <MudLink Href="https://github.com/Archomeda/Gw2Sharp" Target="_blank">Gw2Sharp</MudLink> made this process extremely easy.  </p>
 
         </MudPaper>
 
         <MudPaper Class="mud-width-full py-8 px-8 my-4">
 
             <MudText Typo="Typo.h6" GutterBottom="true">Development</MudText>
-<p>Gw2Fish is a Single Page App (SPA) built using <MudLink Href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor" Target="_blank">Blazor</MudLink>, heavily using components from <MudLink Href="https://www.mudblazor.com/" Target="_blank">MudBlazor</MudLink>. Blazor was chosen because C# is a nice environment to use and I wanted to try web development in it (Full disclosure: I work at Microsoft, but not near any of the teams who work on these technologies. This is a personal project.). MudBlazor’s components made building a modern looking web app very easy. I don't think I had to write even a single line of Javascript when developing Gw2Fish!</p>
-<br />
-<p>Gw2Fish was going also use Gw2Sharp to retrieve player achievement information from the GW2 API in the web app. However, the GW2 API endpoint currently has an <MudLink Href="https://github.com/gw2-api/issues/issues/19" Target="_blank">issue</MudLink> that prevented CORS when using Authorization header. So instead Gw2Fish just makes a direct call to the GW2 API to fetch this data. Fortunately the processing that needs to be done on the data is minimal and it’s straightforward to parse this data. </p>
+            <p>Gw2Fish is a Single Page App (SPA) built using <MudLink Href="https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor" Target="_blank">Blazor</MudLink>, heavily using components from <MudLink Href="https://www.mudblazor.com/" Target="_blank">MudBlazor</MudLink>. Blazor was chosen because C# is a nice environment to use and I wanted to try web development in it (Full disclosure: I work at Microsoft, but not near any of the teams who work on these technologies. This is a personal project.). MudBlazor’s components made building a modern looking web app very easy. I don't think I had to write even a single line of Javascript when developing Gw2Fish!</p>
+            <br />
+            <p>Gw2Fish was going also use Gw2Sharp to retrieve player achievement information from the GW2 API in the web app. However, the GW2 API endpoint currently has an <MudLink Href="https://github.com/gw2-api/issues/issues/19" Target="_blank">issue</MudLink> that prevented CORS when using Authorization header. So instead Gw2Fish just makes a direct call to the GW2 API to fetch this data. Fortunately the processing that needs to be done on the data is minimal and it’s straightforward to parse this data. </p>
         </MudPaper>
 
         <MudPaper Class="mud-width-full py-8 px-8 my-4">
 
             <MudText Typo="Typo.h6" GutterBottom="true">Progressive Web App (PWA)</MudText>
-<p>Gw2Fish is registered as a PWA so you can use it offline to browse your favorite fish. I mostly picked this because it was an option during project setup. I thought “why not” and checked the box. However there are some quirks associated with the features that come with PWAs compared to a traditional web page.</p>
-<br />
-<p>The one that took the longest to figure out (because I failed to RTFM) is that PWAs have an additional layer of caching done by a “service worker”. The service worker is what the browser runs to keep the PWA up to date. To ensure consistency, the service worker will not be updated until <MudLink Href="https://docs.microsoft.com/en-us/aspnet/core/blazor/progressive-web-app?view=aspnetcore-6.0&tabs=visual-studio#caveats-for-offline-pwas" Target="_blank">the user closes all tabs containing the PWA</MudLink>. So unless all tabs of Gw2Fish are closed, none of the tabs will get the new version if a new version is published.</p>
-<br />
-<p>Another one is fallback routing. The first time I shared a link to Gw2Fish, I included a deep link into a page in the app. Unless the web host is configured properly, this will result in a 404. An SPA as the name implies, is served from a single page. Gw2Fish only has a single index.html page, with WASM and js updating the body of the page during navigation. The web host (<MudLink Href="https://docs.microsoft.com/en-us/azure/static-web-apps/configuration#fallback-routes" Target="_blank">Azure Static Web Apps</MudLink> for Gw2Fish) must be configured to redirect navigation attempts to these other locations back to the index.html page in order to serve up content.</p>
+            <p>Gw2Fish is registered as a PWA so you can use it offline to browse your favorite fish. I mostly picked this because it was an option during project setup. I thought “why not” and checked the box. However there are some quirks associated with the features that come with PWAs compared to a traditional web page.</p>
+            <br />
+            <p>The one that took the longest to figure out (because I failed to RTFM) is that PWAs have an additional layer of caching done by a “service worker”. The service worker is what the browser runs to keep the PWA up to date. To ensure consistency, the service worker will not be updated until <MudLink Href="https://docs.microsoft.com/en-us/aspnet/core/blazor/progressive-web-app?view=aspnetcore-6.0&tabs=visual-studio#caveats-for-offline-pwas" Target="_blank">the user closes all tabs containing the PWA</MudLink>. So unless all tabs of Gw2Fish are closed, none of the tabs will get the new version if a new version is published.</p>
+            <br />
+            <p>Another one is fallback routing. The first time I shared a link to Gw2Fish, I included a deep link into a page in the app. Unless the web host is configured properly, this will result in a 404. An SPA as the name implies, is served from a single page. Gw2Fish only has a single index.html page, with WASM and js updating the body of the page during navigation. The web host (<MudLink Href="https://docs.microsoft.com/en-us/azure/static-web-apps/configuration#fallback-routes" Target="_blank">Azure Static Web Apps</MudLink> for Gw2Fish) must be configured to redirect navigation attempts to these other locations back to the index.html page in order to serve up content.</p>
         </MudPaper>
 
         <MudPaper Class="mud-width-full py-8 px-8 my-4">
 
             <MudText Typo="Typo.h6" GutterBottom="true">Challenges / Future work?</MudText>
-<p>Developing Gw2Fish with Blazor has its advantages but it also brings with it some challenges. One of these is Search Engine Optimization (SEO). SPAs in general are difficult for search engine crawlers as they don’t have a good way to determine when the site has reached a steady state in order to capture data. They also probably don’t like running WASM. Instead, they just try to interpret what’s on the initial HTML itself. And Gw2Fish’s index.html is very bare:</p>
-<br />
-<MudImage Fluid="true" Src="images/searchresult.png" Alt="Screenshot of search result for gw2fish" Class="rounded-lg" Elevation="5"></MudImage>
-<p>There are ways to improve this. The most basic is to add meta tags to the HTML, giving basic information such as description and keywords to the crawlers. A more complete solution would be to pre-render the pages. That may be work for another day.</p>
+            <p>Developing Gw2Fish with Blazor has its advantages but it also brings with it some challenges. One of these is Search Engine Optimization (SEO). SPAs in general are difficult for search engine crawlers as they don’t have a good way to determine when the site has reached a steady state in order to capture data. They also probably don’t like running WASM. Instead, they just try to interpret what’s on the initial HTML itself. And Gw2Fish’s index.html is very bare:</p>
+            <br />
+            <MudImage Fluid="true" Src="images/searchresult.png" Alt="Screenshot of search result for gw2fish" Class="rounded-lg" Elevation="5"></MudImage>
+            <p>There are ways to improve this. The most basic is to add meta tags to the HTML, giving basic information such as description and keywords to the crawlers. A more complete solution would be to pre-render the pages. That may be work for another day.</p>
 
         </MudPaper>
 

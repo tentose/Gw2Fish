@@ -14,34 +14,34 @@
 else
 {
     <MudGrid>
-    @if (selectedAchievement != null)
-    {
-       
-        <MudItem xs="12">
-            <AchievementBox Model="@selectedAchievement" Fishes="@(DataService.AllFishes.Where(fish => fish.AchievementIds.Contains(selectedAchievement.Id)).ToList())" ShowCaughtInformation="isApiKeySet" ShowFilter="true"></AchievementBox>
-        </MudItem>
-        
-    }
-    else
-    {
-        <MudTextField @bind-Value="filterString" 
-                    Placeholder="Filter"
-                    Adornment="Adornment.Start"
-                    AdornmentIcon="@Icons.Material.Filled.Search"
-                    IconSize="Size.Medium"
-                    Class="mt-0"
-                    Clearable="true"
-                    DebounceInterval="800"></MudTextField>
-        @foreach(var achievement in allAchievements)
+        @if (selectedAchievement != null)
         {
-            if (!(SettingsService.HideCaughtFish && (achievement.Completed || achievement.Repeated > 0)))
+
+            <MudItem xs="12">
+                <AchievementBox Model="@selectedAchievement" Fishes="@(DataService.AllFishes.Where(fish => fish.AchievementIds.Contains(selectedAchievement.Id)).ToList())" ShowCaughtInformation="isApiKeySet" ShowFilter="true"></AchievementBox>
+            </MudItem>
+
+        }
+        else
+        {
+            <MudTextField @bind-Value="filterString"
+                  Placeholder="Filter"
+                  Adornment="Adornment.Start"
+                  AdornmentIcon="@Icons.Material.Filled.Search"
+                  IconSize="Size.Medium"
+                  Class="mt-0"
+                  Clearable="true"
+                  DebounceInterval="800"></MudTextField>
+            @foreach (var achievement in allAchievements)
             {
-                <MudItem xs="12">
-                    <AchievementBox Model="@achievement" Fishes="@(DataService.AllFishes.Where(fish => fish.AchievementIds.Contains(achievement.Id)).Select(fish => fish with {}).ToList())" ShowCaughtInformation="isApiKeySet" FilterFnOverride="FilterFunc"></AchievementBox>
-                </MudItem>
+                if (!(SettingsService.HideCaughtFish && (achievement.Completed || achievement.Repeated > 0)))
+                {
+                    <MudItem xs="12">
+                        <AchievementBox Model="@achievement" Fishes="@(DataService.AllFishes.Where(fish => fish.AchievementIds.Contains(achievement.Id)).Select(fish => fish with {}).ToList())" ShowCaughtInformation="isApiKeySet" FilterFnOverride="FilterFunc"></AchievementBox>
+                    </MudItem>
+                }
             }
         }
-    }
     </MudGrid>
 }
 
@@ -70,7 +70,7 @@ else
             return true;
 
         var filterWords = filterString.Split(" OR ");
-        foreach(var filterWord in filterWords)
+        foreach (var filterWord in filterWords)
         {
             string processedFilterWord = filterWord;
             var searchPredicate = (string hay, string needle) => { return hay.Contains(needle, StringComparison.OrdinalIgnoreCase); };
@@ -130,9 +130,9 @@ else
         {
             return;
         }
-        
+
         await Task.Delay(5000);
-        
+
         if (Snackbar.ShownSnackbars.Count() > 0)
         {
             return;
