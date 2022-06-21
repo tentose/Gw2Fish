@@ -52,7 +52,16 @@ else
         <MudTh Class="mud-table-cell-custom-group" colspan="5">@($"{context.GroupName}: {context.Key}")</MudTh>
     </GroupHeaderTemplate>
     <RowTemplate>
-        <MudTd DataLabel="Icon"><MudImage Src="@string.Format("data:image/png;base64,{0}", context.Icon)" Class="@("rarity-" + context.Rarity.ToLower())"></MudImage></MudTd>
+        <MudTd DataLabel="Icon">
+            <MudTooltip Placement="Placement.Left">
+                <ChildContent>
+                    <MudImage Src="@("data:image/png;base64," + context.Icon)" Class="@("rarity-" + context.Rarity.ToLower())" Width="40" Height="40"></MudImage>
+                </ChildContent>
+                <TooltipContent>
+                    <MudImage Src="@("data:image/png;base64," + context.Icon)" Width="120" Height="120"></MudImage>
+                </TooltipContent>
+            </MudTooltip>
+        </MudTd>
         <MudTd DataLabel="Name">
             <MudText>@context.Name</MudText>
         </MudTd>
