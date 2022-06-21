@@ -27,7 +27,8 @@
       96318,
       97181
     ],
-    "Region": "Cantha"
+    "Region": "Cantha",
+    "Order": 0
   },
   {
     "Id": 6342,
@@ -57,7 +58,8 @@
       96863,
       96196
     ],
-    "Region": "Cantha"
+    "Region": "Cantha",
+    "Order": 1
   },
   {
     "Id": 6258,
@@ -80,7 +82,8 @@
       95765,
       97559
     ],
-    "Region": "Cantha"
+    "Region": "Cantha",
+    "Order": 2
   },
   {
     "Id": 6506,
@@ -103,7 +106,8 @@
       95699,
       95632
     ],
-    "Region": "Cantha"
+    "Region": "Cantha",
+    "Order": 3
   },
   {
     "Id": 6179,
@@ -133,7 +137,8 @@
       96954,
       97225
     ],
-    "Region": "Tyria"
+    "Region": "Tyria",
+    "Order": 4
   },
   {
     "Id": 6330,
@@ -163,7 +168,8 @@
       97163,
       96081
     ],
-    "Region": "Tyria"
+    "Region": "Tyria",
+    "Order": 5
   },
   {
     "Id": 6068,
@@ -193,7 +199,8 @@
       97409,
       97527
     ],
-    "Region": "Tyria"
+    "Region": "Tyria",
+    "Order": 6
   },
   {
     "Id": 6344,
@@ -223,7 +230,8 @@
       97543,
       96439
     ],
-    "Region": "Tyria"
+    "Region": "Tyria",
+    "Order": 7
   },
   {
     "Id": 6363,
@@ -253,7 +261,8 @@
       97186,
       97017
     ],
-    "Region": "Tyria"
+    "Region": "Tyria",
+    "Order": 8
   },
   {
     "Id": 6489,
@@ -276,7 +285,8 @@
       97498,
       96361
     ],
-    "Region": "Tyria"
+    "Region": "Tyria",
+    "Order": 9
   },
   {
     "Id": 6317,
@@ -306,7 +316,8 @@
       97145,
       95929
     ],
-    "Region": "Tyria"
+    "Region": "Tyria",
+    "Order": 10
   },
   {
     "Id": 6106,
@@ -329,7 +340,8 @@
       95849,
       97489
     ],
-    "Region": "Tyria"
+    "Region": "Tyria",
+    "Order": 11
   },
   {
     "Id": 6224,
@@ -352,7 +364,8 @@
       97497,
       95870
     ],
-    "Region": "Other"
+    "Region": "Other",
+    "Order": 12
   },
   {
     "Id": 6471,
@@ -375,7 +388,8 @@
       95968,
       97534
     ],
-    "Region": "Other"
+    "Region": "Other",
+    "Order": 13
   },
   {
     "Id": 6264,
@@ -405,7 +419,8 @@
       96318,
       97181
     ],
-    "Region": "Cantha"
+    "Region": "Cantha",
+    "Order": 100
   },
   {
     "Id": 6192,
@@ -435,7 +450,8 @@
       96863,
       96196
     ],
-    "Region": "Cantha"
+    "Region": "Cantha",
+    "Order": 101
   },
   {
     "Id": 6466,
@@ -458,7 +474,8 @@
       95765,
       97559
     ],
-    "Region": "Cantha"
+    "Region": "Cantha",
+    "Order": 102
   },
   {
     "Id": 6402,
@@ -481,7 +498,8 @@
       95699,
       95632
     ],
-    "Region": "Cantha"
+    "Region": "Cantha",
+    "Order": 103
   },
   {
     "Id": 6153,
@@ -511,7 +529,8 @@
       96954,
       97225
     ],
-    "Region": "Tyria"
+    "Region": "Tyria",
+    "Order": 104
   },
   {
     "Id": 6484,
@@ -541,7 +560,8 @@
       97163,
       96081
     ],
-    "Region": "Tyria"
+    "Region": "Tyria",
+    "Order": 105
   },
   {
     "Id": 6263,
@@ -571,7 +591,8 @@
       97409,
       97527
     ],
-    "Region": "Tyria"
+    "Region": "Tyria",
+    "Order": 106
   },
   {
     "Id": 6475,
@@ -601,7 +622,8 @@
       97543,
       96439
     ],
-    "Region": "Tyria"
+    "Region": "Tyria",
+    "Order": 107
   },
   {
     "Id": 6227,
@@ -631,7 +653,8 @@
       97186,
       97017
     ],
-    "Region": "Tyria"
+    "Region": "Tyria",
+    "Order": 108
   },
   {
     "Id": 6339,
@@ -654,7 +677,8 @@
       97498,
       96361
     ],
-    "Region": "Tyria"
+    "Region": "Tyria",
+    "Order": 109
   },
   {
     "Id": 6509,
@@ -684,7 +708,8 @@
       97145,
       95929
     ],
-    "Region": "Tyria"
+    "Region": "Tyria",
+    "Order": 110
   },
   {
     "Id": 6250,
@@ -707,7 +732,8 @@
       95849,
       97489
     ],
-    "Region": "Tyria"
+    "Region": "Tyria",
+    "Order": 111
   },
   {
     "Id": 6110,
@@ -730,7 +756,32 @@
       97497,
       95870
     ],
-    "Region": "Other"
+    "Region": "Other",
+    "Order": 112
+  },
+  {
+    "Id": 6393,
+    "Name": "Avid Saltwater Fisher",
+    "Description": "\u003Cc=@flavor\u003EThe charm of fishing is in pursuing something elusive, though attainable. It is a simple yet profound practice of hope.\u003C/c\u003E",
+    "Icon": null,
+    "BitIds": [
+      95654,
+      96632,
+      96082,
+      97247,
+      97241,
+      97596,
+      95600,
+      96097,
+      96265,
+      96110,
+      97340,
+      95793,
+      95968,
+      97534
+    ],
+    "Region": "Other",
+    "Order": 113
   },
   {
     "Id": 6439,
@@ -753,7 +804,8 @@
       97707,
       96063
     ],
-    "Region": "Other"
+    "Region": "Other",
+    "Order": 214
   },
   {
     "Id": 6505,
@@ -769,6 +821,7 @@
       95816,
       95885
     ],
-    "Region": "Other"
+    "Region": "Other",
+    "Order": 215
   }
 ]

@@ -72,6 +72,7 @@
     ],
     "Hint": "Hint: Found in bodies of saltwater all across the world.",
     "AchievementIds": [
+      6393,
       6471
     ]
   },
@@ -96,8 +97,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -119,7 +120,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, \u4E09 the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -173,8 +174,8 @@
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
-      6224,
-      6110
+      6110,
+      6224
     ]
   },
   {
@@ -198,8 +199,8 @@
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
-      6506,
-      6402
+      6402,
+      6506
     ]
   },
   {
@@ -224,8 +225,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -250,6 +251,7 @@
     ],
     "Hint": "Hint: Found in bodies of saltwater all across the world.",
     "AchievementIds": [
+      6393,
       6471
     ]
   },
@@ -272,10 +274,10 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -299,8 +301,8 @@
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
-      6506,
-      6402
+      6402,
+      6506
     ]
   },
   {
@@ -325,8 +327,8 @@
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
-      6224,
-      6110
+      6110,
+      6224
     ]
   },
   {
@@ -350,8 +352,8 @@
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
-      6506,
-      6402
+      6402,
+      6506
     ]
   },
   {
@@ -373,10 +375,10 @@
     "Time": [
       "Day"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak 14 Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -401,8 +403,8 @@
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
-      6506,
-      6402
+      6402,
+      6506
     ]
   },
   {
@@ -501,10 +503,10 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak 14 Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -545,6 +547,7 @@
     ],
     "Hint": "Hint: Found in bodies of saltwater all across the world.",
     "AchievementIds": [
+      6393,
       6471
     ]
   },
@@ -595,8 +598,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City .",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -659,10 +662,10 @@
     "Time": [
       "Day"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -734,7 +737,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, = the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -786,8 +789,8 @@
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
-      6224,
-      6110
+      6110,
+      6224
     ]
   },
   {
@@ -812,8 +815,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -947,8 +950,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -970,10 +973,10 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -1023,8 +1026,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -1048,8 +1051,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -1071,7 +1074,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, \u4E09 the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -1098,8 +1101,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -1123,8 +1126,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -1175,6 +1178,7 @@
     ],
     "Hint": "Hint: Found in bodies of saltwater all across the world.",
     "AchievementIds": [
+      6393,
       6471
     ]
   },
@@ -1200,8 +1204,8 @@
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
-      6224,
-      6110
+      6110,
+      6224
     ]
   },
   {
@@ -1344,8 +1348,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -1370,8 +1374,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -1412,8 +1416,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -1437,8 +1441,8 @@
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
-      6506,
-      6402
+      6402,
+      6506
     ]
   },
   {
@@ -1488,6 +1492,7 @@
     ],
     "Hint": "Hint: Found in bodies of saltwater all across the world.",
     "AchievementIds": [
+      6393,
       6471
     ]
   },
@@ -1536,7 +1541,7 @@
     "Time": [
       "Night"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -1590,6 +1595,7 @@
     ],
     "Hint": "Hint: Found in bodies of saltwater all across the world.",
     "AchievementIds": [
+      6393,
       6471
     ]
   },
@@ -1640,8 +1646,8 @@
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
-      6224,
-      6110
+      6110,
+      6224
     ]
   },
   {
@@ -1666,6 +1672,7 @@
     ],
     "Hint": "Hint: Found in bodies of saltwater all across the world.",
     "AchievementIds": [
+      6393,
       6471
     ]
   },
@@ -1691,8 +1698,8 @@
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
-      6224,
-      6110
+      6110,
+      6224
     ]
   },
   {
@@ -1718,8 +1725,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -1743,8 +1750,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -1769,8 +1776,8 @@
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
-      6224,
-      6110
+      6110,
+      6224
     ]
   },
   {
@@ -1794,8 +1801,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -1862,8 +1869,8 @@
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
-      6506,
-      6402
+      6402,
+      6506
     ]
   },
   {
@@ -1963,8 +1970,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -2012,10 +2019,10 @@
     "Time": [
       "Night"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -2106,8 +2113,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City .",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -2132,6 +2139,7 @@
     ],
     "Hint": "Hint: Found in bodies of saltwater all across the world.",
     "AchievementIds": [
+      6393,
       6471
     ]
   },
@@ -2155,10 +2163,10 @@
     "Time": [
       "Night"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -2182,8 +2190,8 @@
     ],
     "Hint": "Hint: Found in the waters of Draconis Mons.",
     "AchievementIds": [
-      6489,
-      6339
+      6339,
+      6489
     ]
   },
   {
@@ -2234,8 +2242,8 @@
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
-      6224,
-      6110
+      6110,
+      6224
     ]
   },
   {
@@ -2258,7 +2266,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -2310,8 +2318,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -2333,7 +2341,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Maguuma Jungle. ig something",
+    "Hint": "Hint: Found in the waters of the Maguuma Jungle.",
     "AchievementIds": [
       6344,
       6475
@@ -2358,7 +2366,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Maguuma Jungle. pursuing something",
+    "Hint": "Hint: Found in the waters of the Maguuma Jungle.",
     "AchievementIds": [
       6344,
       6475
@@ -2385,8 +2393,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -2410,8 +2418,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -2434,7 +2442,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -2462,8 +2470,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -2487,8 +2495,8 @@
     ],
     "Hint": "Hint: Found in the waters of Ember Bay .",
     "AchievementIds": [
-      6489,
-      6339
+      6339,
+      6489
     ]
   },
   {
@@ -2511,7 +2519,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -2537,10 +2545,10 @@
       "Dawn",
       "Dusk"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -2590,8 +2598,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City .",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -2613,10 +2621,10 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of Seitung Province. something",
+    "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -2638,7 +2646,7 @@
     "Time": [
       "Day"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -2690,8 +2698,8 @@
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
-      6506,
-      6402
+      6402,
+      6506
     ]
   },
   {
@@ -2714,7 +2722,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -2742,8 +2750,8 @@
     ],
     "Hint": "Hint: Found in the waters of Ember Bay .",
     "AchievementIds": [
-      6489,
-      6339
+      6339,
+      6489
     ]
   },
   {
@@ -2808,8 +2816,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -2833,8 +2841,8 @@
     ],
     "Hint": "Hint: Found in the waters of Draconis Mons.",
     "AchievementIds": [
-      6489,
-      6339
+      6339,
+      6489
     ]
   },
   {
@@ -2910,8 +2918,8 @@
     ],
     "Hint": "Hint: Found in the waters of Draconis Mons.",
     "AchievementIds": [
-      6489,
-      6339
+      6339,
+      6489
     ]
   },
   {
@@ -2935,8 +2943,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -2960,8 +2968,8 @@
     ],
     "Hint": "Hint: Found in the waters of Ember Bay.",
     "AchievementIds": [
-      6489,
-      6339
+      6339,
+      6489
     ]
   },
   {
@@ -3008,10 +3016,10 @@
     "Time": [
       "Day"
     ],
-    "Hint": "Hint: Found in the waters of Draconis Mons. h pursuing something e",
+    "Hint": "Hint: Found in the waters of Draconis Mons.",
     "AchievementIds": [
-      6489,
-      6339
+      6339,
+      6489
     ]
   },
   {
@@ -3035,8 +3043,8 @@
     ],
     "Hint": "Hint: Found in the waters of Draconis Mons.",
     "AchievementIds": [
-      6489,
-      6339
+      6339,
+      6489
     ]
   },
   {
@@ -3061,8 +3069,8 @@
     ],
     "Hint": "Hint: Found in the waters of Ember Bay.",
     "AchievementIds": [
-      6489,
-      6339
+      6339,
+      6489
     ]
   },
   {
@@ -3084,10 +3092,10 @@
     "Time": [
       "Day"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak 14 Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -3111,8 +3119,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -3137,6 +3145,7 @@
     ],
     "Hint": "Hint: Found in bodies of saltwater all across the world.",
     "AchievementIds": [
+      6393,
       6471
     ]
   },
@@ -3162,8 +3171,8 @@
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
-      6224,
-      6110
+      6110,
+      6224
     ]
   },
   {
@@ -3186,10 +3195,10 @@
     "Time": [
       "Night"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -3265,8 +3274,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -3338,7 +3347,7 @@
     "Time": [
       "Day"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -3390,8 +3399,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -3416,8 +3425,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -3442,8 +3451,8 @@
     ],
     "Hint": "Hint: Found in the waters of Draconis Mons.",
     "AchievementIds": [
-      6489,
-      6339
+      6339,
+      6489
     ]
   },
   {
@@ -3467,8 +3476,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -3490,7 +3499,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -3544,8 +3553,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -3567,7 +3576,7 @@
     "Time": [
       "Day"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -3636,8 +3645,8 @@
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
-      6224,
-      6110
+      6110,
+      6224
     ]
   },
   {
@@ -3687,8 +3696,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -3712,8 +3721,8 @@
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
-      6506,
-      6402
+      6402,
+      6506
     ]
   },
   {
@@ -3779,8 +3788,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City .",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -3805,8 +3814,8 @@
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
-      6224,
-      6110
+      6110,
+      6224
     ]
   },
   {
@@ -3829,7 +3838,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, \u4E09 the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -3856,8 +3865,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -3882,8 +3891,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -3908,8 +3917,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -3931,10 +3940,10 @@
     "Time": [
       "Day"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -3974,8 +3983,8 @@
     ],
     "Hint": "Hint: Found in the waters of Ember Bay.",
     "AchievementIds": [
-      6489,
-      6339
+      6339,
+      6489
     ]
   },
   {
@@ -4000,8 +4009,8 @@
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
-      6506,
-      6402
+      6402,
+      6506
     ]
   },
   {
@@ -4051,8 +4060,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -4076,8 +4085,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -4126,8 +4135,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -4149,10 +4158,10 @@
     "Time": [
       "Night"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -4335,8 +4344,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -4377,8 +4386,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -4427,8 +4436,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -4502,8 +4511,8 @@
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
-      6224,
-      6110
+      6110,
+      6224
     ]
   },
   {
@@ -4527,8 +4536,8 @@
     ],
     "Hint": "Hint: Found in the waters of Ember Bay.",
     "AchievementIds": [
-      6489,
-      6339
+      6339,
+      6489
     ]
   },
   {
@@ -4575,7 +4584,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -4651,7 +4660,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, \u4E09 the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -4703,8 +4712,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -4728,8 +4737,8 @@
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
-      6506,
-      6402
+      6402,
+      6506
     ]
   },
   {
@@ -4753,8 +4762,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -4776,7 +4785,7 @@
     "Time": [
       "Night"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, \u4E09 the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -4801,10 +4810,10 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -4829,8 +4838,8 @@
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
-      6506,
-      6402
+      6402,
+      6506
     ]
   },
   {
@@ -4855,6 +4864,7 @@
     ],
     "Hint": "Hint: Found in bodies of saltwater all across the world.",
     "AchievementIds": [
+      6393,
       6471
     ]
   },
@@ -4880,6 +4890,7 @@
     ],
     "Hint": "Hint: Found in bodies of saltwater all across the world.",
     "AchievementIds": [
+      6393,
       6471
     ]
   },
@@ -4936,8 +4947,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -4959,10 +4970,10 @@
     "Time": [
       "Day"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak 14 Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -4986,8 +4997,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -5037,6 +5048,7 @@
     ],
     "Hint": "Hint: Found in bodies of saltwater all across the world.",
     "AchievementIds": [
+      6393,
       6471
     ]
   },
@@ -5084,10 +5096,10 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -5110,10 +5122,10 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -5164,8 +5176,8 @@
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
-      6224,
-      6110
+      6110,
+      6224
     ]
   },
   {
@@ -5238,10 +5250,10 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -5291,8 +5303,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City .",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -5339,7 +5351,7 @@
     "Time": [
       "Day"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, charm of the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -5366,8 +5378,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -5391,8 +5403,8 @@
     ],
     "Hint": "Hint: Found in the waters of Draconis Mons.",
     "AchievementIds": [
-      6489,
-      6339
+      6339,
+      6489
     ]
   },
   {
@@ -5489,10 +5501,10 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -5517,8 +5529,8 @@
     ],
     "Hint": "Hint: Found in bodies of water all across the world.",
     "AchievementIds": [
-      6224,
-      6110
+      6110,
+      6224
     ]
   },
   {
@@ -5542,8 +5554,8 @@
     ],
     "Hint": "Hint: Found in the waters of Ember Bay .",
     "AchievementIds": [
-      6489,
-      6339
+      6339,
+      6489
     ]
   },
   {
@@ -5567,8 +5579,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -5643,6 +5655,7 @@
     ],
     "Hint": "Hint: Found in bodies of saltwater all across the world.",
     "AchievementIds": [
+      6393,
       6471
     ]
   },
@@ -5717,8 +5730,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -5836,6 +5849,7 @@
     ],
     "Hint": "Hint: Found in bodies of saltwater all across the world.",
     "AchievementIds": [
+      6393,
       6471
     ]
   },
@@ -5860,8 +5874,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -5886,8 +5900,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City .",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -5936,8 +5950,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City .",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -5977,8 +5991,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -6017,10 +6031,10 @@
     "Time": [
       "Day"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -6044,8 +6058,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -6094,8 +6108,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -6117,7 +6131,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -6185,8 +6199,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -6209,7 +6223,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -6259,7 +6273,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -6286,8 +6300,8 @@
     ],
     "Hint": "Hint: Found in the waters of the Ruins of Orr.",
     "AchievementIds": [
-      6363,
-      6227
+      6227,
+      6363
     ]
   },
   {
@@ -6311,8 +6325,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -6386,8 +6400,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -6411,8 +6425,8 @@
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
-      6506,
-      6402
+      6402,
+      6506
     ]
   },
   {
@@ -6435,10 +6449,10 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
@@ -6463,8 +6477,8 @@
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
-      6506,
-      6402
+      6402,
+      6506
     ]
   },
   {
@@ -6488,8 +6502,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City .",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -6561,7 +6575,7 @@
     "Time": [
       "Any"
     ],
-    "Hint": "Hint: Found in the waters of the Elon River,",
+    "Hint": "Hint: Found in the waters of the Elon River, the Crystal Desert, and the Elonian mainland.",
     "AchievementIds": [
       6317,
       6509
@@ -6588,8 +6602,8 @@
     ],
     "Hint": "Hint: Found in the waters of Dragon\u0027s End.",
     "AchievementIds": [
-      6506,
-      6402
+      6402,
+      6506
     ]
   },
   {
@@ -6613,8 +6627,8 @@
     ],
     "Hint": "Hint: Found in the waters of New Kaineng City.",
     "AchievementIds": [
-      6342,
-      6192
+      6192,
+      6342
     ]
   },
   {
@@ -6639,8 +6653,8 @@
     ],
     "Hint": "Hint: Found in the waters of Seitung Province.",
     "AchievementIds": [
-      6336,
-      6264
+      6264,
+      6336
     ]
   },
   {
@@ -6662,10 +6676,10 @@
     "Time": [
       "Day"
     ],
-    "Hint": "Hint: Found in the waters of the Shiverpeak",
+    "Hint": "Hint: Found in the waters of the Shiverpeak Mountains.",
     "AchievementIds": [
-      6179,
-      6153
+      6153,
+      6179
     ]
   },
   {
