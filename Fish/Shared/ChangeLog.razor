@@ -1,0 +1,104 @@
+﻿@foreach (var change in @DisplayedChanges)
+{
+    <div>
+        <MudText Typo="@Typo.h6">@change.date.ToLongDateString()</MudText>
+        @foreach (var item in change.items)
+        {
+            <MudText Class="ml-12">@item</MudText>
+        }
+    </div>
+}
+
+@code {
+    List<(DateTime date, string[] items)> Changes = new List<(DateTime date, string[])>
+    {
+        (new DateTime(2022, 3, 20), new string[]
+        {
+            "Initial public release",
+            "Reduced icon size on All Fish page. Show large icons on hover.",
+        }),
+        (new DateTime(2022, 3, 21), new string[]
+        {
+            "Allow manual override for marking fish as caught",
+            "Use different colors for each type of fishing hole, bait",
+            "Disable coloring of fish if fish is not catchable (darkened)",
+        }),
+        (new DateTime(2022, 3, 23), new string[]
+        {
+            "Added achievement overview page",
+            "Moved All Achievements page to bottom of the nav menu",
+            "Improved page loading experience",
+            "Added daily fisher achievement to overview page",
+            "Added error handling for API query failures",
+        }),
+        (new DateTime(2022, 3, 23), new string[]
+        {
+            "Added more content to About page",
+            "Made clearing API key more reliable on Settings page",
+        }),
+        (new DateTime(2022, 3, 26), new string[]
+        {
+            "Reddit announce!",
+            "Persist manual override for marking fish as caught across API refreshes",
+            "Allow hiding of caught fish on individual achievement pages",
+            "Added nav menu icons for achievement pages to indicate completion",
+            "Add time as a filterable property",
+            "Small fix to the fish list to remove OCR artifacts",
+        }),
+        (new DateTime(2022, 3, 27), new string[]
+        {
+            "Do not show repeated achievements as incomplete on the nav menu",
+        }),
+        (new DateTime(2022, 3, 28), new string[]
+        {
+            "Avid achievement now show as completed even if it's at 0 progress but repeated",
+        }),
+        (new DateTime(2022, 3, 29), new string[]
+        {
+            "Updated Fire Eel to have a time of Any to match game update",
+            "Fixed issue where all achievements page was not showing caught fish properly",
+            "Added links to more fishing resources to the About page",
+        }),
+        (new DateTime(2022, 3, 30), new string[]
+        {
+            "Added missing Avid Saltwater Fisher achievement",
+            "Improved fish and achievement database to include hints and ordering",
+        }),
+        (new DateTime(2022, 4, 2), new string[]
+        {
+            "Fixed an issue that was causing double loading of database on page refresh",
+            "Improved overview page sorting order",
+        }),
+        (new DateTime(2022, 4, 3), new string[]
+        {
+            "Added Change Log page",
+            "Added Home page",
+            "Added filtering to All Achievements page",
+            "Hid completed achievements on All Achievements page",
+            "Improved overview page sorting order",
+        }),
+    };
+
+    List<(DateTime date, string[] items)> DisplayedChanges;
+
+    [Parameter]
+    public int ItemsToShow { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Changes.Sort((a, b) => b.date.CompareTo(a.date));
+        DisplayedChanges = Changes;
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (ItemsToShow != 0)
+        {
+            DisplayedChanges = Changes.Take(ItemsToShow).ToList();
+        }
+        else
+        {
+            DisplayedChanges = Changes;
+        }
+    }
+}

@@ -24,11 +24,22 @@ else
     }
     else
     {
-        @foreach(var achievement in DataService.AllAchievements)
+        <MudTextField @bind-Value="filterString" 
+                    Placeholder="Filter"
+                    Adornment="Adornment.Start"
+                    AdornmentIcon="@Icons.Material.Filled.Search"
+                    IconSize="Size.Medium"
+                    Class="mt-0"
+                    Clearable="true"
+                    DebounceInterval="800"></MudTextField>
+        @foreach(var achievement in allAchievements)
         {
-            <MudItem xs="12">
-                <AchievementBox Model="@achievement" Fishes="@(DataService.AllFishes.Where(fish => fish.AchievementIds.Contains(achievement.Id)).Select(fish => fish with {}).ToList())" ShowCaughtInformation="isApiKeySet"></AchievementBox>
-            </MudItem>
+            if (!(SettingsService.HideCaughtFish && (achievement.Completed || achievement.Repeated > 0)))
+            {
+                <MudItem xs="12">
+                    <AchievementBox Model="@achievement" Fishes="@(DataService.AllFishes.Where(fish => fish.AchievementIds.Contains(achievement.Id)).Select(fish => fish with {}).ToList())" ShowCaughtInformation="isApiKeySet" FilterFnOverride="FilterFunc"></AchievementBox>
+                </MudItem>
+            }
         }
     }
     </MudGrid>
@@ -44,7 +55,44 @@ else
     private Models.Achievement? selectedAchievement;
     private bool isApiKeySet;
 
+    private List<Models.Achievement>? allAchievements;
+
     private Timer? promptApiKeyTimer;
+
+    private string filterString;
+
+    private bool FilterFunc(Models.Fish fish)
+    {
+        if (SettingsService.HideCaughtFish && fish.Caught)
+            return false;
+
+        if (string.IsNullOrWhiteSpace(filterString))
+            return true;
+
+        var filterWords = filterString.Split(" OR ");
+        foreach(var filterWord in filterWords)
+        {
+            string processedFilterWord = filterWord;
+            var searchPredicate = (string hay, string needle) => { return hay.Contains(needle, StringComparison.OrdinalIgnoreCase); };
+            if (filterWord.ElementAt(0) == '+')
+            {
+                processedFilterWord = filterWord.Substring(1);
+                searchPredicate = (string hay, string needle) => { return hay.Equals(needle, StringComparison.OrdinalIgnoreCase); };
+            }
+            if (searchPredicate(fish.Name, processedFilterWord))
+                return true;
+            if (fish.Area.Any(x => searchPredicate(x, processedFilterWord)))
+                return true;
+            if (fish.Hole.Any(x => searchPredicate(x, processedFilterWord)))
+                return true;
+            if (fish.Bait.Any(x => searchPredicate(x, processedFilterWord)))
+                return true;
+            if (fish.Time.Any(x => searchPredicate(x, processedFilterWord)))
+                return true;
+        }
+
+        return false;
+    }
 
     private async Task UpdateContent()
     {
@@ -52,10 +100,12 @@ else
         if (_achievementName != "")
         {
             selectedAchievement = DataService.AllAchievements.First(ach => ach.Name == _achievementName);
+            allAchievements = null;
         }
         else
         {
             selectedAchievement = null;
+            allAchievements = DataService.GetAllAchievementsInProgressOrder();
         }
 
         StateHasChanged();

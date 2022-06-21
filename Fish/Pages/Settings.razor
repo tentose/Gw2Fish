@@ -21,7 +21,8 @@
             <p>For more details, see the wiki: <MudLink Href="https://wiki.guildwars2.com/wiki/API:API_key" Target="_blank">https://wiki.guildwars2.com/wiki/API:API_key</MudLink></p>
         </MudPaper>
 
-        <MudPaper Class="mud-width-full py-8 px-8 my-4">
+        <MudPaper Class="mud-width-full py-8 px-8 my-4 flex-column">
+            <MudSwitch Color="Color.Primary" Class="ma-4" T="bool" Label="Hide Caught Fish" CheckedChanged="HideCaughtChecked" Checked="SettingsService.HideCaughtFish"/>
             <MudSwitch Color="Color.Primary" Class="ma-4" T="bool" Label="Toggle Light/Dark Mode" CheckedChanged="DarkModeChecked" Checked="SettingsService.IsDarkMode"/>
         </MudPaper>
     </MudItem>
@@ -43,6 +44,11 @@
     private void DarkModeChecked(bool isChecked)
     {
         SettingsService.SetDarkMode(isChecked);
+    }
+
+    private void HideCaughtChecked(bool isChecked)
+    {
+        SettingsService.SetHideCaughtFish(isChecked);
     }
 
     private async Task<string> ValidateGw2ApiKey(string key)

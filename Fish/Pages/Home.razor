@@ -1,0 +1,66 @@
+﻿@page "/"
+@using System.Reflection
+
+<MudGrid>
+    <MudItem xs="12" Class="mt-8">
+        <MudText Typo="Typo.h4" GutterBottom="true" Class="px-8">GW2 Fish!</MudText>
+
+        <MudPaper Class="mud-width-full py-8 px-8 my-4">
+            <p>Gw2Fish is a tool for helping you track your fishing achievements in Guild Wars 2.</p>
+        </MudPaper>
+
+        <MudPaper Class="mud-width-full py-8 px-8 my-4">
+            
+            <MudText Typo="Typo.h6" GutterBottom="true">Recent changes</MudText>
+
+            <div Class="d-flex flex-column">
+                <ChangeLog ItemsToShow="1"></ChangeLog>
+            </div>
+        </MudPaper>
+
+        <MudPaper Class="mud-width-full py-8 px-8 my-4">
+
+            <MudText Typo="Typo.h6" GutterBottom="true">How to use</MudText>
+<p>Use the menu on the left side to navigate to the various pages.</p>
+<br />
+<MudText>All Fish</MudText>
+<p>Use this page to browse the available fish GW2.</p>
+<br />
+<MudText>Achievement Overview</MudText>
+<p>An overview of your fishing achievement progress. This includes how far you’ve progressed in each individual achievement as well as your progress towards Cod Swimming Among Mere Minnows.</p>
+<br />
+<MudText>Individual Achievement Pages</MudText>
+<p>Use these pages when you want to focus on a specific achievement. It will show you which fish you still need to catch to complete the achievement, with an option to hide fish that you’ve already caught.</p>
+<br />
+<MudText>All Achievements</MudText>
+<p>This provides a similar view to the individual achievement pages but lists all achievements, except for the ones you’ve completed. Use this page when you’re in the final stages of achieving Cod Swimming Among Mere Minnows and just need a few more fish from a number of different maps.</p>
+<br />
+<MudText>Settings</MudText>
+<p>Go here to add your API key and configure display options.</p>
+        </MudPaper>
+
+        <MudPaper Class="mud-width-full py-8 px-8 my-4">
+
+            <MudText Typo="Typo.h6" GutterBottom="true">Additional Fishing Resources</MudText>
+
+<p><MudLink Href="https://docs.google.com/spreadsheets/d/1Bhzxj6T1bc83UGMwtr_B4A_UoCxIqugoYVjNSwlcsVc/edit#gid=275775758" Target="_blank">The Fishing Sheet</MudLink> by /u/ferthi_akaiito</p>
+<br />
+<p><MudLink Href="https://www.peuresearchcenter.com/resources/fishing.php" Target="_blank">Fishing from Peu Research Center</MudLink> by Peureki</p>
+
+        </MudPaper>
+
+        <MudPaper Class="d-flex mud-width-full py-8 px-8 my-4 gap-4 flex-wrap">
+            <div style="width: 200px">
+                <p>Issues?</p>
+                <p>IGN: Pentose.3479</p>
+                <p>Discord: Pentose#0829</p>
+                <br />
+                <p>Version: @version</p>
+            </div>
+        </MudPaper>
+    </MudItem>
+</MudGrid>
+
+@code {
+    private string version = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion ?? "";
+}

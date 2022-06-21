@@ -133,6 +133,9 @@
     [Parameter]
     public bool ShowFilter { get; set; }
 
+    [Parameter]
+    public Func<Models.Fish,bool>? FilterFnOverride { get; set; }
+
     private TimeStage currentTimeStage;
     private RegionType currentRegion;
     private bool isRegionKnown = false;
@@ -185,6 +188,9 @@
 
     private bool FilterFunc(Models.Fish fish)
     {
+        if (FilterFnOverride != null)
+            return FilterFnOverride(fish);
+
         if (!ShowFilter)
             return true;
 

@@ -90,25 +90,7 @@ else
     {
         isApiKeySet = !string.IsNullOrEmpty(SettingsService.Gw2ApiKey);
 
-        var achievementsWithOrder = DataService.AllAchievements.Select(a =>
-        {
-            int order = 0;
-
-            if (a.Repeated > 0)
-            {
-                order += 100;
-            }
-            else if (a.Completed)
-            {
-                order += 500;
-            }
-
-            order += 100 - (int)(100.0f * a.CurrentProgress / a.PointRequirement);
-
-            return (order, a);
-        }).ToList();
-        achievementsWithOrder.Sort((a, b) => a.order.CompareTo(b.order));
-        allAchievements = achievementsWithOrder.Select(ao => ao.a).ToList();
+        allAchievements = DataService.GetAllAchievementsInProgressOrder();
 
         maxTitleProgress = DataService.TitleAchievements.Select(a => a.CurrentProgress).Max();
         maxTitleRequirement = DataService.TitleAchievements.Select(a => a.PointRequirement).Max();

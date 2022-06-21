@@ -11,6 +11,7 @@ namespace Fish.Services
         public IEnumerable<Models.Achievement> DailyAchievements { get; set; }
         public IEnumerable<Models.Fish> AllFishes { get; set; }
         public IEnumerable<Gw2Api.AccountAchievement> AllAccountAchievements { get; set; }
+        public List<Models.Achievement> GetAllAchievementsInProgressOrder();
         public event EventHandler ApiDataUpdated;
         public Task LoadAppData(bool force = false);
         public Task LoadAllData(bool force = false);
@@ -69,6 +70,29 @@ namespace Fish.Services
         {
             get => allAccountAchievements ?? (allAccountAchievements = new List<Gw2Api.AccountAchievement>());
             set => allAccountAchievements = value.ToList();
+        }
+
+        public List<Models.Achievement> GetAllAchievementsInProgressOrder()
+        {
+            var achievementsWithOrder = AllAchievements.Select(a =>
+            {
+                int order = 0;
+
+                if (a.Repeated > 0)
+                {
+                    order += 100;
+                }
+                else if (a.Completed)
+                {
+                    order += 500;
+                }
+
+                order += 100 - (int)(100.0f * a.CurrentProgress / a.PointRequirement);
+
+                return (order, a);
+            }).ToList();
+            achievementsWithOrder.Sort((a, b) => a.order.CompareTo(b.order));
+            return achievementsWithOrder.Select(ao => ao.a).ToList();
         }
 
         public event EventHandler ApiDataUpdated;

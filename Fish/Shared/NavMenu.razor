@@ -11,7 +11,8 @@
     </div>
     </div>
     <MudDivider></MudDivider>
-    <MudNavLink Href="/" Match="NavLinkMatch.All">All Fish</MudNavLink>
+    <MudNavLink Href="/" Match="NavLinkMatch.All">Home</MudNavLink>
+    <MudNavLink Href="/allfish" Match="NavLinkMatch.All">All Fish</MudNavLink>
     <MudNavGroup Title="Achievements" @bind-Expanded="expandAchievementsMenu">
         <MudNavLink Href="/achievements" Match="NavLinkMatch.All" Icon="@Icons.Filled.ShowChart">Overview</MudNavLink>
         @if(DataService.AllAchievements != null)
@@ -24,6 +25,7 @@
         <MudNavLink Href="/achievements/all" Match="NavLinkMatch.All" Icon="@Icons.Filled.DensitySmall">All Achievements</MudNavLink>
     </MudNavGroup>
     <MudNavLink Href="/settings" Match="NavLinkMatch.Prefix">Settings</MudNavLink>
+    <MudNavLink Href="/changes"  Match="NavLinkMatch.Prefix">Change Log</MudNavLink>
     <MudNavLink Href="/about"  Match="NavLinkMatch.Prefix">About</MudNavLink>
 </MudNavMenu>
 
