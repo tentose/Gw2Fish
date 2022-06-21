@@ -5,11 +5,9 @@
 @inject ISnackbar Snackbar
 
 <MudGrid>
-    <MudItem xs="12" Class="px-8 mt-8">
-        <MudText Typo="Typo.h4">Settings</MudText>
-    </MudItem>
+    <MudItem xs="12" Class="mt-8">
+        <MudText Typo="Typo.h4" GutterBottom="true" Class="px-8">Settings</MudText>
 
-    <MudItem xs="12">
         <MudPaper Class="mud-width-full py-8 px-8 my-4">
             <MudTextField T="string" Label="API Key" Class="mb-3" Validation="ValidateGw2ApiKey" @bind-Value="@_apiKeyText" Clearable="true"/>
             <MudButton Variant="Variant.Filled" OnClick="ClearGw2ApiKey" Class="mb-8">Clear Stored API Key</MudButton>
@@ -22,13 +20,11 @@
             <p>Don't have an API key? Get one here: <MudLink Href="https://account.arena.net/applications" Target="_blank">https://account.arena.net/applications</MudLink></p>
             <p>For more details, see the wiki: <MudLink Href="https://wiki.guildwars2.com/wiki/API:API_key" Target="_blank">https://wiki.guildwars2.com/wiki/API:API_key</MudLink></p>
         </MudPaper>
-    </MudItem>
-    <MudItem xs="12">
+
         <MudPaper Class="mud-width-full py-8 px-8 my-4">
             <MudSwitch Color="Color.Primary" Class="ma-4" T="bool" Label="Toggle Light/Dark Mode" CheckedChanged="DarkModeChecked" Checked="SettingsService.IsDarkMode"/>
         </MudPaper>
     </MudItem>
-
 </MudGrid>
 
 @code {

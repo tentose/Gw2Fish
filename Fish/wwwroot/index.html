@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Fish</title>
     <base href="/" />
-    <!-- <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" /> -->
     <link href="css/app.css" rel="stylesheet" />
     <link href="Fish.styles.css" rel="stylesheet" />
     <link href="manifest.json" rel="manifest" />
@@ -14,10 +13,32 @@
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+    <style>
+        @keyframes bounce {
+            from, to {
+                transform: translateY(5vh) scaleY(0.9);
+            }
+
+            80% {
+                transform: translateY(0vh) scaleY(1.0);
+            }
+        }
+        @media (prefers-color-scheme: dark) {
+            .loading-screen {
+                background-color: #32333d;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div id="app">Loading...</div>
+    <div id="app">
+        <div class="loading-screen" style="height:100%;width:100%;margin:0;position:fixed;">
+            <div style="display: flex;justify-content: center;align-items:center;height:100%;width:100%;">
+                <img src="images/gw2fishexclaim.png" alt="Loading ..." width="150" style="transform-origin: center; animation: bounce 1.5s cubic-bezier(0.30, 2.40, 0.85, 2.50) infinite;">
+            </div>
+        </div>
+    </div>
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.
