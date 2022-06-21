@@ -9,7 +9,7 @@
         <MudText Typo="Typo.h4" GutterBottom="true" Class="px-8">Settings</MudText>
 
         <MudPaper Class="mud-width-full py-8 px-8 my-4">
-            <MudTextField T="string" Label="API Key" Class="mb-3" Validation="ValidateGw2ApiKey" @bind-Value="@_apiKeyText" Clearable="true"/>
+            <MudTextField T="string" Label="API Key" Class="mb-3" Validation="ValidateGw2ApiKey" @bind-Value="@_apiKeyText"/>
             <MudButton Variant="Variant.Filled" OnClick="ClearGw2ApiKey" Class="mb-8">Clear Stored API Key</MudButton>
             <p>Gw2Fish needs an API key that has access to
                 <ul style="list-style: disc" class="px-8">
@@ -89,6 +89,7 @@
 
     private async Task ClearGw2ApiKey()
     {
+        _apiKeyText = "";
         await SetGw2ApiKey("");
     }
 
