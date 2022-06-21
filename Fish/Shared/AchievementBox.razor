@@ -60,17 +60,37 @@
         <MudTd DataLabel="Name">@context.Name</MudTd>
         <MudTd DataLabel="Hole">
             <div class="">
-                @foreach(var text in context.Hole)
+                @if (IsFishCatchable(context))
                 {
-                    <MudText Color="@(holeToColorMap?[text] ?? Color.Default)">@text</MudText>
+                    @foreach(var text in context.Hole)
+                    {
+                        <MudText Color="@(holeToColorMap?[text] ?? Color.Default)">@text</MudText>
+                    }
+                }
+                else
+                {
+                    @foreach(var text in context.Hole)
+                    {
+                        <MudText>@text</MudText>
+                    }
                 }
             </div>
         </MudTd>
         <MudTd DataLabel="Bait">
             <div class="">
-                @foreach(var text in context.Bait)
+                @if (IsFishCatchable(context))
                 {
-                    <MudText Color="@(baitToColorMap?[text] ?? Color.Default)">@text</MudText>
+                    @foreach(var text in context.Bait)
+                    {
+                        <MudText Color="@(baitToColorMap?[text] ?? Color.Default)">@text</MudText>
+                    }
+                }
+                else
+                {
+                    @foreach(var text in context.Bait)
+                    {
+                        <MudText>@text</MudText>
+                    }
                 }
             </div>
         </MudTd>
@@ -118,15 +138,19 @@
         Color.Warning,
     };
 
-
     protected override async Task OnInitializedAsync()
     {
         TimeService.StageChanged += StageUpdate;
     }
 
+    private bool IsFishCatchable(Models.Fish fish)
+    {
+        return !isRegionKnown || fish.Time.Contains("Any") || fish.Time.Contains(currentTimeStage.ToString()) || currentTimeStage == TimeStage.Dawn || currentTimeStage == TimeStage.Dusk;
+    }
+
     private string RowStyleFunc(Models.Fish fish, int index)
     {
-        if (!isRegionKnown || fish.Time.Contains("Any") || fish.Time.Contains(currentTimeStage.ToString()) || currentTimeStage == TimeStage.Dawn || currentTimeStage == TimeStage.Dusk)
+        if (IsFishCatchable(fish))
         {
             return "";
         }
