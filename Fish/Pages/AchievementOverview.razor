@@ -18,6 +18,18 @@ else
 
     <div class="d-flex flex-grow-0 flex-wrap gap-4">
         <div class="mt-8 d-flex flex-wrap gap-4" style="max-width:600px; width: auto">
+                @foreach (var achievement in DataService.DailyAchievements)
+                {
+                    <div class="flex-grow-1" width="" style="width: 450px">
+                    <MudCard>
+                        <MudCardContent>
+                            <MudText Typo="Typo.h6">@(achievement.Name)</MudText>
+                            <MudText Typo="Typo.body1">@(achievement.Description)</MudText>
+                        </MudCardContent>
+                    </MudCard>
+                    </div>
+                }
+
                 @foreach (var achievement in allAchievements)
                 {
                     <div class="flex-grow-1" width="" style="width: 250px">
@@ -32,7 +44,7 @@ else
                                     </MudText>
                                 </MudProgressLinear>
                             }
-                            </MudCardContent>
+                        </MudCardContent>
                         <MudCardActions>
                             <MudButton Variant="Variant.Text" Color="Color.Primary" Link="@("/achievements/" + achievement.Name)">Details</MudButton>
                         </MudCardActions>

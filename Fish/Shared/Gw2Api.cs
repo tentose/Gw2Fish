@@ -17,4 +17,20 @@
         public string name { get; set; }
         public string[] permissions { get; set; }
     }
+
+    public class AchievementCategory
+    { 
+        public int id { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
+        public int[] achievements { get; set; }
+    }
+
+    public class Achievement
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public string description { get; set; }
+        public string requirement { get; set; }
+    }
 }

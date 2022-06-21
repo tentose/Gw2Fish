@@ -8,6 +8,7 @@ namespace Fish.Services
     {
         public IEnumerable<Models.Achievement> AllAchievements { get; set; }
         public IEnumerable<Models.Achievement> TitleAchievements { get; set; }
+        public IEnumerable<Models.Achievement> DailyAchievements { get; set; }
         public IEnumerable<Models.Fish> AllFishes { get; set; }
         public IEnumerable<Gw2Api.AccountAchievement> AllAccountAchievements { get; set; }
         public event EventHandler ApiDataUpdated;
@@ -25,11 +26,13 @@ namespace Fish.Services
 
         private List<Models.Achievement>? allAchievements;
         private List<Models.Achievement>? titleAchievements;
+        private List<Models.Achievement>? dailyAchievements;
         private List<Models.Fish>? allFishes;
         private List<Gw2Api.AccountAchievement>? allAccountAchievements;
 
         private Timer? apiRefreshTimer;
         private ReaderWriterLock allDataLock = new ReaderWriterLock();
+        private DateTime lastDailyRefresh = DateTime.MinValue;
 
         public DataService(HttpClient httpClient, ISettingsService settingsService)
         {
@@ -47,6 +50,12 @@ namespace Fish.Services
         {
             get => titleAchievements ?? (titleAchievements = new List<Models.Achievement>());
             set => titleAchievements = value.ToList();
+        }
+
+        public IEnumerable<Models.Achievement> DailyAchievements
+        {
+            get => dailyAchievements ?? (dailyAchievements = new List<Models.Achievement>());
+            set => dailyAchievements = value.ToList();
         }
 
         public IEnumerable<Models.Fish> AllFishes
@@ -117,72 +126,10 @@ namespace Fish.Services
                 {
                     if (settingsService.Gw2ApiKey != "")
                     {
-                        allAccountAchievements = await httpClient.GetFromJsonAsync<List<Gw2Api.AccountAchievement>>("https://api.guildwars2.com/v2/account/achievements?access_token=" + settingsService.Gw2ApiKey);
-
-                        if (allAccountAchievements != null && allAchievements != null && allFishes != null && titleAchievements != null)
-                        {
-                            // Merge account achievements into the achievement data
-
-                            // Some optimization (maybe) by doing a range comparison first instead of searching
-                            IEnumerable<int> fishingAchievementIds = allAchievements.Select(a => a.Id).Concat(titleAchievements.Select(a => a.Id));
-                            int minAchievementId = fishingAchievementIds.Min();
-                            int maxAchievementId = fishingAchievementIds.Max();
-
-                            var fishingAccountAchievements = allAccountAchievements.Where(aa =>
-                                                                        aa.id >= minAchievementId &&
-                                                                        aa.id <= maxAchievementId &&
-                                                                        fishingAchievementIds.Contains(aa.id));
-
-                            List<int> caughtFishIds = new();
-
-                            allAchievements = allAchievements.GroupJoin(fishingAccountAchievements, a => a.Id, aa => aa.id, (a, aas) =>
-                            {
-                                var aa = aas.FirstOrDefault();
-                                if (aa != null && aa.bits != null)
-                                {
-                                    var bitIds = aa.bits.Select(bit => a.BitIds[bit]);
-                                    a.CompletedBitIds = bitIds.ToArray();
-                                    a.Completed = aa.done;
-                                    a.CurrentProgress = aa.current;
-                                    a.PointRequirement = aa.max;
-
-                                    // If an achievement is completed, it won't have CompletedBitIds
-                                    if (a.Completed)
-                                    {
-                                        caughtFishIds.AddRange(a.BitIds);
-                                    }
-                                    else
-                                    {
-                                        caughtFishIds.AddRange(bitIds);
-                                    }
-                                }
-                                else
-                                {
-                                    a.PointRequirement = a.BitIds.Length;
-                                }
-                                return a;
-                            }).ToList();
-
-                            titleAchievements = titleAchievements.GroupJoin(fishingAccountAchievements, a => a.Id, aa => aa.id, (a, aas) =>
-                            {
-                                var aa = aas.FirstOrDefault();
-                                if (aa != null && aa.bits != null)
-                                {
-                                    a.CurrentProgress = aa.current;
-                                    a.Completed = aa.done;
-                                }
-                                return a;
-                            }).ToList();
-                            titleAchievements.Sort((a, b) => a.PointRequirement.CompareTo(b.PointRequirement));
-
-                            // Mark all caught fishes as caught
-                            foreach (var fish in allFishes)
-                            {
-                                fish.Caught = caughtFishIds.Contains(fish.Id);
-                            }
-                        }
+                        await RefreshAccountBasedApiData();
                     }
 
+                    await RefreshDailydApiData();
                 }
                 finally
                 {
@@ -197,6 +144,110 @@ namespace Fish.Services
             catch (ApplicationException)
             {
                 Console.WriteLine("Timedout acquiring write lock for RefreshApiData");
+            }
+        }
+
+        private async Task RefreshDailydApiData()
+        {
+            DateTime currentDailyReset = DateTime.UtcNow;
+            if (dailyAchievements != null && dailyAchievements.Count() > 0 && currentDailyReset.Date <= lastDailyRefresh.Date)
+            {
+                return;
+            }
+
+            // Always reset daily achievements so we don't show stale data
+            dailyAchievements = new List<Models.Achievement>();
+
+            var dailyEodAchievementCategory = await httpClient.GetFromJsonAsync<Gw2Api.AchievementCategory>("https://api.guildwars2.com/v2/achievements/categories/321");
+
+            if (dailyEodAchievementCategory != null && dailyEodAchievementCategory.name == "Daily End of Dragons")
+            {
+                var dailyEodAchievements = await httpClient.GetFromJsonAsync<List<Gw2Api.Achievement>>("https://api.guildwars2.com/v2/achievements?ids=" + string.Join(',', dailyEodAchievementCategory.achievements));
+
+                if (dailyEodAchievements != null)
+                {
+                    foreach (var dailyAchievement in dailyEodAchievements)
+                    {
+                        if (dailyAchievement.name.StartsWith("Daily") && dailyAchievement.name.EndsWith("Fisher"))
+                        {
+                            var achievement = new Models.Achievement();
+                            achievement.Id = dailyAchievement.id;
+                            achievement.Name = dailyAchievement.name;
+                            achievement.Description = dailyAchievement.requirement;
+
+                            dailyAchievements.Add(achievement);
+                            lastDailyRefresh = DateTime.UtcNow;
+                        }
+                    }
+                }
+            }
+        }
+
+        private async Task RefreshAccountBasedApiData()
+        {
+            allAccountAchievements = await httpClient.GetFromJsonAsync<List<Gw2Api.AccountAchievement>>("https://api.guildwars2.com/v2/account/achievements?access_token=" + settingsService.Gw2ApiKey);
+
+            if (allAccountAchievements != null && allAchievements != null && allFishes != null && titleAchievements != null)
+            {
+                // Merge account achievements into the achievement data
+
+                // Some optimization (maybe) by doing a range comparison first instead of searching
+                IEnumerable<int> fishingAchievementIds = allAchievements.Select(a => a.Id).Concat(titleAchievements.Select(a => a.Id));
+                int minAchievementId = fishingAchievementIds.Min();
+                int maxAchievementId = fishingAchievementIds.Max();
+
+                var fishingAccountAchievements = allAccountAchievements.Where(aa =>
+                                                            aa.id >= minAchievementId &&
+                                                            aa.id <= maxAchievementId &&
+                                                            fishingAchievementIds.Contains(aa.id));
+
+                List<int> caughtFishIds = new();
+
+                allAchievements = allAchievements.GroupJoin(fishingAccountAchievements, a => a.Id, aa => aa.id, (a, aas) =>
+                {
+                    var aa = aas.FirstOrDefault();
+                    if (aa != null && aa.bits != null)
+                    {
+                        var bitIds = aa.bits.Select(bit => a.BitIds[bit]);
+                        a.CompletedBitIds = bitIds.ToArray();
+                        a.Completed = aa.done;
+                        a.CurrentProgress = aa.current;
+                        a.PointRequirement = aa.max;
+
+                        // If an achievement is completed, it won't have CompletedBitIds
+                        if (a.Completed)
+                        {
+                            caughtFishIds.AddRange(a.BitIds);
+                        }
+                        else
+                        {
+                            caughtFishIds.AddRange(bitIds);
+                        }
+                    }
+                    else
+                    {
+                        a.PointRequirement = a.BitIds.Length;
+                    }
+                    return a;
+                }).ToList();
+
+                titleAchievements = titleAchievements.GroupJoin(fishingAccountAchievements, a => a.Id, aa => aa.id, (a, aas) =>
+                {
+                    var aa = aas.FirstOrDefault();
+                    if (aa != null && aa.bits != null)
+                    {
+                        a.CurrentProgress = aa.current;
+                        a.Completed = aa.done;
+                    }
+                    return a;
+                }).ToList();
+                titleAchievements.Sort((a, b) => a.PointRequirement.CompareTo(b.PointRequirement));
+
+                // Mark all caught fishes as caught
+                foreach (var fish in allFishes)
+                {
+                    fish.Caught = caughtFishIds.Contains(fish.Id);
+                }
             }
         }
 
