@@ -210,24 +210,28 @@ namespace Fish.Services
                 allAchievements = allAchievements.GroupJoin(fishingAccountAchievements, a => a.Id, aa => aa.id, (a, aas) =>
                 {
                     var aa = aas.FirstOrDefault();
-                    if (aa != null && aa.bits != null)
+                    if (aa != null)
                     {
-                        var bitIds = aa.bits.Select(bit => a.BitIds[bit]);
-                        a.CompletedBitIds = bitIds.ToArray();
+                        if (aa.bits != null)
+                        {
+                            var bitIds = aa.bits.Select(bit => a.BitIds[bit]);
+                            a.CompletedBitIds = bitIds.ToArray();
+                            caughtFishIds.AddRange(bitIds);
+                        }
+                        else
+                        {
+                            a.CompletedBitIds = new int[] { };
+
+                            // If an achievement is completed, it won't have CompletedBitIds
+                            if (aa.done || aa.repeated > 0)
+                            {
+                                caughtFishIds.AddRange(a.BitIds);
+                            }
+                        }
                         a.Completed = aa.done;
                         a.CurrentProgress = aa.current;
                         a.PointRequirement = aa.max;
                         a.Repeated = aa.repeated;
-
-                        // If an achievement is completed, it won't have CompletedBitIds
-                        if (a.Completed)
-                        {
-                            caughtFishIds.AddRange(a.BitIds);
-                        }
-                        else
-                        {
-                            caughtFishIds.AddRange(bitIds);
-                        }
                     }
                     else
                     {
